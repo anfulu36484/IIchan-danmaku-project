@@ -15,10 +15,10 @@ namespace iichanTouhou.Objects
 
         private float speed = 0.05f;
 
-        public MainObject(Danmaku danmaku, int width, int height, Vector2f startPosition) 
-            : base(danmaku, width, height, startPosition)
-        {
 
+        public MainObject(Danmaku danmaku, int width, int height, Vector2f startPosition, float hitboxRadius) 
+            : base(danmaku, width, height, startPosition, hitboxRadius)
+        {
         }
 
         public override void LoadContent()
@@ -31,7 +31,6 @@ namespace iichanTouhou.Objects
             obj = new CircleShape(10f);
             obj.Position = new Vector2f(500 - obj.Radius, 800 - obj.Radius);
             obj.FillColor = Color.Green;
-            hitbox = new Hitbox(danmaku,10, 10, new Vector2f(CenterCoordinates.X-10, CenterCoordinates.Y-10),this );
         }
 
         public override void Tick()

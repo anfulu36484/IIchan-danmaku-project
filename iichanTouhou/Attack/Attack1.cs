@@ -38,7 +38,7 @@ namespace iichanTouhou.Attack
             float fi = 10;
             for (int i = 0; i < countOfBullets; i++)
             {
-                bullet1s[i]=new Bullet1(_danmaku,10,10, GetStartOfPoint(fi,fi));
+                bullet1s[i]=new Bullet1(_danmaku,10,10, GetStartOfPoint(fi,fi),5);
                 bullet1s[i].Initialize();
                 bullet1s[i].Speed = (bullet1s[i].Position - _startPoint)*0.0005f;
                 fi += 10f;

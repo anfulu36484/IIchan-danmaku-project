@@ -9,7 +9,9 @@ using SFML.Graphics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Xml.Schema;
 using Microsoft.SqlServer.Server;
+using SFML.System;
 
 namespace iichanTouhou.Helpers
 {
@@ -20,6 +22,14 @@ namespace iichanTouhou.Helpers
             MemoryStream ms = new MemoryStream();
             image.Save(ms, format);
             return new Texture(ms);
+        }
+    }
+
+    public static class Vector
+    {
+        public static float Length(this Vector2f vector)
+        {
+            return (float)Math.Sqrt(vector.X*vector.X + vector.Y*vector.Y);
         }
     }
 }

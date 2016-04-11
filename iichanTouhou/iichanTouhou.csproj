@@ -68,7 +68,6 @@
     <Compile Include="GameBase.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Helpers\TextureGenerator.cs" />
-    <Compile Include="Hitbox.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
     <Compile Include="Objects\Bullets\BulletBase.cs" />
     <Compile Include="Objects\MainObject.cs" />

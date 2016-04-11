@@ -14,8 +14,8 @@ namespace iichanTouhou.Objects.NPC
 {
     class NPC1 :GameObject
     {
-        public NPC1(Danmaku danmaku, int width, int height, Vector2f startPosition) 
-            : base(danmaku, width, height, startPosition)
+        public NPC1(Danmaku danmaku, int width, int height, Vector2f startPosition, float hitboxRadius) 
+            : base(danmaku, width, height, startPosition,hitboxRadius)
         {
         }
 
@@ -33,8 +33,7 @@ namespace iichanTouhou.Objects.NPC
             texture = TextureGenerator.Generate(Properties.Resources.npc, ImageFormat.Png);
             sprite = new Sprite(texture);
             sprite.Position = Position;
-            hitbox = new Hitbox(danmaku, Width, Height, new Vector2f(CenterCoordinates.X - Width, CenterCoordinates.Y - Height), this);
-
+           
             Speed=new Vector2f(0,0.05f);
         }
 

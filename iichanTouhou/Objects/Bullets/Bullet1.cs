@@ -14,8 +14,8 @@ namespace iichanTouhou.Objects.Bullets
 {
     class Bullet1:GameObject
     {
-        public Bullet1(Danmaku danmaku, int width, int height, Vector2f startPosition) 
-            : base(danmaku, width, height,  startPosition)
+        public Bullet1(Danmaku danmaku, int width, int height, Vector2f startPosition, float hitboxRadius) 
+            : base(danmaku, width, height, startPosition, hitboxRadius)
         {
         }
 
@@ -31,7 +31,6 @@ namespace iichanTouhou.Objects.Bullets
             texture = TextureGenerator.Generate(Properties.Resources.bullet1, ImageFormat.Png);
             sprite = new Sprite(texture);
             sprite.Position = Position;
-            hitbox = new Hitbox(danmaku,Width,Height,new Vector2f(CenterCoordinates.X-Width,CenterCoordinates.Y-Height), this);
         }
 
         public override void Tick()
@@ -45,5 +44,6 @@ namespace iichanTouhou.Objects.Bullets
             danmaku.window.Draw(sprite);
         }
 
+        
     }
 }
