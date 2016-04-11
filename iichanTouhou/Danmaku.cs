@@ -20,7 +20,6 @@ namespace iichanTouhou
 
         public GameArea gameArea;
 
-        private Attack1 attack1;
 
         public Danmaku() 
             : base(1280, 960, "IIchan Danmaku Project", Color.Black)
@@ -32,11 +31,9 @@ namespace iichanTouhou
             sliceOfLife = new SliceOfLife1(this);
 
             //нужно лучше стараться
-            /*window.Size=new Vector2u(window.Size.X,(uint)(SystemInformation.PrimaryMonitorSize.Height*0.9f));
-            Window_Resized(null, null);*/
+            window.Size=new Vector2u(window.Size.X,(uint)(SystemInformation.PrimaryMonitorSize.Height*0.9f));
+            Window_Resized(null, null);
 
-
-            attack1=new Attack1(this,new Vector2f(500,200));
         }
 
         private float scaleFactor = 1.33f; // width/height
@@ -61,16 +58,14 @@ namespace iichanTouhou
         {
             gameArea.LoadContent();
             mainObject.LoadContent();
-            //sliceOfLife.LoadContent();
-            attack1.LoadContent();
+            sliceOfLife.LoadContent();
         }
 
         public override void Initialize()
         {
             gameArea.Initialize();
             mainObject.Initialize();
-            //sliceOfLife.Initialize();
-            attack1.Initialize();
+            sliceOfLife.Initialize();
         }
 
 
@@ -78,16 +73,14 @@ namespace iichanTouhou
         {
             gameArea.Tick();
             mainObject.Tick();
-            //sliceOfLife.Tick();
-            attack1.Tick();
+            sliceOfLife.Tick();
         }
 
         public override void Render()
         {
             gameArea.Render();
             mainObject.Render();
-            //sliceOfLife.Render(); 
-            attack1.Render();
+            sliceOfLife.Render(); 
         }
 
         public void UpdateWindowSize()

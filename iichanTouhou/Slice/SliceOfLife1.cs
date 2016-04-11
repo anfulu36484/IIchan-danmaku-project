@@ -4,37 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iichanTouhou.Attack;
+using iichanTouhou.Objects.NPC;
 using SFML.System;
 
 namespace iichanTouhou.Slice
 {
     class SliceOfLife1:SliceOfLife
     {
-        private Attack1 attack1;
+        private NPC1 npc1;
 
         public SliceOfLife1(Danmaku danmaku) : base(danmaku)
         {
-            attack1= new Attack1(danmaku,new Vector2f(500,200));
+            npc1 = new NPC1(danmaku,100,100,new Vector2f(500,-100));
         }
 
         public override void LoadContent()
         {
-            attack1.LoadContent();
+            npc1.LoadContent();
         }
 
         public override void Initialize()
         {
-            attack1.Initialize();
+            npc1.Initialize();
         }
 
         public override void Tick()
         {
-           attack1.Tick();
+            npc1.Tick();
         }
 
         public override void Render()
         {
-            attack1.Render();
+            npc1.Render();
         }
     }
 }

@@ -18,23 +18,28 @@ namespace iichanTouhou
             set { Position = new Vector2f((float)(value.X- Width * 0.5),(float)(value.Y- Height * 0.5)); }
         }
 
-        protected Hitbox hitbox;
-
-        protected GameObject(Danmaku danmaku, int width, int height, Vector2f startPosition)
+        protected GameObject(Danmaku danmaku, int width, int height, Vector2f startPosition, Hitbox hitbox)
         {
             this.danmaku = danmaku;
             Width = width;
             Height = height;
             _hitbox = hitbox;
             Position = startPosition;
-            danmaku.gameArea.Resized += GameArea_Resized;
 
+        }
+
+        public bool IsObjectInGameArea()
+        {
+            if (this.Position.X > danmaku.gameArea.Width 
+                || this.Position.Y > danmaku.gameArea.Height
+                || this.Position.X < danmaku.gameArea.Position.X- this.Width
+                || this.Position.Y < danmaku.gameArea.Position.Y - this.Height)
+                return false;
+            return true;
         }
 
         public Vector2f Speed;
 
-        
-        public virtual void GameArea_Resized(object sender, SizeGameAreaEventArgs e) { }
 
  
     }

@@ -70,7 +70,9 @@
     <Compile Include="Helpers\TextureGenerator.cs" />
     <Compile Include="Hitbox.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
+    <Compile Include="Objects\Bullets\BulletBase.cs" />
     <Compile Include="Objects\MainObject.cs" />
+    <Compile Include="Objects\NPC\NPC1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -78,7 +80,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SizeGameAreaEventArgs.cs" />
     <Compile Include="SliceOfLife.cs" />
     <Compile Include="Slice\SliceOfLife1.cs" />
   </ItemGroup>
@@ -96,7 +97,9 @@
   <ItemGroup>
     <None Include="Resources\bullet1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\npc.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -29,7 +29,7 @@ namespace iichanTouhou.Objects
         public override void Initialize()
         {
             obj = new CircleShape(10f);
-            obj.Position = new Vector2f(600 - obj.Radius, 400 - obj.Radius);
+            obj.Position = new Vector2f(500 - obj.Radius, 800 - obj.Radius);
             obj.FillColor = Color.Green;
             hitbox = new Hitbox(danmaku,10, 10, new Vector2f(CenterCoordinates.X-10, CenterCoordinates.Y-10),this );
         }
@@ -59,10 +59,6 @@ namespace iichanTouhou.Objects
             danmaku.window.Draw(obj);
         }
 
-        public override void GameArea_Resized(object sender, SizeGameAreaEventArgs e)
-        {
-            obj.Scale = e.ScaleFactor;
-        }
-        
+
     }
 }

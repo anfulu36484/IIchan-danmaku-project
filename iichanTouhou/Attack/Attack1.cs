@@ -16,7 +16,7 @@ namespace iichanTouhou.Attack
 
         private Bullet1[] bullet1s;
 
-        private int countOfBullets = 20;
+        private int countOfBullets = 100;
 
 
         Vector2f GetStartOfPoint(float fi, float r)
@@ -35,12 +35,12 @@ namespace iichanTouhou.Attack
         public override void Initialize()
         {
             bullet1s = new Bullet1[countOfBullets];
-            float fi = 0;
+            float fi = 10;
             for (int i = 0; i < countOfBullets; i++)
             {
                 bullet1s[i]=new Bullet1(_danmaku,10,10, GetStartOfPoint(fi,fi));
                 bullet1s[i].Initialize();
-                bullet1s[i].Speed = new Vector2f(0, 0.1f);
+                bullet1s[i].Speed = (bullet1s[i].Position - _startPoint)*0.0005f;
                 fi += 10f;
             }
         }
@@ -54,7 +54,7 @@ namespace iichanTouhou.Attack
         {
             foreach (var bullet1 in bullet1s)
             {
-                bullet1.Render();
+                bullet1?.Render();
             }
         }
 
@@ -64,9 +64,13 @@ namespace iichanTouhou.Attack
         {
             for (int i = 0; i < bullet1s.Length; i++)
             {
-                bullet1s[i].Tick();
+                if (bullet1s[i] != null)
+                {
+                    bullet1s[i].Tick();
+                    if (!bullet1s[i].IsObjectInGameArea())
+                        bullet1s[i] = null;
+                }
             }
-
         }
 
     }

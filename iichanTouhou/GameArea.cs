@@ -13,23 +13,21 @@ namespace iichanTouhou
     {
         private readonly Danmaku danmaku;
 
-        public event EventHandler<SizeGameAreaEventArgs> Resized;
-
 
         public GameArea(Danmaku danmaku)
         {
             this.danmaku = danmaku;
-            danmaku.window.Resized += Window_Resized;
         }
 
+        public float Width => rectangle.Size.X;
+        public float Height => rectangle.Size.Y;
 
+        public Vector2f Position => rectangle.Position;
 
         private void Window_Resized(object sender, SizeEventArgs e)
         {
             rectangle.Scale = new Vector2f(danmaku.window.Size.X / (float)danmaku.Size.X,
                 danmaku.window.Size.Y / (float)danmaku.Size.Y);
-            if(Resized != null)
-                Resized(this,new SizeGameAreaEventArgs(rectangle.Scale));
         }
 
         

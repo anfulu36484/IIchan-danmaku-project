@@ -45,9 +45,5 @@ namespace iichanTouhou.Objects.Bullets
             danmaku.window.Draw(sprite);
         }
 
-        public override void GameArea_Resized(object sender, SizeGameAreaEventArgs e)
-        {
-            base.GameArea_Resized(sender, e);
-        }
     }
 }
