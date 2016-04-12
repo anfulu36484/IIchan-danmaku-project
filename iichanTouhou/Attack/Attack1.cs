@@ -10,75 +10,52 @@ using SFML.System;
 
 namespace iichanTouhou.Attack
 {
-    class Attack1 : GameBase
+    class Attack1 : AttackBase
     {
-        private readonly Danmaku _danmaku;
-        private readonly Vector2f _startPoint;
-
-        private Bullet1[] bullet1s;
-
-        private int countOfBullets = 100;
 
 
-        Vector2f GetStartOfPoint(float fi, float r)
+        public Attack1(Danmaku danmaku, Vector2f startPoint) : base(danmaku, startPoint)
         {
-            return new Vector2f((float)(r*Math.Sin(fi)+_startPoint.X),(float)(r*Math.Cos(fi) + _startPoint.Y));
         }
 
-        
-        public Attack1(Danmaku danmaku, Vector2f startPoint)
+        public override void LoadContent()
         {
-            _danmaku = danmaku;
-            _startPoint = startPoint;
+            
         }
-
 
         public override void Initialize()
         {
-            bullet1s = new Bullet1[countOfBullets];
+            bullets = new Bullet1[countOfBullets];
             float fi = 10;
             for (int i = 0; i < countOfBullets; i++)
             {
-                bullet1s[i] =new Bullet1(_danmaku, GetStartOfPoint(fi, fi),new Vector2f(50,50),25, _danmaku.mainObject,OnCollision);
-                bullet1s[i].Initialize();
-                bullet1s[i].Speed = (bullet1s[i].Position - _startPoint)*0.005f;
+                bullets[i] =new Bullet1(Danmaku, GetStartOfPoint(fi, fi),new Vector2f(50,50),25, Danmaku.mainObject,OnCollision);
+                bullets[i].Initialize();
+                bullets[i].Speed = (bullets[i].Position - StartPoint)*0.005f;
                 fi += 10f;
             }
         }
 
-        public void OnCollision(object obj, EventArgs e)
+        protected override Vector2f GetStartOfPoint(float fi, float r)
         {
-            Console.WriteLine(@"Столкновение произошло");
-        }
-
-
-        public override void LoadContent()
-        {
-        }
-
-
-        public override void Render()
-        {
-            foreach (var bullet1 in bullet1s)
-            {
-                bullet1?.Render();
-            }
+            return new Vector2f((float)(r * Math.Sin(fi) + StartPoint.X), (float)(r * Math.Cos(fi) + StartPoint.Y));
         }
 
 
 
         public override void Tick()
         {
-            for (int i = 0; i < bullet1s.Length; i++)
+            for (int i = 0; i < bullets.Length; i++)
             {
-                if (bullet1s[i] != null)
+                if (bullets[i] != null)
                 {
-                    bullet1s[i].Tick();
-                    if (!bullet1s[i].IsObjectInGameArea())
-                        bullet1s[i] = null;
+                    bullets[i].Tick();
+                    if (!bullets[i].IsObjectInGameArea())
+                        bullets[i] = null;
                 }
             }
         }
 
+        
     }
 }

@@ -11,7 +11,7 @@ namespace iichanTouhou.Objects
 {
     class MainObject :GameObject
     {
-        private float speed = 1.2f;
+        private float speed = 1.5f;
 
 
         public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius) 

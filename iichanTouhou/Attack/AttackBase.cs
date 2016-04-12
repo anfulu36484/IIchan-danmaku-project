@@ -10,40 +10,33 @@ namespace iichanTouhou.Attack
 {
     abstract class AttackBase :GameBase
     {
-        private readonly Danmaku _danmaku;
-        private readonly Vector2f _startPoint;
+        protected readonly Danmaku Danmaku;
+        protected readonly Vector2f StartPoint;
 
-        private BulletBase[] bullets;
+        protected BulletBase[] bullets;
 
-        private readonly int countOfBullets = 100;
+        protected readonly int countOfBullets = 100;
         
         protected AttackBase(Danmaku danmaku, Vector2f startPoint)
         {
-            _danmaku = danmaku;
-            _startPoint = startPoint;
+            Danmaku = danmaku;
+            StartPoint = startPoint;
         }
 
         protected abstract Vector2f GetStartOfPoint(float fi, float r);
-      
 
-        public override void LoadContent()
-        {
-            throw new NotImplementedException();
-        }
 
-        public override void Initialize()
+        public void OnCollision(object obj, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        public override void Tick()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine(@"Столкновение произошло");
         }
 
         public override void Render()
         {
-            throw new NotImplementedException();
+            foreach (var bullet in bullets)
+            {
+                bullet?.Render();
+            }
         }
     }
 }
