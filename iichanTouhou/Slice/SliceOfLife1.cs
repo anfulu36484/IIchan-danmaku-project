@@ -15,7 +15,7 @@ namespace iichanTouhou.Slice
 
         public SliceOfLife1(Danmaku danmaku) : base(danmaku)
         {
-            npc1 = new NPC1(danmaku,100,100,new Vector2f(500,-100),50);
+            npc1 = new NPC1(danmaku,new Vector2f(500,-100),new Vector2f(50,50),25  );
         }
 
         public override void LoadContent()

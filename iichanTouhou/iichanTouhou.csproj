@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attack\Attack1.cs" />
+    <Compile Include="Attack\AttackBase.cs" />
     <Compile Include="Danmaku.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameArea.cs" />

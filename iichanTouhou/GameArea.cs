@@ -62,26 +62,6 @@ namespace iichanTouhou
         {
             
 
-           /* float changeX = (float)danmaku.window.Size.X - (float)danmaku.Size.X;
-            float changeY = (float)danmaku.window.Size.Y - (float)danmaku.Size.Y;
-
-            if(changeX==0 & changeY==0)
-                return;
-
-            if (changeX <= changeY)
-            {
-                float newX = danmaku.window.Size.X*XShareOfWindow;
-                float newY = newX/(XShareOfWindow/YShareOfWindow);
-                rectangle.Scale = new Vector2f(newX/rectangle.Size.X, newY/ rectangle.Size.Y);
-            }
-            else
-            {
-                float newY = danmaku.window.Size.Y * YShareOfWindow;
-                float newX = newY * (XShareOfWindow / YShareOfWindow);
-                rectangle.Scale = new Vector2f(newX / rectangle.Size.X, newY /  rectangle.Size.Y);
-            }
-            */
-
 
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using iichanTouhou.Objects.Bullets;
 using SFML.Graphics;
 using SFML.System;
@@ -38,12 +39,18 @@ namespace iichanTouhou.Attack
             float fi = 10;
             for (int i = 0; i < countOfBullets; i++)
             {
-                bullet1s[i]=new Bullet1(_danmaku,10,10, GetStartOfPoint(fi,fi),5);
+                bullet1s[i] =new Bullet1(_danmaku, GetStartOfPoint(fi, fi),new Vector2f(50,50),25, _danmaku.mainObject,OnCollision);
                 bullet1s[i].Initialize();
-                bullet1s[i].Speed = (bullet1s[i].Position - _startPoint)*0.0005f;
+                bullet1s[i].Speed = (bullet1s[i].Position - _startPoint)*0.005f;
                 fi += 10f;
             }
         }
+
+        public void OnCollision(object obj, EventArgs e)
+        {
+            Console.WriteLine(@"Столкновение произошло");
+        }
+
 
         public override void LoadContent()
         {

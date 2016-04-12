@@ -16,31 +16,34 @@ namespace iichanTouhou.Objects.Bullets
 
         public event EventHandler<EventArgs> Collision;
 
-        protected BulletBase(Danmaku danmaku, 
-            int width,
-            int height,
-            Vector2f startPosition, 
-            float hitboxRadius, 
-            GameObject targetObject,
-            EventHandler<EventArgs> onCollision) 
-            : base(danmaku, width, height, startPosition,hitboxRadius)
+
+        protected BulletBase(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius,
+           GameObject targetObject, EventHandler<EventArgs> onCollision)
+           : base(danmaku, startPosition, size, hitboxRadius)
         {
             TargetObject = targetObject;
-            safeDistance = this.HitboxRadius+targetObject.HitboxRadius;
+            safeDistance = this.HitboxRadius + targetObject.HitboxRadius;
             Collision += onCollision;
         }
 
 
+
         private bool IsCollisionDetection()
         {
-            return (this.CenterCoordinates - TargetObject.CenterCoordinates).Length() < safeDistance;
+            float  x = (CenterCoordinates - TargetObject.CenterCoordinates).Length();
+            return (CenterCoordinates - TargetObject.CenterCoordinates).Length() <= safeDistance;
         }
 
         public override void Tick()
         {
-            if(IsCollisionDetection())
+            if (IsCollisionDetection())
+            {
+                Console.WriteLine(this.CenterCoordinates+" "+ TargetObject.CenterCoordinates+" "+(this.CenterCoordinates - TargetObject.CenterCoordinates).Length() + " "+ safeDistance);
                 Collision(this,new EventArgs());
+            }
+                
         }
 
+       
     }
 }

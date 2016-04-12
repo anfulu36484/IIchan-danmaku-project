@@ -12,38 +12,29 @@ using SFML.Window;
 
 namespace iichanTouhou.Objects.Bullets
 {
-    class Bullet1:GameObject
+    class Bullet1:BulletBase
     {
-        public Bullet1(Danmaku danmaku, int width, int height, Vector2f startPosition, float hitboxRadius) 
-            : base(danmaku, width, height, startPosition, hitboxRadius)
+        public Bullet1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, 
+            GameObject targetObject, EventHandler<EventArgs> onCollision) 
+            : base(danmaku, startPosition, size, hitboxRadius, targetObject, onCollision)
         {
         }
 
-        private Texture texture;
-        private Sprite sprite;
-
+        
         public override void LoadContent()
         {
         }
 
         public override void Initialize()
         {
-            texture = TextureGenerator.Generate(Properties.Resources.bullet1, ImageFormat.Png);
-            sprite = new Sprite(texture);
-            sprite.Position = Position;
+            Texture = TextureGenerator.Generate(Properties.Resources.bullet1, ImageFormat.Png);
         }
 
         public override void Tick()
         {
+            base.Tick();
             Position += Speed;
-            sprite.Position = Position;
         }
 
-        public override void Render()
-        {
-            danmaku.window.Draw(sprite);
-        }
-
-        
     }
 }

@@ -11,13 +11,11 @@ namespace iichanTouhou.Objects
 {
     class MainObject :GameObject
     {
-        private CircleShape obj;
-
-        private float speed = 0.05f;
+        private float speed = 1.2f;
 
 
-        public MainObject(Danmaku danmaku, int width, int height, Vector2f startPosition, float hitboxRadius) 
-            : base(danmaku, width, height, startPosition, hitboxRadius)
+        public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius) 
+            : base(danmaku, startPosition, size, hitboxRadius)
         {
         }
 
@@ -28,34 +26,27 @@ namespace iichanTouhou.Objects
 
         public override void Initialize()
         {
-            obj = new CircleShape(10f);
-            obj.Position = new Vector2f(500 - obj.Radius, 800 - obj.Radius);
-            obj.FillColor = Color.Green;
+            rectangleShape.FillColor = Color.Green;
         }
 
         public override void Tick()
         {
             if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
             {
-                obj.Position -= new Vector2f(speed, 0);
+                Position -= new Vector2f(speed, 0);
             }
             if (Keyboard.IsKeyPressed(Keyboard.Key.Right))
             {
-                obj.Position += new Vector2f(speed, 0);
+                Position += new Vector2f(speed, 0);
             }
             if (Keyboard.IsKeyPressed(Keyboard.Key.Down))
             {
-                obj.Position += new Vector2f(0, speed);
+                Position += new Vector2f(0, speed);
             }
             if (Keyboard.IsKeyPressed(Keyboard.Key.Up))
             {
-                obj.Position -= new Vector2f(0, speed);
+                Position -= new Vector2f(0, speed);
             }
-        }
-
-        public override void Render()
-        {
-            danmaku.window.Draw(obj);
         }
 
 

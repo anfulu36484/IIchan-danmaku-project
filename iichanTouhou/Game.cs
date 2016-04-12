@@ -25,7 +25,7 @@ namespace iichanProject
             this.clearColor = clearColor;
             window.SetActive(true);
             window.Position=new Vector2i(window.Position.X,0);
-
+            window.SetFramerateLimit(60);
             // Set up events
             window.Closed += OnClosed;
            
