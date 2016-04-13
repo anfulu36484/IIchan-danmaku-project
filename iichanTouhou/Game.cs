@@ -34,7 +34,6 @@ namespace iichanProject
      
         public void Run()
         {
-            LoadContent();
             Initialize();
 
             while (window.IsOpen)

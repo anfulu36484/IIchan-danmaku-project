@@ -17,10 +17,6 @@ namespace iichanTouhou.Objects.Bullets
         {
         }
 
-        public override void LoadContent()
-        {
-            
-        }
 
         public override void Initialize()
         {

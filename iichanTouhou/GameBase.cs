@@ -8,7 +8,7 @@ namespace iichanTouhou
 {
     abstract class GameBase
     {
-        public abstract void LoadContent();
+
         public abstract void Initialize();
 
         public abstract void Tick();

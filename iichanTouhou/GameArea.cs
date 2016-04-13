@@ -35,10 +35,6 @@ namespace iichanTouhou
 
         private RectangleShape rectangle;
 
-        public override void LoadContent()
-        {
-            
-        }
 
 
         private float XShareOfWindow = 0.7f;

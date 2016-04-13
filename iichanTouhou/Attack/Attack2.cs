@@ -16,10 +16,7 @@ namespace iichanTouhou.Attack
 
         private float[] fiArray;
 
-        public override void LoadContent()
-        {
-            
-        }
+
 
         public override void Initialize()
         {

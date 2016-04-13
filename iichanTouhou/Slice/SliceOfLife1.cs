@@ -18,11 +18,6 @@ namespace iichanTouhou.Slice
             npc1 = new NPC1(danmaku,new Vector2f(500,-100),new Vector2f(50,50),25 ,double.PositiveInfinity );
         }
 
-        public override void LoadContent()
-        {
-            npc1.LoadContent();
-        }
-
         public override void Initialize()
         {
             npc1.Initialize();

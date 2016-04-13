@@ -21,10 +21,6 @@ namespace iichanTouhou.Objects.Bullets
         }
 
 
-        public override void LoadContent()
-        {
-        }
-
         public override void Initialize()
         {
             Texture = TextureGenerator.Generate(Properties.Resources.bullet1, ImageFormat.Png);

@@ -54,12 +54,6 @@ namespace iichanTouhou
             }
         }
 
-        public override void LoadContent()
-        {
-            gameArea.LoadContent();
-            mainObject.LoadContent();
-            sliceOfLife.LoadContent();
-        }
 
         public override void Initialize()
         {

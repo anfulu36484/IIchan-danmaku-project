@@ -18,10 +18,6 @@ namespace iichanTouhou.Attack
         }
 
 
-        public override void LoadContent()
-        {
-            
-        }
 
         public override void Initialize()
         {

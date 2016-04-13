@@ -19,10 +19,7 @@ namespace iichanTouhou.Objects
         }
 
 
-        public override void LoadContent()
-        {
 
-        }
 
         public override void Initialize()
         {

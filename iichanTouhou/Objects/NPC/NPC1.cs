@@ -18,10 +18,6 @@ namespace iichanTouhou.Objects.NPC
         {
         }
 
-        public override void LoadContent()
-        {
-            
-        }
 
         public override void Initialize()
         {
