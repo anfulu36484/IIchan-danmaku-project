@@ -47,14 +47,11 @@ namespace iichanProject
             }
         }
 
-
-
         private void OnClosed(object sender, EventArgs e)
         {
             window.Close();
         }
 
-        
     }
 }
 

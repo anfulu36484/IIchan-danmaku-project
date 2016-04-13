@@ -46,6 +46,9 @@ namespace iichanTouhou
 
         public Vector2f Speed = new Vector2f(0, 0);
 
+      
+
+
         protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, double lifeTime) 
             : base(danmaku, lifeTime)
         {

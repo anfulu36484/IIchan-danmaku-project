@@ -71,6 +71,7 @@
     <Compile Include="GameElement.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Helpers\TextureGenerator.cs" />
+    <Compile Include="Objects\AnthropomorphicObject.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
     <Compile Include="Objects\Bullets\Bullet2.cs" />
     <Compile Include="Objects\Bullets\BulletBase.cs" />

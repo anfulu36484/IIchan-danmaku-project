@@ -32,6 +32,21 @@ namespace iichanTouhou
             }
         }
 
+        private int _XP = 1;
+
+        protected int XP
+        {
+            get { return _XP; }
+            set
+            {
+                _XP = value;
+                if (_XP <= 0)
+                {
+                    Died?.Invoke(this, new EventArgs());
+                }
+            }
+        }
+
         public event EventHandler Died;
 
         public override void Tick()
