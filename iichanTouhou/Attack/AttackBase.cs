@@ -8,22 +8,20 @@ using SFML.System;
 
 namespace iichanTouhou.Attack
 {
-    abstract class AttackBase :GameBase
+    abstract class AttackBase :GameElement
     {
-        protected readonly Danmaku Danmaku;
         protected readonly Vector2f StartPoint;
 
         protected BulletBase[] bullets;
 
-        protected readonly int countOfBullets = 100;
-        
-        protected AttackBase(Danmaku danmaku, Vector2f startPoint)
+        protected int CountOfBullets;
+
+        protected AttackBase(Danmaku danmaku, Vector2f startPoint, double lifeTime) : base(danmaku, lifeTime)
         {
-            Danmaku = danmaku;
             StartPoint = startPoint;
         }
 
-        protected abstract Vector2f GetStartOfPoint(float fi, float r);
+        protected abstract Vector2f GetStartOfPoint(float fi);
 
 
         public void OnCollision(object obj, EventArgs e)
@@ -38,5 +36,6 @@ namespace iichanTouhou.Attack
                 bullet?.Render();
             }
         }
+
     }
 }

@@ -62,14 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attack\Attack1.cs" />
+    <Compile Include="Attack\Attack2.cs" />
     <Compile Include="Attack\AttackBase.cs" />
     <Compile Include="Danmaku.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameArea.cs" />
     <Compile Include="GameBase.cs" />
+    <Compile Include="GameElement.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Helpers\TextureGenerator.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
+    <Compile Include="Objects\Bullets\Bullet2.cs" />
     <Compile Include="Objects\Bullets\BulletBase.cs" />
     <Compile Include="Objects\MainObject.cs" />
     <Compile Include="Objects\NPC\NPC1.cs" />
@@ -99,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\npc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,10 +1,11 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using SFML.Graphics;
 using SFML.System;
 
 namespace iichanTouhou
 {
-    abstract class GameObject:GameBase
+    abstract class GameObject: GameElement
     {
         
         protected Danmaku danmaku;
@@ -43,8 +44,10 @@ namespace iichanTouhou
             set { Position = new Vector2f(value.X- Size.X * 0.5f,value.Y- Size.Y * 0.5f); }
         }
 
+        public Vector2f Speed = new Vector2f(0, 0);
 
-        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius)
+        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, double lifeTime) 
+            : base(danmaku, lifeTime)
         {
             this.danmaku = danmaku;
 
@@ -57,6 +60,9 @@ namespace iichanTouhou
             HitboxRadius = hitboxRadius;
         }
 
+
+
+
         public bool IsObjectInGameArea()
         {
             if (this.Position.X > danmaku.gameArea.Width 
@@ -67,11 +73,13 @@ namespace iichanTouhou
             return true;
         }
 
-        public Vector2f Speed;
+        
 
         public override void Render()
         {
             danmaku.window.Draw(rectangleShape);
         }
+
+
     }
 }

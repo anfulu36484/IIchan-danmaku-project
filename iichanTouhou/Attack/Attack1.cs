@@ -13,10 +13,10 @@ namespace iichanTouhou.Attack
     class Attack1 : AttackBase
     {
 
-
-        public Attack1(Danmaku danmaku, Vector2f startPoint) : base(danmaku, startPoint)
+        public Attack1(Danmaku danmaku, Vector2f startPoint, double lifeTime) : base(danmaku, startPoint, lifeTime)
         {
         }
+
 
         public override void LoadContent()
         {
@@ -25,26 +25,29 @@ namespace iichanTouhou.Attack
 
         public override void Initialize()
         {
-            bullets = new Bullet1[countOfBullets];
+            CountOfBullets = 50;
+
+            bullets = new Bullet1[CountOfBullets];
             float fi = 10;
-            for (int i = 0; i < countOfBullets; i++)
+            for (int i = 0; i < CountOfBullets; i++)
             {
-                bullets[i] =new Bullet1(Danmaku, GetStartOfPoint(fi, fi),new Vector2f(50,50),25, Danmaku.mainObject,OnCollision);
+                bullets[i] =new Bullet1(Danmaku, GetStartOfPoint(fi),new Vector2f(50,50),25, Danmaku.mainObject,OnCollision,double.PositiveInfinity);
                 bullets[i].Initialize();
                 bullets[i].Speed = (bullets[i].Position - StartPoint)*0.005f;
                 fi += 10f;
             }
         }
 
-        protected override Vector2f GetStartOfPoint(float fi, float r)
+        protected override Vector2f GetStartOfPoint(float fi)
         {
-            return new Vector2f((float)(r * Math.Sin(fi) + StartPoint.X), (float)(r * Math.Cos(fi) + StartPoint.Y));
+            return new Vector2f((float)(fi * Math.Sin(fi) + StartPoint.X), (float)(fi * Math.Cos(fi) + StartPoint.Y));
         }
 
 
 
         public override void Tick()
         {
+            base.Tick();
             for (int i = 0; i < bullets.Length; i++)
             {
                 if (bullets[i] != null)
@@ -55,6 +58,7 @@ namespace iichanTouhou.Attack
                 }
             }
         }
+
 
         
     }

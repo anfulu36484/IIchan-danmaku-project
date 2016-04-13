@@ -14,6 +14,7 @@ namespace iichanTouhou
         protected SliceOfLife(Danmaku game)
         {
             _game = game;
+            
         }
 
         protected void NextSlice(SliceOfLife sliceOfLife)

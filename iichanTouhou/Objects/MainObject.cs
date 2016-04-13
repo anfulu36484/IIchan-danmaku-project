@@ -13,11 +13,11 @@ namespace iichanTouhou.Objects
     {
         private float speed = 1.5f;
 
-
-        public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius) 
-            : base(danmaku, startPosition, size, hitboxRadius)
+        public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, double lifeTime)
+            : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
         {
         }
+
 
         public override void LoadContent()
         {
@@ -31,6 +31,7 @@ namespace iichanTouhou.Objects
 
         public override void Tick()
         {
+            base.Tick();
             if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
             {
                 Position -= new Vector2f(speed, 0);
@@ -50,5 +51,6 @@ namespace iichanTouhou.Objects
         }
 
 
+        
     }
 }
