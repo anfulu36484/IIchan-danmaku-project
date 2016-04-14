@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iichanTouhou.Objects;
 using iichanTouhou.Objects.Bullets;
 using SFML.Graphics;
 using SFML.System;
@@ -13,9 +14,7 @@ namespace iichanTouhou.Attack
     class Attack1 : AttackBase
     {
 
-        public Attack1(Danmaku danmaku, Vector2f startPoint, double lifeTime) : base(danmaku, startPoint, lifeTime)
-        {
-        }
+
 
 
 
@@ -27,7 +26,7 @@ namespace iichanTouhou.Attack
             float fi = 10;
             for (int i = 0; i < CountOfBullets; i++)
             {
-                bullets[i] =new Bullet1(Danmaku, GetStartOfPoint(fi),new Vector2f(50,50),25, Danmaku.mainObject,OnCollision,double.PositiveInfinity);
+                bullets[i] =new Bullet1(Danmaku, GetStartOfPoint(fi),new Vector2f(50,50),25, Danmaku.mainObject,OwnerObject, OnCollision,double.PositiveInfinity);
                 bullets[i].Initialize();
                 bullets[i].Speed = (bullets[i].Position - StartPoint)*0.005f;
                 fi += 10f;
@@ -56,6 +55,8 @@ namespace iichanTouhou.Attack
         }
 
 
-        
+        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, double lifeTime) : base(danmaku, ownerObject, startPoint, lifeTime)
+        {
+        }
     }
 }

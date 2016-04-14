@@ -25,7 +25,7 @@ namespace iichanTouhou
             private set
             {
                 _lifeTime = value;
-                if (_lifeTime < 0)
+                if (_lifeTime <= 0)
                 {
                     Died?.Invoke(this, new EventArgs());
                 }

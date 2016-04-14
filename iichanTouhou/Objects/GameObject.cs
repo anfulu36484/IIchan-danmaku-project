@@ -1,9 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using SFML.Graphics;
+﻿using SFML.Graphics;
 using SFML.System;
 
-namespace iichanTouhou
+namespace iichanTouhou.Objects
 {
     abstract class GameObject: GameElement
     {

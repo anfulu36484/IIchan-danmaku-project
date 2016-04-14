@@ -14,12 +14,10 @@ namespace iichanTouhou.Objects.Bullets
 {
     class Bullet1:BulletBase
     {
-        public Bullet1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius,
-            GameObject targetObject, EventHandler<EventArgs> onCollision, double lifeTime)
-            : base(danmaku, startPosition, size, hitboxRadius, targetObject, onCollision, lifeTime)
+
+        public Bullet1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, GameObject targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision, double lifeTime) : base(danmaku, startPosition, size, hitboxRadius, targetObjects, ownerObject, onCollision, lifeTime)
         {
         }
-
 
         public override void Initialize()
         {
@@ -32,6 +30,6 @@ namespace iichanTouhou.Objects.Bullets
             Position += Speed;
         }
 
-        
+
     }
 }

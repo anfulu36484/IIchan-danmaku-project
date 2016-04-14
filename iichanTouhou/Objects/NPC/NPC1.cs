@@ -49,7 +49,7 @@ namespace iichanTouhou.Objects.NPC
 
         public void Attack()
         {
-            attack2 = new Attack2(danmaku,this.CenterCoordinates,60*60*3);
+            attack2 = new Attack2(danmaku,this, CenterCoordinates,60*60*3);
             attack2.Initialize();
         }
 
