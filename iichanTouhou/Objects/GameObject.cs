@@ -6,7 +6,7 @@ namespace iichanTouhou.Objects
     abstract class GameObject: GameElement
     {
         
-        protected Danmaku danmaku;
+        public Danmaku danmaku;
 
         protected RectangleShape rectangleShape;
 
@@ -74,7 +74,11 @@ namespace iichanTouhou.Objects
             return true;
         }
 
-        
+        public override void Update()
+        {
+            base.Update();
+            Position += Speed;
+        }
 
         public override void Render()
         {

@@ -14,7 +14,8 @@ namespace iichanTouhou.Objects.NPC
 {
     class NPC1 :GameObject
     {
-        public NPC1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, double lifeTime) : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
+        public NPC1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, double lifeTime)
+            : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
         {
         }
 
@@ -27,9 +28,9 @@ namespace iichanTouhou.Objects.NPC
         }
 
 
-        public override void Tick()
+        public override void Update()
         {
-            base.Tick();
+            base.Update();
             if (Position.Y > 300)
             {
                 base.rectangleShape.Texture=TextureGenerator.Generate(Properties.Resources.bullet2, ImageFormat.Png);
@@ -40,7 +41,7 @@ namespace iichanTouhou.Objects.NPC
             }
             Position += Speed;
 
-            attack2?.Tick();
+            attack2?.Update();
 
             
         }
@@ -49,7 +50,7 @@ namespace iichanTouhou.Objects.NPC
 
         public void Attack()
         {
-            attack2 = new Attack2(danmaku,this, CenterCoordinates,60*60*3);
+            attack2 = new Attack2(danmaku,this, CenterCoordinates);
             attack2.Initialize();
         }
 

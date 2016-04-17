@@ -26,9 +26,9 @@ namespace iichanTouhou.Objects
             rectangleShape.FillColor = Color.Green;
         }
 
-        public override void Tick()
+        public override void Update()
         {
-            base.Tick();
+            base.Update();
             if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
             {
                 Position -= new Vector2f(speed, 0);

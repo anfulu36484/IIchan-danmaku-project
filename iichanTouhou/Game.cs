@@ -18,6 +18,8 @@ namespace iichanProject
 
         public Vector2u Size;
 
+        public uint FrameRateLimit = 60;
+
         protected Game(uint width, uint height, string title, Color clearColor)
         {
             Size = new Vector2u(width,height);
@@ -25,7 +27,7 @@ namespace iichanProject
             this.clearColor = clearColor;
             window.SetActive(true);
             window.Position=new Vector2i(window.Position.X,0);
-            window.SetFramerateLimit(60);
+            window.SetFramerateLimit(FrameRateLimit);
             // Set up events
             window.Closed += OnClosed;
            
@@ -39,7 +41,7 @@ namespace iichanProject
             while (window.IsOpen)
             {
                 window.DispatchEvents();
-                Tick();
+                Update();
 
                 window.Clear(clearColor);
                 Render();

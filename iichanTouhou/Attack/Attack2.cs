@@ -11,7 +11,24 @@ namespace iichanTouhou.Attack
 {
     class Attack2 :AttackBase
     {
+        public Attack2(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint) 
+            : base(danmaku, ownerObject, startPoint,60*1)
+        {
+            Died += Attack2_Died;
+        }
 
+        private int o = 1;
+
+        private void Attack2_Died(object sender, EventArgs e)
+        {
+            if(o==1)
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                Danmaku.sliceOfLife.Shinigami.AddAsBonus(bullets[i]);
+                bullets[i] = null;
+            }
+            o = 2;
+        }
 
         private float[] fiArray;
 
@@ -41,13 +58,16 @@ namespace iichanTouhou.Attack
 
         double k=1000000;
 
-        public override void Tick()
+        public override void Update()
         {
-            base.Tick();
+            base.Update();
             for (int i = 0; i < CountOfBullets; i++)
             {
-                bullets[i].Tick();
-                bullets[i].Position = GetStartOfPoint(fiArray[i]);
+                if (bullets[i] != null)
+                {
+                    bullets[i].Update();
+                    bullets[i].Position = GetStartOfPoint(fiArray[i]);
+                }
             }
             k += 0.000007f;
         }
@@ -63,8 +83,6 @@ namespace iichanTouhou.Attack
         }
 
 
-        public Attack2(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, double lifeTime) : base(danmaku, ownerObject, startPoint, lifeTime)
-        {
-        }
+        
     }
 }

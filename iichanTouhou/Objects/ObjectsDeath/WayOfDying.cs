@@ -8,6 +8,8 @@
         {
             DyingObject = dyingObject;
         }
+
+        public abstract void GoTheWay();
     }
 
 }

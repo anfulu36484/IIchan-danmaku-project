@@ -23,13 +23,15 @@ namespace iichanTouhou.Slice
             npc1.Initialize();
         }
 
-        public override void Tick()
+        public override void Update()
         {
-            npc1.Tick();
+            base.Update();
+            npc1.Update();
         }
 
         public override void Render()
         {
+            base.Render();
             npc1.Render();
         }
     }

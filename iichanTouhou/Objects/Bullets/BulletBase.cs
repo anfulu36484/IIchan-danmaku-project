@@ -69,12 +69,11 @@ namespace iichanTouhou.Objects.Bullets
             return false;
         }
 
-        public override void Tick()
+        public override void Update()
         {
-            base.Tick();
+            base.Update();
             if (IsCollisionDetection())
             {
-                //Console.WriteLine(this.CenterCoordinates+" "+ TargetObjects.CenterCoordinates+" "+(this.CenterCoordinates - TargetObjects.CenterCoordinates).Length() + " "+ safeDistance);
                 Collision(this,new EventArgs());
             }
                 

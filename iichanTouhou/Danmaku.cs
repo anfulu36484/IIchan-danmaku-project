@@ -63,11 +63,11 @@ namespace iichanTouhou
         }
 
 
-        public override void Tick()
+        public override void Update()
         {
-            gameArea.Tick();
-            mainObject.Tick();
-            sliceOfLife.Tick();
+            gameArea.Update();
+            mainObject.Update();
+            sliceOfLife.Update();
         }
 
         public override void Render()

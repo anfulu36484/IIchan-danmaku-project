@@ -54,7 +54,7 @@ namespace iichanTouhou
 
         
 
-        public override void Tick()
+        public override void Update()
         {
             
 

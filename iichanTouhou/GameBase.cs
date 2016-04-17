@@ -10,7 +10,7 @@ namespace iichanTouhou
     {
         public abstract void Initialize();
 
-        public abstract void Tick();
+        public abstract void Update();
         public abstract void Render();
     }
 

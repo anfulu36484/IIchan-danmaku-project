@@ -13,12 +13,12 @@ namespace iichanTouhou
 
         protected readonly Danmaku Danmaku;
 
-        protected GameElement(Danmaku danmaku, double lifeTime)
+        protected GameElement(Danmaku danmaku, double lifeTimeInSeconds)
         {
             Danmaku = danmaku;
-            _lifeTime = lifeTime;
+            _lifeTime = lifeTimeInSeconds*danmaku.FrameRateLimit;
         }
-        
+
         public double Lifetime
         {
             get { return _lifeTime; }
@@ -49,7 +49,7 @@ namespace iichanTouhou
 
         public event EventHandler Died;
 
-        public override void Tick()
+        public override void Update()
         {
             Lifetime--;
         }
