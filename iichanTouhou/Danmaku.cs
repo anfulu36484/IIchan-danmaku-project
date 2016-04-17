@@ -66,14 +66,12 @@ namespace iichanTouhou
         public override void Update()
         {
             gameArea.Update();
-            mainObject.Update();
             sliceOfLife.Update();
         }
 
         public override void Render()
         {
             gameArea.Render();
-            mainObject.Render();
             sliceOfLife.Render(); 
         }
 
