@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using iichanProject;
+using iichanTouhou.Area;
 using iichanTouhou.Attack;
 using iichanTouhou.Objects;
 using iichanTouhou.Slice;
@@ -14,21 +15,23 @@ namespace iichanTouhou
     class Danmaku:Game
     {
 
-        public SliceOfLife sliceOfLife;
+        public SliceOfLifeBase SliceOfLifeBase;
 
-        public MainObject mainObject;
+        public MainObject MainObject;
 
-        public GameArea gameArea;
+        public GameArea GameArea;
 
+        public StatisticsArea StatisticsArea;
 
         public Danmaku() 
             : base(1280, 960, "IIchan Danmaku Project", Color.Black)
         {
             window.Resized += Window_Resized;
             
-            gameArea = new GameArea(this);
-            mainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),10);
-            sliceOfLife = new SliceOfLife1(this);
+            GameArea = new GameArea(this);
+            StatisticsArea = new StatisticsArea(this,GameArea);
+            MainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),10);
+            SliceOfLifeBase = new SliceOfLife1(this,MainObject);
 
             //нужно лучше стараться
             window.Size=new Vector2u(window.Size.X,(uint)(SystemInformation.PrimaryMonitorSize.Height*0.9f));
@@ -57,22 +60,25 @@ namespace iichanTouhou
 
         public override void Initialize()
         {
-            gameArea.Initialize();
-            mainObject.Initialize();
-            sliceOfLife.Initialize();
+            GameArea.Initialize();
+            StatisticsArea.Initialize();
+            MainObject.Initialize();
+            SliceOfLifeBase.Initialize();
         }
 
 
         public override void Update()
         {
-            gameArea.Update();
-            sliceOfLife.Update();
+            GameArea.Update();
+            StatisticsArea.Update();
+            SliceOfLifeBase.Update();
         }
 
         public override void Render()
         {
-            gameArea.Render();
-            sliceOfLife.Render(); 
+            GameArea.Render();
+            StatisticsArea.Render();
+            SliceOfLifeBase.Render(); 
         }
 
         public void UpdateWindowSize()

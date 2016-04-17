@@ -1,30 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Objects;
+﻿using iichanTouhou.Objects;
 using iichanTouhou.Objects.ObjectsDeath;
 
-namespace iichanTouhou
+namespace iichanTouhou.Slice
 {
-    abstract class SliceOfLife :GameBase
+    abstract class SliceOfLifeBase :GameBase
     {
         public MainObject MainObject { get; }
         private readonly Danmaku _danmaku;
 
         public Shinigami Shinigami;
 
-        protected SliceOfLife(Danmaku danmaku, MainObject mainObject)
+        protected SliceOfLifeBase(Danmaku danmaku, MainObject mainObject)
         {
             MainObject = mainObject;
             _danmaku = danmaku;
             Shinigami = new Shinigami(_danmaku);
         }
 
-        protected void NextSlice(SliceOfLife sliceOfLife)
+        protected void NextSlice(SliceOfLifeBase sliceOfLife)
         {
-            _danmaku.sliceOfLife = sliceOfLife;
+            _danmaku.SliceOfLifeBase = sliceOfLife;
         }
 
         public override void Update()

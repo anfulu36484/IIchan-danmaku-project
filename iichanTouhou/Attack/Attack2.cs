@@ -22,7 +22,7 @@ namespace iichanTouhou.Attack
         {
             for (int i = 0; i < bullets.Length; i++)
             {
-                Danmaku.sliceOfLife.Shinigami.AddAsBonus(bullets[i]);
+                Danmaku.SliceOfLifeBase.Shinigami.AddAsBonus(bullets[i]);
                 bullets[i] = null;
             }
         }
@@ -46,7 +46,7 @@ namespace iichanTouhou.Attack
             for (int i = 0; i < CountOfBullets; i++)
             {
                 bullets[i] = new Bullet2(Danmaku, GetStartOfPoint(fiArray[i])
-                    , new Vector2f(30, 30), 10, Danmaku.mainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
+                    , new Vector2f(30, 30), 10, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
                 bullets[i].Initialize();
 
             }

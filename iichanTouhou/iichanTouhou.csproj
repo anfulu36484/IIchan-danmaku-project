@@ -61,12 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area\AreaBase.cs" />
+    <Compile Include="Area\StatisticsArea.cs" />
     <Compile Include="Attack\Attack1.cs" />
     <Compile Include="Attack\Attack2.cs" />
     <Compile Include="Attack\AttackBase.cs" />
     <Compile Include="Danmaku.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="GameArea.cs" />
+    <Compile Include="Area\GameArea.cs" />
     <Compile Include="GameBase.cs" />
     <Compile Include="GameElement.cs" />
     <Compile Include="Helpers\Vector.cs" />
@@ -86,7 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SliceOfLife.cs" />
+    <Compile Include="Slice\SliceOfLifeBase.cs" />
     <Compile Include="Slice\SliceOfLife1.cs" />
   </ItemGroup>
   <ItemGroup>

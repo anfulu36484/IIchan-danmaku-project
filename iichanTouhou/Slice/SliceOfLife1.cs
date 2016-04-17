@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iichanTouhou.Attack;
+using iichanTouhou.Objects;
 using iichanTouhou.Objects.NPC;
 using SFML.System;
 
 namespace iichanTouhou.Slice
 {
-    class SliceOfLife1:SliceOfLife
+    class SliceOfLife1:SliceOfLifeBase
     {
         private NPC1 npc1;
 
-        public SliceOfLife1(Danmaku danmaku) : base(danmaku)
+        public SliceOfLife1(Danmaku danmaku, MainObject mainObject) : base(danmaku, mainObject)
         {
             npc1 = new NPC1(danmaku,new Vector2f(500,-100),new Vector2f(50,50),25 ,int.MaxValue/60 );
         }

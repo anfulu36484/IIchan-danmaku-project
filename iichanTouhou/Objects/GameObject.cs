@@ -66,10 +66,10 @@ namespace iichanTouhou.Objects
 
         public bool IsObjectInGameArea()
         {
-            if (this.Position.X > danmaku.gameArea.Width 
-                || this.Position.Y > danmaku.gameArea.Height
-                || this.Position.X < danmaku.gameArea.Position.X- Size.X
-                || this.Position.Y < danmaku.gameArea.Position.Y - Size.Y)
+            if (this.Position.X > danmaku.GameArea.Size.X
+                || this.Position.Y > danmaku.GameArea.Size.Y
+                || this.Position.X < danmaku.GameArea.Position.X- Size.X
+                || this.Position.Y < danmaku.GameArea.Position.Y - Size.Y)
                 return false;
             return true;
         }
