@@ -12,7 +12,7 @@ namespace iichanTouhou.Objects.ObjectsDeath
         List<BulletBase> _objects = new List<BulletBase>();
 
         public Shinigami(Danmaku danmaku) 
-            : base(danmaku, new Vector2f(0,0), new Vector2f(0,0), 0, double.PositiveInfinity)
+            : base(danmaku, new Vector2f(0,0), new Vector2f(0,0), 0, int.MaxValue/60)
         {
         }
 

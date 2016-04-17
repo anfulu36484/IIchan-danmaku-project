@@ -12,22 +12,19 @@ namespace iichanTouhou.Attack
     class Attack2 :AttackBase
     {
         public Attack2(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint) 
-            : base(danmaku, ownerObject, startPoint,60*1)
+            : base(danmaku, ownerObject, startPoint,30)
         {
             Died += Attack2_Died;
         }
 
-        private int o = 1;
 
         private void Attack2_Died(object sender, EventArgs e)
         {
-            if(o==1)
             for (int i = 0; i < bullets.Length; i++)
             {
                 Danmaku.sliceOfLife.Shinigami.AddAsBonus(bullets[i]);
                 bullets[i] = null;
             }
-            o = 2;
         }
 
         private float[] fiArray;
@@ -49,7 +46,7 @@ namespace iichanTouhou.Attack
             for (int i = 0; i < CountOfBullets; i++)
             {
                 bullets[i] = new Bullet2(Danmaku, GetStartOfPoint(fiArray[i])
-                    , new Vector2f(30, 30), 10, Danmaku.mainObject, OwnerObject, OnCollision,double.PositiveInfinity);
+                    , new Vector2f(30, 30), 10, Danmaku.mainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
                 bullets[i].Initialize();
 
             }

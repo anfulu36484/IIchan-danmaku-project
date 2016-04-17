@@ -16,7 +16,7 @@ namespace iichanTouhou.Objects.Bullets
     {
 
         public Bullet1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, 
-            GameObject targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision, double lifeTime) 
+            GameObject targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision, int lifeTime) 
             : base(danmaku, startPosition, size, hitboxRadius, targetObjects, ownerObject, onCollision, lifeTime)
         {
 

@@ -34,7 +34,7 @@ namespace iichanTouhou.Objects.Bullets
             GameObject targetObject,
             GameObject ownerObject, 
             EventHandler<EventArgs> onCollision, 
-            double lifeTime)
+            int lifeTime)
             : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
         {
             TargetObjects =  new[]{ targetObject};
@@ -50,7 +50,7 @@ namespace iichanTouhou.Objects.Bullets
             GameObject[] targetObjects,
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
-            double lifeTime)
+            int lifeTime)
             : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
         {
             TargetObjects = targetObjects;

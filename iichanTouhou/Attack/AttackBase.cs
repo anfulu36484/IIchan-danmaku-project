@@ -19,7 +19,7 @@ namespace iichanTouhou.Attack
 
         protected int CountOfBullets;
 
-        protected AttackBase(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, double lifeTime) : base(danmaku, lifeTime)
+        protected AttackBase(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime) : base(danmaku, lifeTime)
         {
             OwnerObject = ownerObject;
             StartPoint = startPoint;

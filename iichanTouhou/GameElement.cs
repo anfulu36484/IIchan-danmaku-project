@@ -9,30 +9,38 @@ namespace iichanTouhou
 {
     abstract class GameElement :GameBase
     {
-        private double _lifeTime;
 
         protected readonly Danmaku Danmaku;
 
-        protected GameElement(Danmaku danmaku, double lifeTimeInSeconds)
+        protected GameElement(Danmaku danmaku, int lifeTimeInSeconds)
         {
             Danmaku = danmaku;
-            _lifeTime = lifeTimeInSeconds*danmaku.FrameRateLimit;
+            _timeOfDeath = lifeTimeInSeconds * danmaku.FrameRateLimit;
         }
 
-        public double Lifetime
+
+        private int _livedTime;
+
+        private readonly int _timeOfDeath;
+
+        public int LivedTimeInSeconds => _livedTime / Danmaku.FrameRateLimit;
+
+
+        public int LivedTime
         {
-            get { return _lifeTime; }
-            private set
-            {
-                _lifeTime = value;
-                if (_lifeTime <= 0)
+            get { return _livedTime; }
+            private set {
+                _livedTime = value;
+                if (_livedTime >= _timeOfDeath)
                 {
                     Died?.Invoke(this, new EventArgs());
                 }
             }
         }
 
+
         private int _XP = 1;
+        
 
         protected int XP
         {
@@ -51,7 +59,7 @@ namespace iichanTouhou
 
         public override void Update()
         {
-            Lifetime--;
+            LivedTime++;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace iichanTouhou
             window.Resized += Window_Resized;
             
             gameArea = new GameArea(this);
-            mainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),10,double.PositiveInfinity);
+            mainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),10);
             sliceOfLife = new SliceOfLife1(this);
 
             //нужно лучше стараться

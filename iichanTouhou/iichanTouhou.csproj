@@ -71,17 +71,14 @@
     <Compile Include="GameElement.cs" />
     <Compile Include="Helpers\Vector.cs" />
     <Compile Include="Objects\ObjectsDeath\Shinigami.cs" />
-    <Compile Include="Objects\ObjectsDeath\TurnIntoGameBonus.cs" />
     <Compile Include="Objects\Bullets\Bonuses\Bonus.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Helpers\TextureGenerator.cs" />
-    <Compile Include="Objects\AnthropomorphicObject.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
     <Compile Include="Objects\Bullets\Bullet2.cs" />
     <Compile Include="Objects\Bullets\BulletBase.cs" />
     <Compile Include="Objects\MainObject.cs" />
     <Compile Include="Objects\NPC\NPC1.cs" />
-    <Compile Include="Objects\ObjectsDeath\WayOfDying.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

@@ -47,7 +47,7 @@ namespace iichanTouhou.Objects
       
 
 
-        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, double lifeTime) 
+        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, int lifeTime) 
             : base(danmaku, lifeTime)
         {
             this.danmaku = danmaku;

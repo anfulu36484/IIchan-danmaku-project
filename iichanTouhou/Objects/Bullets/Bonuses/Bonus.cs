@@ -14,7 +14,7 @@ namespace iichanTouhou.Objects.Bullets.Bonuses
     {
         public Bonus(Danmaku danmaku, Vector2f startPosition,GameObject targetObject,
             GameObject ownerObject, EventHandler<EventArgs> onCollision)
-        : base(danmaku, startPosition, new Vector2f(5,5),2, targetObject, ownerObject, onCollision, double.PositiveInfinity)
+        : base(danmaku, startPosition, new Vector2f(5,5),2, targetObject, ownerObject, onCollision, int.MaxValue/danmaku.FrameRateLimit)
         {
             Texture = TextureGenerator.Generate(Properties.Resources.Bonus, ImageFormat.Png);
         }
