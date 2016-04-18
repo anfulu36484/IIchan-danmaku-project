@@ -23,7 +23,7 @@ namespace iichanTouhou.Attack
             float fi = 10;
             for (int i = 0; i < CountOfBullets; i++)
             {
-                bullets[i] =new Bullet1(Danmaku, GetStartOfPoint(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
+                bullets[i] =new Bullet1(Danmaku, GetPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
                     OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
                 bullets[i].Initialize();
                 bullets[i].Speed = (bullets[i].Position - StartPoint).Normalize()*1.5f;
@@ -31,7 +31,7 @@ namespace iichanTouhou.Attack
             }
         }
 
-        protected override Vector2f GetStartOfPoint(float fi)
+        protected override Vector2f GetPosition(float fi)
         {
             return new Vector2f((float)(fi * Math.Sin(fi) + StartPoint.X), (float)(fi * Math.Cos(fi) + StartPoint.Y));
         }
@@ -53,8 +53,8 @@ namespace iichanTouhou.Attack
         }
 
 
-        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime) 
-            : base(danmaku, ownerObject, startPoint, lifeTime)
+        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime, int countOfBulletsForEasyMode) 
+            : base(danmaku, ownerObject, startPoint, lifeTime, countOfBulletsForEasyMode)
         {
         }
     }

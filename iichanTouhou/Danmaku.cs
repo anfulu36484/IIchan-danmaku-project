@@ -15,9 +15,13 @@ namespace iichanTouhou
     class Danmaku:Game
     {
 
+        public float ComplexityFactor = 1;
+
         public SliceOfLifeBase SliceOfLifeBase;
 
         public MainObject MainObject;
+
+        private BackgroundArea backgroundArea;
 
         public GameArea GameArea;
 
@@ -28,6 +32,7 @@ namespace iichanTouhou
         {
             window.Resized += Window_Resized;
             
+            backgroundArea = new BackgroundArea(this);
             GameArea = new GameArea(this);
             StatisticsArea = new StatisticsArea(this,GameArea);
             MainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),10);
@@ -60,6 +65,7 @@ namespace iichanTouhou
 
         public override void Initialize()
         {
+            backgroundArea.Initialize();
             GameArea.Initialize();
             StatisticsArea.Initialize();
             MainObject.Initialize();
@@ -69,6 +75,7 @@ namespace iichanTouhou
 
         public override void Update()
         {
+            backgroundArea.Initialize();
             GameArea.Update();
             StatisticsArea.Update();
             SliceOfLifeBase.Update();
@@ -76,9 +83,10 @@ namespace iichanTouhou
 
         public override void Render()
         {
+            backgroundArea.Render();
             GameArea.Render();
+            SliceOfLifeBase.Render();
             StatisticsArea.Render();
-            SliceOfLifeBase.Render(); 
         }
 
         public void UpdateWindowSize()

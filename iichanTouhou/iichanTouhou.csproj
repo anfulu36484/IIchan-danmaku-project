@@ -62,16 +62,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Area\AreaBase.cs" />
+    <Compile Include="Area\BackgroundArea.cs" />
     <Compile Include="Area\StatisticsArea.cs" />
     <Compile Include="Attack\Attack1.cs" />
-    <Compile Include="Attack\Attack2.cs" />
+    <Compile Include="Attack\PolarAttack\Flower2.cs" />
+    <Compile Include="Attack\PolarAttack\Flower.cs" />
     <Compile Include="Attack\AttackBase.cs" />
+    <Compile Include="Attack\PolarAttack\PolarAttackBase.cs" />
     <Compile Include="Danmaku.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Area\GameArea.cs" />
     <Compile Include="GameBase.cs" />
     <Compile Include="GameElement.cs" />
     <Compile Include="Helpers\Vector.cs" />
+    <Compile Include="Objects\Bullets\Bullet3.cs" />
     <Compile Include="Objects\ObjectsDeath\Shinigami.cs" />
     <Compile Include="Objects\Bullets\Bonuses\Bonus.cs" />
     <Compile Include="Objects\GameObject.cs" />
@@ -113,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bonus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using iichanTouhou.Attack;
+using iichanTouhou.Attack.PolarAttack;
 using iichanTouhou.Helpers;
 using SFML.Graphics;
 using SFML.System;
@@ -37,39 +38,36 @@ namespace iichanTouhou.Objects.NPC
                 base.rectangleShape.Texture=TextureGenerator.Generate(Properties.Resources.bullet2, ImageFormat.Png);
 
                 Speed = new Vector2f(0, 0);
-                if (attack2 == null)
+                if (_flower2 == null)
                     Attack();
             }
 
-            /*if (Position.Y > 300)
-            {
-                
-            }*/
+ 
             Position += Speed;
 
-            attack2?.Update();
+            _flower2?.Update();
 
             
         }
 
-        private Attack2 attack2;
+        private Flower2 _flower2;
 
         public void Attack()
         {
-            attack2 = new Attack2(danmaku,this, CenterCoordinates);
-            attack2.Initialize();
-            attack2.Died += Attack2_Died;
+            _flower2 = new Flower2(danmaku,this, CenterCoordinates);
+            _flower2.Initialize();
+            _flower2.Died += FlowerDied;
         }
 
-        private void Attack2_Died(object sender, EventArgs e)
+        private void FlowerDied(object sender, EventArgs e)
         {
-            attack2 = null;
+            _flower2 = null;
         }
 
         public override void Render()
         {
             base.Render();
-            attack2?.Render();
+            _flower2?.Render();
         }
 
 

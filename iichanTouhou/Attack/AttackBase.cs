@@ -19,14 +19,18 @@ namespace iichanTouhou.Attack
 
         protected int CountOfBullets;
 
-        protected AttackBase(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime) : base(danmaku, lifeTime)
+
+
+        protected AttackBase(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime, 
+            int countOfBulletsForEasyMode) : base(danmaku, lifeTime)
         {
             OwnerObject = ownerObject;
             StartPoint = startPoint;
+            CountOfBullets = (int) (countOfBulletsForEasyMode*danmaku.ComplexityFactor);
         }
 
 
-        protected abstract Vector2f GetStartOfPoint(float fi);
+        protected abstract Vector2f GetPosition(float fi);
 
 
         public void OnCollision(object obj, EventArgs e)
