@@ -23,9 +23,9 @@ namespace iichanTouhou.Objects.NPC
 
         public override void Initialize()
         {
-            Texture = TextureGenerator.Generate(Properties.Resources.npc, ImageFormat.Png);
-           
-            Speed=new Vector2f(0,2f);
+            Texture = danmaku.Textures["npc"];
+
+            Speed =new Vector2f(0,2f);
         }
 
 
@@ -35,7 +35,7 @@ namespace iichanTouhou.Objects.NPC
 
             if (LivedTimeInSeconds == 1)
             {
-                base.rectangleShape.Texture=TextureGenerator.Generate(Properties.Resources.bullet2, ImageFormat.Png);
+                base.rectangleShape.Texture = danmaku.Textures["bullet2"];
 
                 Speed = new Vector2f(0, 0);
                 if (_flower2 == null)

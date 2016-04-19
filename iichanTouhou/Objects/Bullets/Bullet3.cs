@@ -19,7 +19,7 @@ namespace iichanTouhou.Objects.Bullets
 
         public override void Initialize()
         {
-            Texture = TextureGenerator.Generate(Properties.Resources.bullet4, ImageFormat.Png);
+            Texture = danmaku.Textures["bullet3"];
         }
 
     }

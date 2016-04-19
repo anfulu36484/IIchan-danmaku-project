@@ -79,7 +79,6 @@
     <Compile Include="Objects\ObjectsDeath\Shinigami.cs" />
     <Compile Include="Objects\Bullets\Bonuses\Bonus.cs" />
     <Compile Include="Objects\GameObject.cs" />
-    <Compile Include="Helpers\TextureGenerator.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
     <Compile Include="Objects\Bullets\Bullet2.cs" />
     <Compile Include="Objects\Bullets\BulletBase.cs" />
@@ -94,6 +93,7 @@
     </Compile>
     <Compile Include="Slice\SliceOfLifeBase.cs" />
     <Compile Include="Slice\SliceOfLife1.cs" />
+    <Compile Include="Textures.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -104,6 +104,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -113,13 +114,13 @@
     <None Include="Resources\npc.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bullet3.png" />
+    <None Include="Resources\bullet2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bonus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bullet4.png" />
+    <None Include="Resources\bullet3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

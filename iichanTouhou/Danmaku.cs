@@ -19,6 +19,8 @@ namespace iichanTouhou
 
         public SliceOfLifeBase SliceOfLifeBase;
 
+        public Textures Textures;
+
         public MainObject MainObject;
 
         private BackgroundArea backgroundArea;
@@ -32,6 +34,8 @@ namespace iichanTouhou
         {
             window.Resized += Window_Resized;
             
+            Textures = new Textures();
+
             backgroundArea = new BackgroundArea(this);
             GameArea = new GameArea(this);
             StatisticsArea = new StatisticsArea(this,GameArea);
@@ -65,6 +69,7 @@ namespace iichanTouhou
 
         public override void Initialize()
         {
+            Textures.Load();
             backgroundArea.Initialize();
             GameArea.Initialize();
             StatisticsArea.Initialize();
