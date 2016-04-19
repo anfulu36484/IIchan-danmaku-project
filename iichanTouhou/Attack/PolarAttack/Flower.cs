@@ -1,9 +1,9 @@
 ﻿using System;
-using iichanTouhou.Objects;
-using iichanTouhou.Objects.Bullets;
+using IIchanDanmakuProject.Objects;
+using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
 
-namespace iichanTouhou.Attack.PolarAttack
+namespace IIchanDanmakuProject.Attack.PolarAttack
 {
     class Flower :PolarAttackBase
     {

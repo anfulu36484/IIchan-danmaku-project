@@ -1,7 +1,7 @@
-﻿using iichanTouhou.Objects;
-using iichanTouhou.Objects.ObjectsDeath;
+﻿using IIchanDanmakuProject.Objects;
+using IIchanDanmakuProject.Objects.ObjectsDeath;
 
-namespace iichanTouhou.Slice
+namespace IIchanDanmakuProject.Slice
 {
     abstract class SliceOfLifeBase :GameBase
     {

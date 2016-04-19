@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Objects;
-using iichanTouhou.Objects.Bullets;
+using IIchanDanmakuProject.Objects;
+using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
 
-namespace iichanTouhou.Attack
+namespace IIchanDanmakuProject.Attack
 {
     abstract class AttackBase :GameElement
     {

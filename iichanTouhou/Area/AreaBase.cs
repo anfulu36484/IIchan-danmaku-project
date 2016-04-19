@@ -1,7 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 
-namespace iichanTouhou.Area
+namespace IIchanDanmakuProject.Area
 {
     abstract class AreaBase:GameBase
     {

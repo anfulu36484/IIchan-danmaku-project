@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Helpers;
-using iichanTouhou.Objects.ObjectsDeath;
+using IIchanDanmakuProject.Helpers;
 using SFML.System;
 
-namespace iichanTouhou.Objects.Bullets.Bonuses
+namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
 {
     class Bonus :BulletBase
     {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SFML.Graphics;
+﻿using SFML.Graphics;
 using SFML.System;
 
-namespace iichanTouhou.Area
+namespace IIchanDanmakuProject.Area
 {
     class StatisticsArea :AreaBase
     {

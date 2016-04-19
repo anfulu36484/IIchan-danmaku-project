@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using iichanTouhou.Helpers;
-using iichanTouhou.Objects.Bullets;
-using iichanTouhou.Objects.Bullets.Bonuses;
+using IIchanDanmakuProject.Helpers;
+using IIchanDanmakuProject.Objects.Bullets;
+using IIchanDanmakuProject.Objects.Bullets.Bonuses;
 using SFML.System;
 
-namespace iichanTouhou.Objects.ObjectsDeath
+namespace IIchanDanmakuProject.Objects.ObjectsDeath
 {
     class Shinigami:GameObject
     {

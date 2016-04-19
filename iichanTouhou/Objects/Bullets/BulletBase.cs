@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Helpers;
+using IIchanDanmakuProject.Helpers;
 using SFML.System;
 
-namespace iichanTouhou.Objects.Bullets
+namespace IIchanDanmakuProject.Objects.Bullets
 {
     abstract class BulletBase :GameObject
     {

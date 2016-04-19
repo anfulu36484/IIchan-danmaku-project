@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iichanTouhou.Properties {
+namespace IIchanDanmakuProject.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace iichanTouhou.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("iichanTouhou.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IIchanDanmakuProject.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -96,6 +96,16 @@ namespace iichanTouhou.Properties {
         internal static System.Drawing.Bitmap bullet4 {
             get {
                 object obj = ResourceManager.GetObject("bullet4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hitbox {
+            get {
+                object obj = ResourceManager.GetObject("hitbox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

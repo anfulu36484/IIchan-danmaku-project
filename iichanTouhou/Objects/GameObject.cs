@@ -1,7 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 
-namespace iichanTouhou.Objects
+namespace IIchanDanmakuProject.Objects
 {
     abstract class GameObject: GameElement
     {

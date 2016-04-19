@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using iichanTouhou.Attack;
-using iichanTouhou.Attack.PolarAttack;
-using iichanTouhou.Helpers;
-using SFML.Graphics;
+using IIchanDanmakuProject.Attack.PolarAttack;
 using SFML.System;
 
-namespace iichanTouhou.Objects.NPC
+namespace IIchanDanmakuProject.Objects.NPC
 {
     class NPC1 :GameObject
     {

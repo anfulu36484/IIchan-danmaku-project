@@ -1,21 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SFML.Graphics;
+﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 
-namespace iichanTouhou.Objects
+namespace IIchanDanmakuProject.Objects
 {
     class MainObject :GameObject
     {
-        private float speed = 5f;
+        private float ordinarySpeed = 5f;
+        private float focusSpeed = 2f;
+
+        private readonly Hitbox _hitbox;
+
+
+        public int Score;
+
+        public int Power;
 
         public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius)
             : base(danmaku, startPosition, size, hitboxRadius, int.MaxValue/danmaku.FrameRateLimit)
         {
+            _hitbox = new Hitbox(danmaku,this);
         }
 
         public override Vector2f Position
@@ -34,11 +38,11 @@ namespace iichanTouhou.Objects
         public override void Initialize()
         {
             rectangleShape.FillColor = Color.Green;
+            _hitbox.Initialize();
         }
 
-        public override void Update()
+        void Move(float speed)
         {
-            base.Update();
             if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
             {
                 Position -= new Vector2f(speed, 0);
@@ -58,6 +62,19 @@ namespace iichanTouhou.Objects
         }
 
 
-        
+        public override void Update()
+        {
+            base.Update();
+
+            Move(Keyboard.IsKeyPressed(Keyboard.Key.LShift) ? focusSpeed : ordinarySpeed);
+
+            _hitbox.Update();
+        }
+
+        public override void Render()
+        {
+            base.Render();
+            _hitbox.Render();
+        }
     }
 }

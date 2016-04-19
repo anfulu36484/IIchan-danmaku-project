@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Helpers;
 using SFML.System;
 
-namespace iichanTouhou.Objects.Bullets
+namespace IIchanDanmakuProject.Objects.Bullets
 {
     class Bullet2 :BulletBase
     {

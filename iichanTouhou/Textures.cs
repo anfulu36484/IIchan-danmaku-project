@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Helpers;
 using SFML.Graphics;
 
-namespace iichanTouhou
+namespace IIchanDanmakuProject
 {
     internal class Textures
     {
@@ -30,6 +25,8 @@ namespace iichanTouhou
             _textures.Add("bullet1", GenerateTexture(Properties.Resources.bullet1, ImageFormat.Png));
             _textures.Add("bullet2", GenerateTexture(Properties.Resources.bullet2, ImageFormat.Png));
             _textures.Add("bullet3", GenerateTexture(Properties.Resources.bullet4, ImageFormat.Png));
+
+            _textures.Add("hitbox", GenerateTexture(Properties.Resources.hitbox, ImageFormat.Png));
         }
 
         public Texture this[string name] => _textures[name];

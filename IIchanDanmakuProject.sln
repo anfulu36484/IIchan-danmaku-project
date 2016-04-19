@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iichanTouhou", "iichanTouhou\iichanTouhou.csproj", "{FDF7E043-CF93-4FDC-94B5-47D647EC518F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIchanDanmakuProject", "iichanTouhou\IIchanDanmakuProject.csproj", "{FDF7E043-CF93-4FDC-94B5-47D647EC518F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

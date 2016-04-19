@@ -1,16 +1,12 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-using iichanProject;
-using iichanTouhou.Area;
-using iichanTouhou.Attack;
-using iichanTouhou.Objects;
-using iichanTouhou.Slice;
+﻿using System.Windows.Forms;
+using IIchanDanmakuProject;
+using IIchanDanmakuProject.Area;
+using IIchanDanmakuProject.Objects;
+using IIchanDanmakuProject.Slice;
 using SFML.System;
 using Color = SFML.Graphics.Color;
 
-namespace iichanTouhou
+namespace IIchanDanmakuProject
 {
     class Danmaku:Game
     {
@@ -39,7 +35,7 @@ namespace iichanTouhou
             backgroundArea = new BackgroundArea(this);
             GameArea = new GameArea(this);
             StatisticsArea = new StatisticsArea(this,GameArea);
-            MainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),10);
+            MainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),5);
             SliceOfLifeBase = new SliceOfLife1(this,MainObject);
 
             //нужно лучше стараться

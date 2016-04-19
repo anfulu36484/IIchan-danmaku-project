@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using iichanTouhou.Attack;
-using iichanTouhou.Objects;
-using iichanTouhou.Objects.NPC;
+﻿using IIchanDanmakuProject.Objects;
+using IIchanDanmakuProject.Objects.NPC;
 using SFML.System;
 
-namespace iichanTouhou.Slice
+namespace IIchanDanmakuProject.Slice
 {
     class SliceOfLife1:SliceOfLifeBase
     {
