@@ -8,7 +8,7 @@ namespace iichanTouhou.Attack.PolarAttack
     class Flower2 :PolarAttackBase
     {
         public Flower2(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint) 
-            : base(danmaku, ownerObject, startPoint, 60*2, 600, 1000, 1000000)
+            : base(danmaku, ownerObject, startPoint,40, 600, 1000, 1000000)
         {
         }
 

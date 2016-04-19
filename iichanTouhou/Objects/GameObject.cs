@@ -10,7 +10,7 @@ namespace iichanTouhou.Objects
 
         protected RectangleShape rectangleShape;
 
-        public Vector2f Position
+        public virtual Vector2f Position
         {
             get { return rectangleShape.Position; } 
             set { rectangleShape.Position = value; }
