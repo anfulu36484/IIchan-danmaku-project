@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using IIchanDanmakuProject.Helpers;
+using IIchanDanmakuProject.Objects.Bullets.Bonuses;
+using IIchanDanmakuProject.Objects.Rotate;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets
@@ -14,6 +16,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
 
         public event EventHandler<EventArgs> Collision;
 
+        private RotatorBase _rotator;
+
         private void DefineSaveDistances(GameObject[] targetObjects)
         {
             _safeDistances = new float[targetObjects.Count()];
@@ -23,22 +27,35 @@ namespace IIchanDanmakuProject.Objects.Bullets
             }
         }
 
+        protected BulletBase(Danmaku danmaku,
+            Vector2f startPosition,
+            Vector2f size,
+            float hitboxRadius,
+            GameObject targetObject,
+            GameObject ownerObject,
+            EventHandler<EventArgs> onCollision,
+            int lifeTime,
+            RotatorBase rotator)
+            : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }, ownerObject, onCollision, lifeTime,
+                 rotator)
+        {
+
+        }
 
         protected BulletBase(Danmaku danmaku,
             Vector2f startPosition,
             Vector2f size,
             float hitboxRadius,
             GameObject targetObject,
-            GameObject ownerObject, 
-            EventHandler<EventArgs> onCollision, 
+            GameObject ownerObject,
+            EventHandler<EventArgs> onCollision,
             int lifeTime)
-            : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
+            :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject },ownerObject,onCollision,lifeTime,
+                 new NoneRotator())
         {
-            TargetObjects =  new[]{ targetObject};
-            OwnerObject = ownerObject;
-            DefineSaveDistances(TargetObjects);
-            Collision += onCollision;
+
         }
+
 
         protected BulletBase(Danmaku danmaku,
             Vector2f startPosition,
@@ -47,13 +64,16 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject[] targetObjects,
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
-            int lifeTime)
+            int lifeTime, 
+            RotatorBase rotator)
             : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
         {
             TargetObjects = targetObjects;
             OwnerObject = ownerObject;
             DefineSaveDistances(TargetObjects);
             Collision += onCollision;
+            _rotator = rotator;
+            _rotator.AddBullet(this);
         }
 
         private bool IsCollisionDetection()
@@ -69,6 +89,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
         public override void Update()
         {
             base.Update();
+            _rotator.Rotate();
             if (IsCollisionDetection())
             {
                 Collision(this,new EventArgs());

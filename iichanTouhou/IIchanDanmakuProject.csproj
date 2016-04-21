@@ -89,8 +89,10 @@
     <Compile Include="Area\GameArea.cs" />
     <Compile Include="GameBase.cs" />
     <Compile Include="GameElement.cs" />
+    <Compile Include="Helpers\MathConverter.cs" />
     <Compile Include="Helpers\Vector.cs" />
     <Compile Include="Objects\Bullets\Bullet3.cs" />
+    <Compile Include="Objects\Bullets\Bulleto1.cs" />
     <Compile Include="Objects\Hitbox.cs" />
     <Compile Include="Objects\ObjectsDeath\Shinigami.cs" />
     <Compile Include="Objects\Bullets\Bonuses\Bonus.cs" />
@@ -100,6 +102,9 @@
     <Compile Include="Objects\Bullets\BulletBase.cs" />
     <Compile Include="Objects\MainObject.cs" />
     <Compile Include="Objects\NPC\NPC1.cs" />
+    <Compile Include="Objects\Bullets\Rotate\InDirectionOfMotionRotator.cs" />
+    <Compile Include="Objects\Bullets\Rotate\NoneRotator.cs" />
+    <Compile Include="Objects\Bullets\Rotate\RotatorBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -152,6 +157,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulleto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulleto2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

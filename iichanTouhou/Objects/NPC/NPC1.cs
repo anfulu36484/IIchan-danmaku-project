@@ -26,7 +26,7 @@ namespace IIchanDanmakuProject.Objects.NPC
 
             if (LivedTimeInSeconds == 1)
             {
-                base.rectangleShape.Texture = danmaku.Textures["bullet2"];
+                base.RectangleShape.Texture = danmaku.Textures["bullet2"];
 
                 Speed = new Vector2f(0, 0);
                 if (_flower2 == null)

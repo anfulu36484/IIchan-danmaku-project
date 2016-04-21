@@ -24,20 +24,20 @@ namespace IIchanDanmakuProject.Objects
 
         public override Vector2f Position
         {
-            get { return rectangleShape.Position; }
+            get { return RectangleShape.Position; }
             set
             {
                 if(value.X>danmaku.GameArea.Position.X
                     & value.X<danmaku.GameArea.Size.X+ danmaku.GameArea.Position.X-this.Size.X
                     & value.Y>danmaku.GameArea.Position.Y
                     & value.Y<danmaku.GameArea.Size.Y+ danmaku.GameArea.Position.Y-this.Size.Y)
-                    rectangleShape.Position = value;
+                    RectangleShape.Position = value;
             }
         }
 
         public override void Initialize()
         {
-            rectangleShape.FillColor = Color.Green;
+            RectangleShape.FillColor = Color.Green;
             _hitbox.Initialize();
         }
 

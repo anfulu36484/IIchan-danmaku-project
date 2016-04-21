@@ -8,30 +8,30 @@ namespace IIchanDanmakuProject.Objects
         
         public Danmaku danmaku;
 
-        protected RectangleShape rectangleShape;
+        public RectangleShape RectangleShape;
 
         public virtual Vector2f Position
         {
-            get { return rectangleShape.Position; } 
-            set { rectangleShape.Position = value; }
+            get { return RectangleShape.Position; } 
+            set { RectangleShape.Position = value; }
         }
 
         public Vector2f Scale
         {
-            get { return rectangleShape.Scale; }
-            set { rectangleShape.Scale = value; }
+            get { return RectangleShape.Scale; }
+            set { RectangleShape.Scale = value; }
         }
 
         public Vector2f Size
         {
-            get { return rectangleShape.Size; }
-            set { rectangleShape.Size = value; }
+            get { return RectangleShape.Size; }
+            set { RectangleShape.Size = value; }
         }
 
         public Texture Texture
         {
-            get { return rectangleShape.Texture; }
-            set { rectangleShape.Texture = value; }
+            get { return RectangleShape.Texture; }
+            set { RectangleShape.Texture = value; }
         }
 
         public float HitboxRadius;
@@ -52,7 +52,7 @@ namespace IIchanDanmakuProject.Objects
         {
             this.danmaku = danmaku;
 
-            rectangleShape = new RectangleShape
+            RectangleShape = new RectangleShape
             {
                 Position = startPosition,
                 Size = size
@@ -82,7 +82,7 @@ namespace IIchanDanmakuProject.Objects
 
         public override void Render()
         {
-            danmaku.window.Draw(rectangleShape);
+            danmaku.window.Draw(RectangleShape);
         }
 
 

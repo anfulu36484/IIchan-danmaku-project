@@ -8,7 +8,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
     class Flower2 :PolarAttackBase
     {
         public Flower2(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint) 
-            : base(danmaku, ownerObject, startPoint,40, 600, 1000, 1000000)
+            : base(danmaku, ownerObject, startPoint,40, 1000, 1000, 1000000)
         {
         }
 
@@ -18,8 +18,9 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             base.Initialize();
             for (int i = 0; i < CountOfBullets; i++)
             {
-                bullets[i] = new Bullet3(Danmaku, GetPosition(FiArray[i])
-                    , new Vector2f(20, 20), 8, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
+                /*bullets[i] = new Bullet3(Danmaku, GetPosition(FiArray[i])
+                    , new Vector2f(20, 20), 8, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);*/
+                bullets[i] = new Bulleto1(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
                 bullets[i].Initialize();
             }
         }

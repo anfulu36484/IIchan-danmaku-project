@@ -83,6 +83,26 @@ namespace IIchanDanmakuProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bullet10 {
+            get {
+                object obj = ResourceManager.GetObject("bullet10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bullet11 {
+            get {
+                object obj = ResourceManager.GetObject("bullet11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bullet2 {
             get {
                 object obj = ResourceManager.GetObject("bullet2", resourceCulture);
@@ -96,6 +116,26 @@ namespace IIchanDanmakuProject.Properties {
         internal static System.Drawing.Bitmap bullet4 {
             get {
                 object obj = ResourceManager.GetObject("bullet4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bulleto1 {
+            get {
+                object obj = ResourceManager.GetObject("bulleto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bulleto2 {
+            get {
+                object obj = ResourceManager.GetObject("bulleto2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
