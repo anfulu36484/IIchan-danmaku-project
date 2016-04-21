@@ -11,8 +11,15 @@ namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
         : base(danmaku, startPosition, new Vector2f(5,5),2, targetObject, ownerObject, onCollision, int.MaxValue/danmaku.FrameRateLimit)
         {
             Texture = danmaku.Textures["Bonus"];
+            Collision += Bonus_Collision;
         }
 
+        private int _bonusPoint = 10;
+
+        private void Bonus_Collision(object sender, EventArgs e)
+        {
+            Danmaku.MainObject.Score += _bonusPoint;
+        }
 
         public override void Initialize()
         {

@@ -3,6 +3,7 @@ using IIchanDanmakuProject;
 using IIchanDanmakuProject.Area;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Slice;
+using IIchanDanmakuProject.Statistics;
 using SFML.System;
 using Color = SFML.Graphics.Color;
 
@@ -25,6 +26,8 @@ namespace IIchanDanmakuProject
 
         public StatisticsArea StatisticsArea;
 
+        public StatisticsView StatisticsView;
+
         public Danmaku() 
             : base(1280, 960, "IIchan Danmaku Project", Color.Black)
         {
@@ -37,6 +40,8 @@ namespace IIchanDanmakuProject
             StatisticsArea = new StatisticsArea(this,GameArea);
             MainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),5);
             SliceOfLifeBase = new SliceOfLife1(this,MainObject);
+
+            StatisticsView = new StatisticsView(this);
 
             //нужно лучше стараться
             window.Size=new Vector2u(window.Size.X,(uint)(SystemInformation.PrimaryMonitorSize.Height*0.9f));
@@ -69,6 +74,7 @@ namespace IIchanDanmakuProject
             backgroundArea.Initialize();
             GameArea.Initialize();
             StatisticsArea.Initialize();
+            StatisticsView.Initialize();
             MainObject.Initialize();
             SliceOfLifeBase.Initialize();
         }
@@ -79,6 +85,7 @@ namespace IIchanDanmakuProject
             backgroundArea.Initialize();
             GameArea.Update();
             StatisticsArea.Update();
+            StatisticsView.Update();
             SliceOfLifeBase.Update();
         }
 
@@ -88,6 +95,7 @@ namespace IIchanDanmakuProject
             GameArea.Render();
             SliceOfLifeBase.Render();
             StatisticsArea.Render();
+            StatisticsView.Render();
         }
 
         public void UpdateWindowSize()

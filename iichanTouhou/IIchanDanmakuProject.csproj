@@ -114,11 +114,15 @@
     </Compile>
     <Compile Include="Slice\SliceOfLifeBase.cs" />
     <Compile Include="Slice\SliceOfLife1.cs" />
+    <Compile Include="Statistics\StatisticsView.cs" />
     <Compile Include="Textures.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Statistics\arial.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +174,7 @@
   <ItemGroup>
     <None Include="Resources\bullet11.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

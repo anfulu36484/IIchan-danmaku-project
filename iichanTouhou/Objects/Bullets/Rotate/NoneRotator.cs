@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IIchanDanmakuProject.Objects.Bullets;
+﻿using IIchanDanmakuProject.Objects.Rotate;
 
-namespace IIchanDanmakuProject.Objects.Rotate
+namespace IIchanDanmakuProject.Objects.Bullets.Rotate
 {
     class NoneRotator:RotatorBase
     {

@@ -2,6 +2,7 @@
 using System.Linq;
 using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects.Bullets.Bonuses;
+using IIchanDanmakuProject.Objects.Bullets.Rotate;
 using IIchanDanmakuProject.Objects.Rotate;
 using SFML.System;
 

@@ -14,12 +14,12 @@ namespace IIchanDanmakuProject.Objects.Bullets
     {
         public Bulleto1(Danmaku danmaku, Vector2f startPosition,  GameObject targetObject, GameObject ownerObject, 
             EventHandler<EventArgs> onCollision) 
-            : base(danmaku, startPosition, new Vector2f(40,40), 15, targetObject, ownerObject, onCollision,
+            : base(danmaku, startPosition, new Vector2f(40,40), 5, targetObject, ownerObject, onCollision,
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator())
         {
         }
 
-
+        
         public override void Initialize()
         {
             Texture texture = new Texture(@"D:\С_2015\IIchan danmaku project\iichanTouhou\Resources\bulleto1.png");
