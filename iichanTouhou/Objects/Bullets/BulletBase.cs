@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using IIchanDanmakuProject.Helpers;
-using IIchanDanmakuProject.Objects.Bullets.Bonuses;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
 using IIchanDanmakuProject.Objects.Rotate;
 using SFML.System;
@@ -10,22 +10,29 @@ namespace IIchanDanmakuProject.Objects.Bullets
 {
     abstract class BulletBase :GameObject
     {
-        public GameObject[] TargetObjects { get; }
+        public List<GameObject> TargetObjects { get; }
         public GameObject OwnerObject { get; }
 
-        private float[] _safeDistances;
+        private List<float> _safeDistances;
 
         public event EventHandler<EventArgs> Collision;
 
         private RotatorBase _rotator;
 
-        private void DefineSaveDistances(GameObject[] targetObjects)
+        private void DefineSaveDistances(List<GameObject> targetObjects)
         {
-            _safeDistances = new float[targetObjects.Count()];
-            for (int i = 0; i < targetObjects.Count(); i++)
+            _safeDistances = new List<float>(targetObjects.Count);
+
+            for (int i = 0; i < targetObjects.Count; i++)
             {
-                _safeDistances[i]= this.HitboxRadius + TargetObjects[i].HitboxRadius;
+                _safeDistances.Add(this.HitboxRadius + TargetObjects[i].HitboxRadius);
             }
+        }
+
+        public void AddTargetObject(GameObject gameObject)
+        {
+            TargetObjects.Add(gameObject);
+            _safeDistances.Add(this.HitboxRadius + gameObject.HitboxRadius);
         }
 
         protected BulletBase(Danmaku danmaku,
@@ -37,7 +44,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             EventHandler<EventArgs> onCollision,
             int lifeTime,
             RotatorBase rotator)
-            : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }, ownerObject, onCollision, lifeTime,
+            : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }.ToList(), ownerObject, onCollision, lifeTime,
                  rotator)
         {
 
@@ -51,7 +58,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
             int lifeTime)
-            :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject },ownerObject,onCollision,lifeTime,
+            :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject }.ToList(),ownerObject,onCollision,lifeTime,
                  new NoneRotator())
         {
 
@@ -62,7 +69,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             Vector2f startPosition,
             Vector2f size,
             float hitboxRadius,
-            GameObject[] targetObjects,
+            List<GameObject> targetObjects,
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
             int lifeTime, 
@@ -79,7 +86,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
 
         private bool IsCollisionDetection()
         {
-            for (int i = 0; i < TargetObjects.Length; i++)
+            for (int i = 0; i < TargetObjects.Count; i++)
             {
                 if((this.CenterCoordinates - TargetObjects[i].CenterCoordinates).Length() <= _safeDistances[i])
                     return true;

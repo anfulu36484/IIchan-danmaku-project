@@ -25,10 +25,10 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
 
         private void PolarAttack_Died(object sender, EventArgs e)
         {
-            for (int i = 0; i < bullets.Length; i++)
+            for (int i = 0; i < Bullets.Length; i++)
             {
-                Danmaku.SliceOfLifeBase.Shinigami.AddAsBonus(bullets[i]);
-                bullets[i] = null;
+                Danmaku.SliceOfLifeBase.Shinigami.AddAsBonus(Bullets[i]);
+                Bullets[i] = null;
             }
         }
 
@@ -39,7 +39,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             {
                 FiArray[i] = i;
             }
-            bullets = new BulletBase[CountOfBullets];
+            Bullets = new BulletBase[CountOfBullets];
         }
 
         public override void Update()
@@ -47,10 +47,10 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             base.Update();
             for (int i = 0; i < CountOfBullets; i++)
             {
-                if (bullets[i] != null)
+                if (Bullets[i] != null)
                 {
-                    bullets[i].Update();
-                    bullets[i].Position = GetPosition(FiArray[i]);
+                    Bullets[i].Update();
+                    Bullets[i].Position = GetPosition(FiArray[i]);
                 }
             }
             K += 0.000007f;

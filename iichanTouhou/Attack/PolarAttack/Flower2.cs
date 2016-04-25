@@ -20,8 +20,8 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             {
                 /*bullets[i] = new Bullet3(Danmaku, GetPosition(FiArray[i])
                     , new Vector2f(20, 20), 8, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);*/
-                bullets[i] = new Bulleto1(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
-                bullets[i].Initialize();
+                Bullets[i] = new Bulleto1(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
+                Bullets[i].Initialize();
             }
         }
 
@@ -32,10 +32,10 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             base.Update();
             for (int i = 0; i < CountOfBullets; i++)
             {
-                if (bullets[i] != null)
+                if (Bullets[i] != null)
                 {
-                    bullets[i].Update();
-                    bullets[i].Position = GetPosition(FiArray[i]);
+                    Bullets[i].Update();
+                    Bullets[i].Position = GetPosition(FiArray[i]);
                 }
             }
             ii++;

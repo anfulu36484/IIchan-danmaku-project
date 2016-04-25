@@ -79,7 +79,9 @@
     <Compile Include="Area\AreaBase.cs" />
     <Compile Include="Area\BackgroundArea.cs" />
     <Compile Include="Area\StatisticsArea.cs" />
-    <Compile Include="Attack\Attack1.cs" />
+    <Compile Include="Attack\AttackOfMainObject\AttackOfMainObject1.cs" />
+    <Compile Include="Attack\AttackOfMainObject\AttackOfMainObject1Pool.cs" />
+    <Compile Include="Attack\StandartAttack\Attack1.cs" />
     <Compile Include="Attack\PolarAttack\Flower2.cs" />
     <Compile Include="Attack\PolarAttack\Flower.cs" />
     <Compile Include="Attack\AttackBase.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="GameBase.cs" />
     <Compile Include="GameElement.cs" />
     <Compile Include="Helpers\MathConverter.cs" />
+    <Compile Include="Helpers\ObjectPool\Pool.cs" />
     <Compile Include="Helpers\Vector.cs" />
     <Compile Include="Objects\Bullets\Bullet3.cs" />
     <Compile Include="Objects\Bullets\Bulleto1.cs" />

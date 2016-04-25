@@ -11,7 +11,7 @@ namespace IIchanDanmakuProject.Attack
 
         protected readonly Vector2f StartPoint;
 
-        protected BulletBase[] bullets;
+        protected BulletBase[] Bullets;
 
         protected int CountOfBullets;
 
@@ -36,7 +36,7 @@ namespace IIchanDanmakuProject.Attack
 
         public override void Render()
         {
-            foreach (var bullet in bullets)
+            foreach (var bullet in Bullets)
             {
                 bullet?.Render();
             }

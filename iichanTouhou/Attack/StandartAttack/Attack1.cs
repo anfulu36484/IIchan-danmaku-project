@@ -4,7 +4,7 @@ using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
 
-namespace IIchanDanmakuProject.Attack
+namespace IIchanDanmakuProject.Attack.StandartAttack
 {
     class Attack1 : AttackBase
     {
@@ -13,14 +13,14 @@ namespace IIchanDanmakuProject.Attack
         {
             CountOfBullets = 50;
 
-            bullets = new Bullet1[CountOfBullets];
+            Bullets = new Bullet1[CountOfBullets];
             float fi = 10;
             for (int i = 0; i < CountOfBullets; i++)
             {
-                bullets[i] =new Bullet1(Danmaku, GetPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
+                Bullets[i] =new Bullet1(Danmaku, GetPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
                     OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
-                bullets[i].Initialize();
-                bullets[i].Speed = (bullets[i].Position - StartPoint).Normalize()*1.5f;
+                Bullets[i].Initialize();
+                Bullets[i].Speed = (Bullets[i].Position - StartPoint).Normalize()*1.5f;
                 fi += 10f;
             }
         }
@@ -35,13 +35,13 @@ namespace IIchanDanmakuProject.Attack
         public override void Update()
         {
             base.Update();
-            for (int i = 0; i < bullets.Length; i++)
+            for (int i = 0; i < Bullets.Length; i++)
             {
-                if (bullets[i] != null)
+                if (Bullets[i] != null)
                 {
-                    bullets[i].Update();
-                    if (!bullets[i].IsObjectInGameArea())
-                        bullets[i] = null;
+                    Bullets[i].Update();
+                    if (!Bullets[i].IsObjectInGameArea())
+                        Bullets[i] = null;
                 }
             }
         }

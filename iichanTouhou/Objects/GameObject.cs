@@ -82,7 +82,7 @@ namespace IIchanDanmakuProject.Objects
 
         public override void Render()
         {
-            danmaku.window.Draw(RectangleShape);
+             danmaku.window.Draw(RectangleShape);
         }
 
 

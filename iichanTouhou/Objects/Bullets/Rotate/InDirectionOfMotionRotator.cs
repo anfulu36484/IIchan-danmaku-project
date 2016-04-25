@@ -15,10 +15,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Rotate
         {
             Vector2f direction = Bullet.CenterCoordinates - _previousPosition;
             Bullet.RectangleShape.Rotation = MathConverter.RadianToDegrees( Math.Atan(direction.Y/direction.X));
-
-            //Bullet.RectangleShape.Rotation += 120;
-
-            _previousPosition = Bullet.CenterCoordinates;
+           _previousPosition = Bullet.CenterCoordinates;
         }
     }
 }
