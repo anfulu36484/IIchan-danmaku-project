@@ -5,9 +5,9 @@ D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\sfmlnet-audio-2.dll
 D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\sfmlnet-graphics-2.dll
 D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\sfmlnet-system-2.dll
 D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\sfmlnet-window-2.dll
-D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\IIchanDanmakuProject.csprojResolveAssemblyReference.cache
 D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\IIchanDanmakuProject.Properties.Resources.resources
 D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\IIchanDanmakuProject.csproj.GenerateResource.Cache
 D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\iichanTouhou.exe
 D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\iichanTouhou.pdb
 D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\Statistics\arial.ttf
+D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\Resources\bulletmainobject1.png
