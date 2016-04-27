@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using System.Collections.Generic;
+using SFML.Graphics;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects
@@ -44,7 +45,9 @@ namespace IIchanDanmakuProject.Objects
 
         public Vector2f Speed = new Vector2f(0, 0);
 
-      
+
+
+        public List<GameObject> TargetObjects; 
 
 
         protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, int lifeTime) 

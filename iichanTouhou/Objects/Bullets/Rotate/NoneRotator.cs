@@ -1,6 +1,4 @@
-﻿using IIchanDanmakuProject.Objects.Rotate;
-
-namespace IIchanDanmakuProject.Objects.Bullets.Rotate
+﻿namespace IIchanDanmakuProject.Objects.Bullets.Rotate
 {
     class NoneRotator:RotatorBase
     {

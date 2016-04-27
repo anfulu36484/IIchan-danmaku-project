@@ -4,17 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IIchanDanmakuProject.Helpers.ObjectPool;
+using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
+using SFML.System;
 
 namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 {
-    class AttackOfMainObject1Pool :Pool<Bulleto1>
+    class AttackOfMainObject1Pool :Pool<BulletForMainObject1>
     {
-        public AttackOfMainObject1Pool()
+        private readonly MainObject _mainObject;
 
-        public override Bulleto1 CreateObject()
+        public AttackOfMainObject1Pool(MainObject mainObject)
         {
-            return new Bulleto1();
+            _mainObject = mainObject;
+        }
+
+        public override BulletForMainObject1 CreateObject()
+        {
+            return new BulletForMainObject1(_mainObject.danmaku,_mainObject.CenterCoordinates+new Vector2f(0,20),
+                _mainObject.TargetObjects,_mainObject,null);
         }
     }
 }

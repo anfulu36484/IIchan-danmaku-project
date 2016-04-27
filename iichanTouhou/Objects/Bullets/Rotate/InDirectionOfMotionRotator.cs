@@ -1,6 +1,5 @@
 ﻿using System;
 using IIchanDanmakuProject.Helpers;
-using IIchanDanmakuProject.Objects.Rotate;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets.Rotate

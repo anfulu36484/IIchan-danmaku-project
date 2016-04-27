@@ -17,6 +17,9 @@ namespace IIchanDanmakuProject.Slice
             Shinigami = new Shinigami(_danmaku);
         }
 
+
+
+
         protected void NextSlice(SliceOfLifeBase sliceOfLife)
         {
             _danmaku.SliceOfLifeBase = sliceOfLife;

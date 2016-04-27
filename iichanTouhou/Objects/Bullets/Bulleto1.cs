@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
-using IIchanDanmakuProject.Objects.Rotate;
 using SFML.Graphics;
 using SFML.System;
 

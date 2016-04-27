@@ -29,6 +29,10 @@ namespace IIchanDanmakuProject
             _textures.Add("hitbox", GenerateTexture(Properties.Resources.hitbox, ImageFormat.Png));
 
             _textures.Add("bullet11", GenerateTexture(Properties.Resources.hitbox, ImageFormat.Png));
+
+            _textures.Add("bulletmainobject1", new Texture(@"D:\С_2015\IIchan danmaku project\iichanTouhou\Resources\bulletmainobject1.png"));
+
+
         }
 
         public Texture this[string name] => _textures[name];

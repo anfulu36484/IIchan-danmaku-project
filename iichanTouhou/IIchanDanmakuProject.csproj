@@ -95,6 +95,7 @@
     <Compile Include="Helpers\ObjectPool\Pool.cs" />
     <Compile Include="Helpers\Vector.cs" />
     <Compile Include="Objects\Bullets\Bullet3.cs" />
+    <Compile Include="Objects\Bullets\BulletForMainObject1.cs" />
     <Compile Include="Objects\Bullets\Bulleto1.cs" />
     <Compile Include="Objects\Hitbox.cs" />
     <Compile Include="Objects\ObjectsDeath\Shinigami.cs" />
@@ -177,7 +178,11 @@
   <ItemGroup>
     <None Include="Resources\bullet11.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\bulletmainobject1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
