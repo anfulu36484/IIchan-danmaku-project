@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
@@ -11,7 +12,7 @@ namespace IIchanDanmakuProject.Attack
 
         protected readonly Vector2f StartPoint;
 
-        protected BulletBase[] Bullets;
+        protected List<BulletBase> Bullets;
 
         protected int CountOfBullets;
 

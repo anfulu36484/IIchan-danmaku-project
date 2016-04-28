@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using IIchanDanmakuProject;
 using IIchanDanmakuProject.Area;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Slice;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
@@ -13,14 +14,18 @@ namespace IIchanDanmakuProject.Attack.StandartAttack
         {
             CountOfBullets = 50;
 
-            Bullets = new Bullet1[CountOfBullets];
+            Bullets = new List<BulletBase>(CountOfBullets);
             float fi = 10;
             for (int i = 0; i < CountOfBullets; i++)
             {
-                Bullets[i] =new Bullet1(Danmaku, GetPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
+                BulletBase bullet = new Bullet1(Danmaku, GetPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
                     OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
-                Bullets[i].Initialize();
-                Bullets[i].Speed = (Bullets[i].Position - StartPoint).Normalize()*1.5f;
+
+                bullet.Initialize();
+                bullet.Speed =  (Bullets[i].Position - StartPoint).Normalize()*1.5f;
+
+                Bullets.Add(bullet);
+
                 fi += 10f;
             }
         }
@@ -35,7 +40,7 @@ namespace IIchanDanmakuProject.Attack.StandartAttack
         public override void Update()
         {
             base.Update();
-            for (int i = 0; i < Bullets.Length; i++)
+            for (int i = 0; i < Bullets.Count; i++)
             {
                 if (Bullets[i] != null)
                 {

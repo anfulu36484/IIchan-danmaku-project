@@ -2,7 +2,7 @@
 using IIchanDanmakuProject.Helpers;
 using SFML.System;
 
-namespace IIchanDanmakuProject.Objects.Bullets.Rotate
+namespace IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate
 {
     class InDirectionOfMotionRotator :RotatorBase
     {

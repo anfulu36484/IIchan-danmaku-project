@@ -20,8 +20,11 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             {
                 /*bullets[i] = new Bullet3(Danmaku, GetPosition(FiArray[i])
                     , new Vector2f(20, 20), 8, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);*/
-                Bullets[i] = new Bulleto1(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
-                Bullets[i].Initialize();
+                BulletBase bullet = new Bulleto1(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
+                bullet.Initialize();
+
+                Bullets.Add(bullet);
+
             }
         }
 

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using IIchanDanmakuProject.Helpers;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
 using SFML.System;
 
@@ -9,7 +11,6 @@ namespace IIchanDanmakuProject.Objects.Bullets
 {
     abstract class BulletBase :GameObject
     {
-        public List<GameObject> TargetObjects { get; }
         public GameObject OwnerObject { get; }
 
         private List<float> _safeDistances;
@@ -17,6 +18,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
         public event EventHandler<EventArgs> Collision;
 
         private RotatorBase _rotator;
+
+        protected DeterminantOfDirectionOfMovementBase DeterminantOfDirectionOfMovement;
 
         private void DefineSaveDistances(List<GameObject> targetObjects)
         {
@@ -42,9 +45,10 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
             int lifeTime,
-            RotatorBase rotator)
+            RotatorBase rotator,
+            DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement)
             : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }.ToList(), ownerObject, onCollision, lifeTime,
-                 rotator)
+                 rotator, determinantOfDirectionOfMovement)
         {
 
         }
@@ -58,7 +62,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
             EventHandler<EventArgs> onCollision,
             int lifeTime)
             :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject }.ToList(),ownerObject,onCollision,lifeTime,
-                 new NoneRotator())
+                 new NoneRotator(),
+                 new NoneDeterminantOfDirectionOfMovement())
         {
 
         }
@@ -72,7 +77,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
             int lifeTime, 
-            RotatorBase rotator)
+            RotatorBase rotator,
+            DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement)
             : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
         {
             TargetObjects = targetObjects;
@@ -80,7 +86,9 @@ namespace IIchanDanmakuProject.Objects.Bullets
             DefineSaveDistances(TargetObjects);
             Collision += onCollision;
             _rotator = rotator;
-            _rotator.AddBullet(this);
+            _rotator.Initialize(this);
+            DeterminantOfDirectionOfMovement = determinantOfDirectionOfMovement;
+            DeterminantOfDirectionOfMovement.Initialize(this);
         }
 
         private bool IsCollisionDetection()
@@ -97,6 +105,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
         {
             base.Update();
             _rotator.Rotate();
+            DeterminantOfDirectionOfMovement.Move();
             if (IsCollisionDetection())
             {
                 Collision(this,new EventArgs());

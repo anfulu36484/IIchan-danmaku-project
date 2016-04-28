@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
@@ -25,7 +26,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
 
         private void PolarAttack_Died(object sender, EventArgs e)
         {
-            for (int i = 0; i < Bullets.Length; i++)
+            for (int i = 0; i < Bullets.Count; i++)
             {
                 Danmaku.SliceOfLifeBase.Shinigami.AddAsBonus(Bullets[i]);
                 Bullets[i] = null;
@@ -39,7 +40,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             {
                 FiArray[i] = i;
             }
-            Bullets = new BulletBase[CountOfBullets];
+            Bullets = new List<BulletBase>(CountOfBullets);
         }
 
         public override void Update()

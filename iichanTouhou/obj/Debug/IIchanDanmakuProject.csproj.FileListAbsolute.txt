@@ -11,3 +11,4 @@ D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\iichanTouhou.exe
 D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\iichanTouhou.pdb
 D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\Statistics\arial.ttf
 D:\С_2015\IIchan danmaku project\iichanTouhou\bin\Debug\Resources\bulletmainobject1.png
+D:\С_2015\IIchan danmaku project\iichanTouhou\obj\Debug\IIchanDanmakuProject.csprojResolveAssemblyReference.cache
