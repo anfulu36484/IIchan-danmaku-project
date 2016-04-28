@@ -12,13 +12,14 @@ namespace IIchanDanmakuProject.Objects.Bullets
             List<GameObject> targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision) 
             : base(danmaku, startPosition, new Vector2f(20,20), 10, targetObjects, ownerObject, onCollision, 
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator(),
-                  new MovementToNearestTargetObject())
+                  new MovementToNearestTargetObject(),
+                  danmaku.Textures["bulletmainobject1"])
         {
         }
 
         public override void Initialize()
         {
-            Texture = danmaku.Textures["bulletmainobject1"];
+
         }
     }
 }

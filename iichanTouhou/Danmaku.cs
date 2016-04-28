@@ -31,17 +31,7 @@ namespace IIchanDanmakuProject
             : base(1280, 960, "IIchan Danmaku Project", Color.Black)
         {
             window.Resized += Window_Resized;
-            
-            Textures = new Textures();
-
-            backgroundArea = new BackgroundArea(this);
-            GameArea = new GameArea(this);
-            StatisticsArea = new StatisticsArea(this,GameArea);
-            MainObject =new MainObject(this,new Vector2f(500,900),new Vector2f(20,20),5);
-            SliceOfLifeBase = new SliceOfLife1(this,MainObject);
-
-            StatisticsView = new StatisticsView(this);
-
+ 
             //нужно лучше стараться
             window.Size=new Vector2u(window.Size.X,(uint)(SystemInformation.PrimaryMonitorSize.Height*0.9f));
             Window_Resized(null, null);
@@ -69,7 +59,17 @@ namespace IIchanDanmakuProject
 
         public override void Initialize()
         {
+            Textures = new Textures();
             Textures.Load();
+
+            backgroundArea = new BackgroundArea(this);
+            GameArea = new GameArea(this);
+            StatisticsArea = new StatisticsArea(this, GameArea);
+            MainObject = new MainObject(this, new Vector2f(500, 900), new Vector2f(20, 20), 5);
+            SliceOfLifeBase = new SliceOfLife1(this, MainObject);
+
+            StatisticsView = new StatisticsView(this);
+
             backgroundArea.Initialize();
             GameArea.Initialize();
             StatisticsArea.Initialize();

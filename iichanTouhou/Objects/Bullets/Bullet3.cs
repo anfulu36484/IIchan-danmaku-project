@@ -7,13 +7,12 @@ namespace IIchanDanmakuProject.Objects.Bullets
     {
         public Bullet3(Danmaku danmaku, Vector2f startPosition, Vector2f size, 
             float hitboxRadius, GameObject targetObject, GameObject ownerObject, EventHandler<EventArgs> onCollision, int lifeTime)
-            : base(danmaku, startPosition, size, hitboxRadius, targetObject, ownerObject, onCollision, lifeTime)
+            : base(danmaku, startPosition, size, hitboxRadius, targetObject, ownerObject, onCollision, lifeTime, danmaku.Textures["bullet3"])
         {
         }
 
         public override void Initialize()
         {
-            Texture = danmaku.Textures["bullet3"];
         }
 
     }

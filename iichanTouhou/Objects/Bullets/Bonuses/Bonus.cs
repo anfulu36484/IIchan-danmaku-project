@@ -11,11 +11,11 @@ namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
         public Bonus(Danmaku danmaku, Vector2f startPosition,GameObject targetObject,
             GameObject ownerObject, EventHandler<EventArgs> onCollision)
         : base(danmaku, startPosition, new Vector2f(5,5),2, targetObject, ownerObject, 
-              onCollision, int.MaxValue/danmaku.FrameRateLimit,new NoneRotator(), new MovementToNearestTargetObject())
+              onCollision, int.MaxValue/danmaku.FrameRateLimit,new NoneRotator(), new MovementToNearestTargetObject(),
+              danmaku.Textures["Bonus"])
         {
             DeterminantOfDirectionOfMovement.SpeedFactor = 5;
 
-            Texture = danmaku.Textures["Bonus"];
             Collision += Bonus_Collision;
         }
 

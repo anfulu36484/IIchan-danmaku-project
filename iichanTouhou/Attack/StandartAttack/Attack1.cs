@@ -22,7 +22,7 @@ namespace IIchanDanmakuProject.Attack.StandartAttack
                     OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
 
                 bullet.Initialize();
-                bullet.Speed =  (Bullets[i].Position - StartPoint).Normalize()*1.5f;
+                //bullet.Speed =  (Bullets[i].Position - StartPoint).Normalize()*1.5f;
 
                 Bullets.Add(bullet);
 

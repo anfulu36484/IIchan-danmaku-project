@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.CodeDom;
+using System.Collections.Generic;
 using SFML.Graphics;
 using SFML.System;
 
@@ -47,10 +48,16 @@ namespace IIchanDanmakuProject.Objects
 
 
 
-        public List<GameObject> TargetObjects; 
+        public List<GameObject> TargetObjects;
 
 
-        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, int lifeTime) 
+        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, Texture texture)
+            :this(danmaku, startPosition, size, hitboxRadius, int.MaxValue/danmaku.FrameRateLimit, texture)
+        {
+            
+        }
+
+        protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, int lifeTime, Texture texture) 
             : base(danmaku, lifeTime)
         {
             this.danmaku = danmaku;
@@ -60,6 +67,8 @@ namespace IIchanDanmakuProject.Objects
                 Position = startPosition,
                 Size = size
             };
+
+            Texture = texture;
 
             HitboxRadius = hitboxRadius;
         }

@@ -17,7 +17,7 @@ namespace IIchanDanmakuProject.Objects
         public int Power;
 
         public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius)
-            : base(danmaku, startPosition, size, hitboxRadius, int.MaxValue/danmaku.FrameRateLimit)
+            : base(danmaku, startPosition, size, hitboxRadius, null)
         {
             _hitbox = new Hitbox(danmaku,this);
         }

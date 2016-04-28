@@ -7,15 +7,13 @@ namespace IIchanDanmakuProject.Objects.NPC
     class NPC1 :GameObject
     {
         public NPC1(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, int lifeTime)
-            : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
+            : base(danmaku, startPosition, size, hitboxRadius, lifeTime,danmaku.Textures["npc"])
         {
         }
 
 
         public override void Initialize()
         {
-            Texture = danmaku.Textures["npc"];
-
             Speed =new Vector2f(0,2f);
         }
 

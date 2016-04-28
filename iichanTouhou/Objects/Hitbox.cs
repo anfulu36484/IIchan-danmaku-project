@@ -12,15 +12,14 @@ namespace IIchanDanmakuProject.Objects
             : base(danmaku, 
                   ownerObject.CenterCoordinates- new Vector2f(ownerObject.HitboxRadius, ownerObject.HitboxRadius), 
                   new Vector2f(ownerObject.HitboxRadius*2, ownerObject.HitboxRadius * 2), 
-                  ownerObject.HitboxRadius ,
-                  int.MaxValue/danmaku.FrameRateLimit)
+                  ownerObject.HitboxRadius, danmaku.Textures["hitbox"]
+                  )
         {
             _ownerObject = ownerObject;
         }
 
         public override void Initialize()
         {
-            Texture = danmaku.Textures["hitbox"];
         }
 
         public override void Update()

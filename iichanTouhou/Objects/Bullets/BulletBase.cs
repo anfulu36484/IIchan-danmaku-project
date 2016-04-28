@@ -5,6 +5,7 @@ using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
+using SFML.Graphics;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets
@@ -46,9 +47,10 @@ namespace IIchanDanmakuProject.Objects.Bullets
             EventHandler<EventArgs> onCollision,
             int lifeTime,
             RotatorBase rotator,
-            DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement)
+            DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement,
+            Texture texture)
             : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }.ToList(), ownerObject, onCollision, lifeTime,
-                 rotator, determinantOfDirectionOfMovement)
+                 rotator, determinantOfDirectionOfMovement,texture)
         {
 
         }
@@ -60,10 +62,13 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject targetObject,
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
-            int lifeTime)
+            int lifeTime,
+            Texture texture
+            )
             :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject }.ToList(),ownerObject,onCollision,lifeTime,
                  new NoneRotator(),
-                 new NoneDeterminantOfDirectionOfMovement())
+                 new NoneDeterminantOfDirectionOfMovement(),
+                 texture)
         {
 
         }
@@ -78,8 +83,9 @@ namespace IIchanDanmakuProject.Objects.Bullets
             EventHandler<EventArgs> onCollision,
             int lifeTime, 
             RotatorBase rotator,
-            DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement)
-            : base(danmaku, startPosition, size, hitboxRadius, lifeTime)
+            DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement,
+            Texture texture)
+            : base(danmaku, startPosition, size, hitboxRadius, lifeTime,texture)
         {
             TargetObjects = targetObjects;
             OwnerObject = ownerObject;
