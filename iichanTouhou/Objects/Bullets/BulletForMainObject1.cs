@@ -10,16 +10,18 @@ namespace IIchanDanmakuProject.Objects.Bullets
     {
         public BulletForMainObject1(Danmaku danmaku, Vector2f startPosition, 
             List<GameObject> targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision) 
-            : base(danmaku, startPosition, new Vector2f(20,20), 10, targetObjects, ownerObject, onCollision, 
+            : base(danmaku, startPosition, new Vector2f(50,50), 25, targetObjects, ownerObject, onCollision, 
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator(),
                   new MovementToNearestTargetObject(),
-                  danmaku.Textures["bulletmainobject1"])
+                  danmaku.Textures["bulletmainobject3"])
         {
+            
         }
 
         public override void Initialize()
         {
-
+            DeterminantOfDirectionOfMovement.SpeedFactor = 10;
+           
         }
     }
 }

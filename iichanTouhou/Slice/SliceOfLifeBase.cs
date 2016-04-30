@@ -1,4 +1,5 @@
-﻿using IIchanDanmakuProject.Objects;
+﻿using System.Collections.Generic;
+using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.ObjectsDeath;
 
 namespace IIchanDanmakuProject.Slice
@@ -10,13 +11,16 @@ namespace IIchanDanmakuProject.Slice
 
         public Shinigami Shinigami;
 
+        public List<GameObject> GameObjects;
+
         protected SliceOfLifeBase(Danmaku danmaku, MainObject mainObject)
         {
             MainObject = mainObject;
             _danmaku = danmaku;
             Shinigami = new Shinigami(_danmaku);
+            GameObjects = new List<GameObject>();
+            MainObject.TargetObjects = GameObjects;
         }
-
 
 
 
@@ -25,16 +29,32 @@ namespace IIchanDanmakuProject.Slice
             _danmaku.SliceOfLifeBase = sliceOfLife;
         }
 
+        public override void Initialize()
+        {
+            foreach (var gameObject in GameObjects)
+            {
+                gameObject?.Initialize();
+            }
+        }
+
         public override void Update()
         {
-            Shinigami.Update();
+            foreach (var gameObject in GameObjects)
+            {
+                gameObject?.Update();
+            }
             MainObject.Update();
+            Shinigami.Update();
         }
 
         public override void Render()
         {
-            Shinigami.Render();
+            foreach (var gameObject in GameObjects)
+            {
+                gameObject?.Render();
+            }
             MainObject.Render();
+            Shinigami.Render();
         }
     }
 }

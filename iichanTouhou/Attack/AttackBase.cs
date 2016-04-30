@@ -30,7 +30,7 @@ namespace IIchanDanmakuProject.Attack
         protected abstract Vector2f GetPosition(float fi);
 
 
-        public void OnCollision(object obj, EventArgs e)
+        public virtual void OnCollision(object obj, EventArgs e)
         {
             Console.WriteLine(@"Столкновение произошло");
         }

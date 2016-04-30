@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using IIchanDanmakuProject.Attack.AttackOfMainObject;
+using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 
@@ -11,6 +12,8 @@ namespace IIchanDanmakuProject.Objects
 
         private readonly Hitbox _hitbox;
 
+
+        private AttackOfMainObject1 _ataAttackOfMainObject1;
 
         public int Score;
 
@@ -39,6 +42,8 @@ namespace IIchanDanmakuProject.Objects
         {
             RectangleShape.FillColor = Color.Green;
             _hitbox.Initialize();
+            _ataAttackOfMainObject1 = new AttackOfMainObject1(Danmaku,this,CenterCoordinates,50,1);
+            _ataAttackOfMainObject1.Initialize();
         }
 
         void Move(float speed)
@@ -69,12 +74,14 @@ namespace IIchanDanmakuProject.Objects
             Move(Keyboard.IsKeyPressed(Keyboard.Key.LShift) ? focusSpeed : ordinarySpeed);
 
             _hitbox.Update();
+            _ataAttackOfMainObject1.Update();
         }
 
         public override void Render()
         {
             base.Render();
             _hitbox.Render();
+            _ataAttackOfMainObject1.Render();
         }
     }
 }

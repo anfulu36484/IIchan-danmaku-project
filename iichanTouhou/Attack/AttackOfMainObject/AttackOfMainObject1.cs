@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
@@ -22,17 +23,24 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         public override void Initialize()
         {
-            _attackOfMainObject1Pool = new AttackOfMainObject1Pool((MainObject)OwnerObject);
-            _timeBetweenAttacks = 60;
+            _attackOfMainObject1Pool = new AttackOfMainObject1Pool((MainObject)OwnerObject,this);
+            _timeBetweenAttacks = 7;
+            Bullets = new List<BulletBase>();
+        }
+
+        public override void OnCollision(object obj, EventArgs e)
+        {
+            _attackOfMainObject1Pool.Release((BulletForMainObject1)obj);
+            Bullets.Remove((BulletBase)obj);
         }
 
 
         void Attack()
         {
-            if (_nextTimeAttack == 0 || _nextTimeAttack >= LivedTime)
+            if ( _nextTimeAttack <= LivedTime)
             {
                 Bullets.Add(_attackOfMainObject1Pool.CreateObject());
-                _nextTimeAttack = LivedTime - _nextTimeAttack;
+                _nextTimeAttack = LivedTime + _timeBetweenAttacks;
             }
         }
 

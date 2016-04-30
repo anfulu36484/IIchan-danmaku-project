@@ -114,7 +114,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             DeterminantOfDirectionOfMovement.Move();
             if (IsCollisionDetection())
             {
-                Collision(this,new EventArgs());
+                Collision?.Invoke(this,new EventArgs());
             }
                 
         }
