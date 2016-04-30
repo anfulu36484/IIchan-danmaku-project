@@ -71,6 +71,8 @@ namespace IIchanDanmakuProject.Objects
             Texture = texture;
 
             HitboxRadius = hitboxRadius;
+
+
         }
 
 

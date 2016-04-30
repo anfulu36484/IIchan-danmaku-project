@@ -107,6 +107,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
             return false;
         }
 
+        public override void Initialize(){}
+
         public override void Update()
         {
             base.Update();

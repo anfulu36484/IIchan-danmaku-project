@@ -11,9 +11,5 @@ namespace IIchanDanmakuProject.Objects.Bullets
         {
         }
 
-        public override void Initialize()
-        {
-        }
-
     }
 }

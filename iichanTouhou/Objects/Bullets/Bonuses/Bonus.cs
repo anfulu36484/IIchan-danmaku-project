@@ -25,11 +25,5 @@ namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
         {
             Danmaku.MainObject.Score += _bonusPoint;
         }
-
-        public override void Initialize()
-        {
-
-        }
-
     }
 }
