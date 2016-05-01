@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using IIchanDanmakuProject.Objects;
-using IIchanDanmakuProject.Objects.ObjectsDeath;
 
 namespace IIchanDanmakuProject.Slice
 {

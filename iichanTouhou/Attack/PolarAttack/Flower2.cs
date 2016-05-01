@@ -52,7 +52,5 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             return ConvertToCartesianCoordinates(r, fi);
         }
 
-
-        
     }
 }

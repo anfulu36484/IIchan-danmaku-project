@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing.Imaging;
 using SFML.Graphics;
 using SFML.System;
 
@@ -39,7 +41,7 @@ namespace IIchanDanmakuProject.Objects
 
         public Vector2f CenterCoordinates
         {
-            get { return new Vector2f(Position.X + Size.X * 0.5f, Position.Y + Size.Y * 0.5f);}
+            get {return  new Vector2f(Position.X + Size.X * 0.5f, Position.Y + Size.Y * 0.5f);}
             set { Position = new Vector2f(value.X- Size.X * 0.5f,value.Y- Size.Y * 0.5f); }
         }
 
@@ -79,7 +81,9 @@ namespace IIchanDanmakuProject.Objects
             if (this.Position.X > danmaku.GameArea.Size.X
                 || this.Position.Y > danmaku.GameArea.Size.Y
                 || this.Position.X < danmaku.GameArea.Position.X- Size.X
-                || this.Position.Y < danmaku.GameArea.Position.Y - Size.Y)
+                || this.Position.Y < danmaku.GameArea.Position.Y - Size.Y 
+                || float.IsNaN(Position.X) 
+                || float.IsNaN(Position.Y))
                 return false;
             return true;
         }

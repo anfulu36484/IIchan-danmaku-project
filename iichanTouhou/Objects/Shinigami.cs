@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
 
-namespace IIchanDanmakuProject.Objects.ObjectsDeath
+namespace IIchanDanmakuProject.Objects
 {
     class Shinigami:GameObject
     {

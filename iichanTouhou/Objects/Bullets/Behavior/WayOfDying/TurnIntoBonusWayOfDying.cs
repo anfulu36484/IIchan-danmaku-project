@@ -10,6 +10,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying
 
         public override void Run()
         {
+            base.Run();
             if (Bullet.IsObjectInGameArea())
             {
                 Bonus bonus = new Bonus(Danmaku, Bullet.Position, Bullet.TargetObjects[0],

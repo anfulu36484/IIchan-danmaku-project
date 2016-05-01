@@ -12,6 +12,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying
 
         public override void Run()
         {
+            base.Run();
             if (Bullet.IsObjectInGameArea())
             {
                 Bullet.Speed = (Bullet.CenterCoordinates - Bullet.OwnerObject.CenterCoordinates).Normalize() * _speedFactor;

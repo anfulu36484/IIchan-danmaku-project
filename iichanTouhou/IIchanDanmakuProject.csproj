@@ -106,7 +106,7 @@
     <Compile Include="Objects\Bullets\BulletForMainObject1.cs" />
     <Compile Include="Objects\Bullets\Bulleto1.cs" />
     <Compile Include="Objects\Hitbox.cs" />
-    <Compile Include="Objects\ObjectsDeath\Shinigami.cs" />
+    <Compile Include="Objects\Shinigami.cs" />
     <Compile Include="Objects\Bullets\Bonuses\Bonus.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Objects\Bullets\Bullet1.cs" />
