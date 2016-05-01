@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
+using IIchanDanmakuProject.Objects.Bullets.MainObjectBullets;
 using SFML.System;
 using SFML.Window;
 

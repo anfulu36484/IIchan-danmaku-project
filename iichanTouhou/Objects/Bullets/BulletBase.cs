@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using IIchanDanmakuProject.Helpers;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
@@ -23,6 +24,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
         private RotatorBase _rotator;
 
         protected DeterminantOfDirectionOfMovementBase DeterminantOfDirectionOfMovement;
+
+        protected StatChanger StatChanger;
 
         private void DefineSaveDistances(List<GameObject> targetObjects)
         {
@@ -51,10 +54,11 @@ namespace IIchanDanmakuProject.Objects.Bullets
             RotatorBase rotator,
             DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement,
             Texture texture,
-            WayOfDyingBase wayOfDyingBase
+            WayOfDyingBase wayOfDyingBase,
+            StatChanger statChanger
             )
             : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }.ToList(), ownerObject, onCollision, lifeTime,
-                 rotator, determinantOfDirectionOfMovement,texture, wayOfDyingBase)
+                 rotator, determinantOfDirectionOfMovement,texture, wayOfDyingBase,statChanger)
         {
 
         }
@@ -67,12 +71,14 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
             int lifeTime,
-            Texture texture)
+            Texture texture,
+            StatChanger statChanger)
             :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject }.ToList(),ownerObject,onCollision,lifeTime,
                  new NoneRotator(),
                  new NoneDeterminantOfDirectionOfMovement(),
                  texture,
-                 new NoneWayOfDying(danmaku))
+                 new NoneWayOfDying(danmaku),
+                 statChanger)
         {
 
         }
@@ -89,7 +95,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
             RotatorBase rotator,
             DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement,
             Texture texture,
-            WayOfDyingBase wayOfDyingBase
+            WayOfDyingBase wayOfDyingBase,
+            StatChanger statChanger
             )
             : base(danmaku, startPosition, size, hitboxRadius, lifeTime,texture)
         {
@@ -103,16 +110,17 @@ namespace IIchanDanmakuProject.Objects.Bullets
             DeterminantOfDirectionOfMovement = determinantOfDirectionOfMovement;
             DeterminantOfDirectionOfMovement.Initialize(this);
             WayOfDyingBase.Initialize(this);
+            StatChanger = statChanger;
         }
 
-        private bool IsCollisionDetection()
+        private GameObject GetCollidedObject()
         {
             for (int i = 0; i < TargetObjects.Count; i++)
             {
                 if((this.CenterCoordinates - TargetObjects[i].CenterCoordinates).Length() <= _safeDistances[i])
-                    return true;
+                    return TargetObjects[i];
             }
-            return false;
+            return null;
         }
 
         public override void OnDied(object sender, EventArgs e)
@@ -128,11 +136,25 @@ namespace IIchanDanmakuProject.Objects.Bullets
             base.Update();
             _rotator.Rotate();
             DeterminantOfDirectionOfMovement.Move();
-            if (IsCollisionDetection())
+
+            GameObject collidedObject = GetCollidedObject();
+
+            if (collidedObject!=null)
             {
-                Collision(this,new EventArgs());
+                StatChanger.ChangeStats(collidedObject);
+                Collision(this,new CollisionEventArgs(collidedObject));
             }
                 
+        }
+    }
+
+    class CollisionEventArgs : EventArgs
+    {
+        public GameObject CollidedObject { get; }
+
+        public CollisionEventArgs(GameObject collidedObject)
+        {
+            CollidedObject = collidedObject;
         }
     }
 }

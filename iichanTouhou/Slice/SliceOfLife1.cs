@@ -11,7 +11,7 @@ namespace IIchanDanmakuProject.Slice
         public SliceOfLife1(Danmaku danmaku, MainObject mainObject) : base(danmaku, mainObject)
         {
             npc1 = new NPC1(danmaku,new Vector2f(500,-100),new Vector2f(50,50),25 ,int.MaxValue/60 );
-            GameObjects.Add(npc1);
+            AddNPC(npc1);
         }
 
 

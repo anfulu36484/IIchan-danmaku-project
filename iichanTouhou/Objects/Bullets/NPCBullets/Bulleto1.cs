@@ -1,4 +1,5 @@
 ﻿using System;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
@@ -12,7 +13,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             EventHandler<EventArgs> onCollision) 
             : base(danmaku, startPosition, new Vector2f(40,40), 5, targetObject, ownerObject, onCollision,
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator(), new NoneDeterminantOfDirectionOfMovement()
-                  , danmaku.Textures["bulleto1"],new TurnIntoBonusWayOfDying(danmaku))
+                  , danmaku.Textures["bulleto1"],new TurnIntoBonusWayOfDying(danmaku),new StatChanger(-100))
         {
         }
 

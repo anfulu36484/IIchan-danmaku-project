@@ -15,6 +15,7 @@ namespace IIchanDanmakuProject.Objects.NPC
         public override void Initialize()
         {
             Speed =new Vector2f(0,2f);
+            XP = 10;
         }
 
 
@@ -33,7 +34,13 @@ namespace IIchanDanmakuProject.Objects.NPC
 
             _flower2?.Update();
 
-            
+        }
+
+
+        public override void OnDied(object sender, EventArgs e)
+        {
+            base.OnDied(sender, e);
+            _flower2.OnDied(this,new EventArgs());
         }
 
         private Flower2 _flower2;

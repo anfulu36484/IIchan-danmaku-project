@@ -40,7 +40,7 @@ namespace IIchanDanmakuProject
         private int _XP = 1;
         
 
-        protected int XP
+        public int XP
         {
             get { return _XP; }
             set

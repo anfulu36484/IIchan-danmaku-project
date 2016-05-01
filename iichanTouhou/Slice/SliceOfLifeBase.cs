@@ -21,7 +21,16 @@ namespace IIchanDanmakuProject.Slice
             MainObject.TargetObjects = GameObjects;
         }
 
+        public void AddNPC(GameObject gameObject)
+        {
+            gameObject.Died += GameObject_Died;
+            GameObjects.Add(gameObject);
+        }
 
+        private void GameObject_Died(object sender, System.EventArgs e)
+        {
+            GameObjects.Remove((GameObject) sender);
+        }
 
         protected void NextSlice(SliceOfLifeBase sliceOfLife)
         {

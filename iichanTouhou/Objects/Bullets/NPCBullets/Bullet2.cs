@@ -1,4 +1,5 @@
 ﻿using System;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
@@ -31,7 +32,8 @@ namespace IIchanDanmakuProject.Objects.Bullets
                   new NoneRotator(), 
                   new NoneDeterminantOfDirectionOfMovement(), 
                   danmaku.Textures["bullet2"], 
-                  new TurnIntoBonusWayOfDying(danmaku))
+                  new TurnIntoBonusWayOfDying(danmaku),
+                  new StatChanger(-100))
         {
         }
     }

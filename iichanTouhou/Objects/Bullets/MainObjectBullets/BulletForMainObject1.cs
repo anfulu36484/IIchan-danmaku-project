@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
 using SFML.System;
 
-namespace IIchanDanmakuProject.Objects.Bullets
+namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
 {
     class BulletForMainObject1 :BulletBase
     {
@@ -14,9 +15,9 @@ namespace IIchanDanmakuProject.Objects.Bullets
             : base(danmaku, startPosition, new Vector2f(50,50), 25, targetObjects, ownerObject, onCollision, 
                   int.MaxValue/danmaku.FrameRateLimit, 
                   new InDirectionOfMotionRotator(),
-                  new MovementToNearestTargetObject(),
+                  new MovementToNearestTargetObject(new Vector2f(0,-1)),
                   danmaku.Textures["bulletmainobject3"],
-                  new NoneWayOfDying(danmaku))
+                  new NoneWayOfDying(danmaku),new StatChanger(-1))
         {
             
         }
@@ -24,7 +25,6 @@ namespace IIchanDanmakuProject.Objects.Bullets
         public override void Initialize()
         {
             DeterminantOfDirectionOfMovement.SpeedFactor = 10;
-           
         }
     }
 }
