@@ -19,19 +19,9 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             : base(danmaku, ownerObject, startPoint, lifeTime, countOfBulletsForEasyMode)
         {
             _attackScale = attackScale;
-            Died += PolarAttack_Died;
             K = startValueOfconstantK;
         }
 
-
-        private void PolarAttack_Died(object sender, EventArgs e)
-        {
-            for (int i = 0; i < Bullets.Count; i++)
-            {
-                Danmaku.SliceOfLifeBase.Shinigami.AddAsBonus(Bullets[i]);
-                Bullets[i] = null;
-            }
-        }
 
         public override void Initialize()
         {
@@ -46,7 +36,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
         public override void Update()
         {
             base.Update();
-            for (int i = 0; i < CountOfBullets; i++)
+            /*for (int i = 0; i < Bullets.Count; i++)
             {
                 if (Bullets[i] != null)
                 {
@@ -54,7 +44,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
                     Bullets[i].Position = GetPosition(FiArray[i]);
                 }
             }
-            K += 0.000007f;
+            K += 0.000007f;*/
         }
 
 
@@ -63,7 +53,5 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             return new Vector2f((float)(r * Math.Cos(fi) * _attackScale + StartPoint.X), (float)(r * Math.Sin(fi)) * _attackScale + StartPoint.Y);
         }
 
-
-        
     }
 }

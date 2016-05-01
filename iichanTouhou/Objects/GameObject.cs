@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SFML.Graphics;
 using SFML.System;
 
@@ -71,12 +70,9 @@ namespace IIchanDanmakuProject.Objects
             Texture = texture;
 
             HitboxRadius = hitboxRadius;
-
-
         }
 
-
-
+        
 
         public bool IsObjectInGameArea()
         {

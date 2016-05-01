@@ -18,12 +18,23 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             base.Initialize();
             for (int i = 0; i < CountOfBullets; i++)
             {
-                BulletBase bullet = new Bullet2(Danmaku, GetPosition(FiArray[i])
-                    , new Vector2f(30, 30), 10, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
-                bullet .Initialize();
-
+                BulletBase bullet =new Bullet2(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
                 Bullets.Add(bullet);
             }
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            for (int i = 0; i < CountOfBullets; i++)
+            {
+                if (Bullets[i] != null)
+                {
+                    Bullets[i].Update();
+                    Bullets[i].Position = GetPosition(FiArray[i]);
+                }
+            }
+            K += 0.000007f;
         }
 
         protected override Vector2f GetPosition(float fi)

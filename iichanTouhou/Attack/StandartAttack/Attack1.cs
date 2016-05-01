@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;

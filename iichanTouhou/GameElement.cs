@@ -11,8 +11,11 @@ namespace IIchanDanmakuProject
         {
             Danmaku = danmaku;
             _timeOfDeath = lifeTimeInSeconds * danmaku.FrameRateLimit;
+            Died += OnDied;
         }
 
+
+        public virtual void OnDied(object sender, System.EventArgs e) { }
 
         private int _livedTime;
 

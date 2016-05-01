@@ -1,6 +1,6 @@
 ﻿using System;
-using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
 using SFML.System;
 
@@ -12,7 +12,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
             GameObject ownerObject, EventHandler<EventArgs> onCollision)
         : base(danmaku, startPosition, new Vector2f(5,5),2, targetObject, ownerObject, 
               onCollision, int.MaxValue/danmaku.FrameRateLimit,new NoneRotator(), new MovementToNearestTargetObject(),
-              danmaku.Textures["Bonus"])
+              danmaku.Textures["Bonus"],new NoneWayOfDying(danmaku))
         {
             DeterminantOfDirectionOfMovement.SpeedFactor = 5;
 

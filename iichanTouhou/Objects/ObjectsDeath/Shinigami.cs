@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects.Bullets;
-using IIchanDanmakuProject.Objects.Bullets.Bonuses;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.ObjectsDeath
@@ -16,29 +14,14 @@ namespace IIchanDanmakuProject.Objects.ObjectsDeath
         {
         }
 
-        private float _speedFactor = 5;
-
+ 
         public void Add(BulletBase bullet)
         {
-            if (bullet.IsObjectInGameArea())
-            {
-                bullet.Speed = (bullet.CenterCoordinates - bullet.OwnerObject.CenterCoordinates).Normalize()*_speedFactor;
-                _objects.Add(bullet);
-            }
-        }
-
-        public void AddAsBonus(BulletBase bullet)
-        {
-            if (bullet.IsObjectInGameArea())
-            {
-                Bonus bonus = new Bonus(danmaku, bullet.Position, bullet.TargetObjects[0], this, OnCollision);
-                _objects.Add(bonus);
-            }
+            _objects.Add(bullet);
         }
 
 
-
-        private void OnCollision(object sender, EventArgs eventArgs)
+        public void OnCollision(object sender, EventArgs eventArgs)
         {
             _objects.Remove((BulletBase) sender);
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
 using SFML.Graphics;
 using SFML.System;
@@ -13,6 +14,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
     abstract class BulletBase :GameObject
     {
         public GameObject OwnerObject { get; }
+        protected WayOfDyingBase WayOfDyingBase { get; }
 
         private List<float> _safeDistances;
 
@@ -48,9 +50,11 @@ namespace IIchanDanmakuProject.Objects.Bullets
             int lifeTime,
             RotatorBase rotator,
             DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement,
-            Texture texture)
+            Texture texture,
+            WayOfDyingBase wayOfDyingBase
+            )
             : this(danmaku, startPosition, size, hitboxRadius, new[] { targetObject }.ToList(), ownerObject, onCollision, lifeTime,
-                 rotator, determinantOfDirectionOfMovement,texture)
+                 rotator, determinantOfDirectionOfMovement,texture, wayOfDyingBase)
         {
 
         }
@@ -63,12 +67,12 @@ namespace IIchanDanmakuProject.Objects.Bullets
             GameObject ownerObject,
             EventHandler<EventArgs> onCollision,
             int lifeTime,
-            Texture texture
-            )
+            Texture texture)
             :this (danmaku,startPosition,size,hitboxRadius, new[] { targetObject }.ToList(),ownerObject,onCollision,lifeTime,
                  new NoneRotator(),
                  new NoneDeterminantOfDirectionOfMovement(),
-                 texture)
+                 texture,
+                 new NoneWayOfDying(danmaku))
         {
 
         }
@@ -84,17 +88,21 @@ namespace IIchanDanmakuProject.Objects.Bullets
             int lifeTime, 
             RotatorBase rotator,
             DeterminantOfDirectionOfMovementBase determinantOfDirectionOfMovement,
-            Texture texture)
+            Texture texture,
+            WayOfDyingBase wayOfDyingBase
+            )
             : base(danmaku, startPosition, size, hitboxRadius, lifeTime,texture)
         {
             TargetObjects = targetObjects;
             OwnerObject = ownerObject;
+            WayOfDyingBase = wayOfDyingBase;
             DefineSaveDistances(TargetObjects);
             Collision += onCollision;
             _rotator = rotator;
             _rotator.Initialize(this);
             DeterminantOfDirectionOfMovement = determinantOfDirectionOfMovement;
             DeterminantOfDirectionOfMovement.Initialize(this);
+            WayOfDyingBase.Initialize(this);
         }
 
         private bool IsCollisionDetection()
@@ -107,6 +115,12 @@ namespace IIchanDanmakuProject.Objects.Bullets
             return false;
         }
 
+        public override void OnDied(object sender, EventArgs e)
+        {
+            base.OnDied(sender, e);
+            WayOfDyingBase.Run();
+        }
+
         public override void Initialize(){}
 
         public override void Update()
@@ -116,7 +130,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             DeterminantOfDirectionOfMovement.Move();
             if (IsCollisionDetection())
             {
-                Collision?.Invoke(this,new EventArgs());
+                Collision(this,new EventArgs());
             }
                 
         }

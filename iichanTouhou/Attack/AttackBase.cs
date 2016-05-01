@@ -24,6 +24,7 @@ namespace IIchanDanmakuProject.Attack
             OwnerObject = ownerObject;
             StartPoint = startPoint;
             CountOfBullets = (int) (countOfBulletsForEasyMode*danmaku.ComplexityFactor);
+            Died += OnDied;
         }
 
 
@@ -34,6 +35,21 @@ namespace IIchanDanmakuProject.Attack
         {
             Console.WriteLine(@"Столкновение произошло");
         }
+
+
+        public override void OnDied(object sender, EventArgs e)
+        {
+            if (Bullets.Count > 0)
+            {
+                for (int i = 0; i < Bullets.Count; i++)
+                {
+                    Bullets[i].OnDied(null, null);
+                }
+                Bullets.Clear();
+            }
+            Console.WriteLine("Атака закончена");
+        }
+
 
         public override void Render()
         {

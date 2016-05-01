@@ -1,7 +1,7 @@
 ﻿using System;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
-using SFML.Graphics;
+using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets
@@ -12,7 +12,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
             EventHandler<EventArgs> onCollision) 
             : base(danmaku, startPosition, new Vector2f(40,40), 5, targetObject, ownerObject, onCollision,
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator(), new NoneDeterminantOfDirectionOfMovement()
-                  , danmaku.Textures["bulleto1"])
+                  , danmaku.Textures["bulleto1"],new TurnIntoBonusWayOfDying(danmaku))
         {
         }
 

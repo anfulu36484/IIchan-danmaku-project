@@ -98,6 +98,10 @@
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementFromStartPoint.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementToNearestTargetObject.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\NoneDeterminantOfDirectionOfMovement.cs" />
+    <Compile Include="Objects\Bullets\Behavior\WayOfDying\GoBeyondGameAreaWayOfDying.cs" />
+    <Compile Include="Objects\Bullets\Behavior\WayOfDying\NoneWayOfDying.cs" />
+    <Compile Include="Objects\Bullets\Behavior\WayOfDying\TurnIntoBonusWayOfDying.cs" />
+    <Compile Include="Objects\Bullets\Behavior\WayOfDying\WayOfDyingBase.cs" />
     <Compile Include="Objects\Bullets\Bullet3.cs" />
     <Compile Include="Objects\Bullets\BulletForMainObject1.cs" />
     <Compile Include="Objects\Bullets\Bulleto1.cs" />
@@ -189,6 +193,7 @@
     <Content Include="Resources\bulletmainobject2.png" />
     <Content Include="Resources\bulletmainobject3.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

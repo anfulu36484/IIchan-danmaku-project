@@ -33,7 +33,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
         public override void Update()
         {
             base.Update();
-            for (int i = 0; i < CountOfBullets; i++)
+            for (int i = 0; i < Bullets.Count; i++)
             {
                 if (Bullets[i] != null)
                 {
