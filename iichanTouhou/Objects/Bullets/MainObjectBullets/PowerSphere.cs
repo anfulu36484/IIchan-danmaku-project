@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
-using SFML.Graphics;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
@@ -21,7 +19,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
                   ownerObject, 
                   null, 
                   int.MaxValue/danmaku.FrameRateLimit,
-                  new InDirectionOfMotionRotator(), 
+                  new AroundCenterRotator(), 
                   new NoneDeterminantOfDirectionOfMovement(), 
                   danmaku.Textures["powersphere"], 
                   new NoneWayOfDying(danmaku), 

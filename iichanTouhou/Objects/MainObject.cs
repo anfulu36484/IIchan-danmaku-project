@@ -107,12 +107,6 @@ namespace IIchanDanmakuProject.Objects
             _hitbox.Update();
             _ataAttackOfMainObject1.Update();
             _powerSphereHolder.Update();
-
-            Trace.WriteLine("");
-            Trace.WriteLine(RectangleShape.Origin);
-            Trace.WriteLine(Size);
-            Trace.WriteLine(Position);
-            Trace.WriteLine(CenterCoordinates);
         }
 
         public override void Render()

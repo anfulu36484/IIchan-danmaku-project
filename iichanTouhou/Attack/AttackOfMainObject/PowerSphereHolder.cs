@@ -45,10 +45,6 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         Vector2f GetDistanceBeforeNearestTargetObject(GameObject nearestTargetObject)
         {
-
-            //Console.WriteLine(Danmaku.MainObject.CenterCoordinates);
-            //Console.WriteLine(nearestTargetObject.CenterCoordinates);
-            //Console.WriteLine(Danmaku.MainObject.CenterCoordinates - nearestTargetObject.CenterCoordinates);
             return  nearestTargetObject.CenterCoordinates-Danmaku.MainObject.CenterCoordinates;
         }
 
@@ -75,7 +71,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         void SetCoordinatesForBullet(BulletBase bullet, Vector2f centerCoordinatesOfMainObject, float r, float angle)
         {
-            bullet.CenterCoordinates = centerCoordinatesOfMainObject + new PolarVector(r,angle).PolarToCartesianCoordinate();
+            bullet.Position = centerCoordinatesOfMainObject + new PolarVector(r,angle).PolarToCartesianCoordinate();
         }
 
 
@@ -98,13 +94,6 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
             Vector2f centerCoordOfMainObject = Danmaku.MainObject.CenterCoordinates;
 
 
-            /*Trace.WriteLine("Угол"+angle);
-            Bullets[0].Position = centerCoordOfMainObject + new Vector2f(-70, 20);
-            Bullets[1].Position = centerCoordOfMainObject + new Vector2f(70, 20);
-
-            Bullets[2].Position = centerCoordOfMainObject + new Vector2f(-90, -15);
-            Bullets[3].Position = centerCoordOfMainObject + new Vector2f(90, -15);*/
-
             SetCoordinatesForBullet(Bullets[0], centerCoordOfMainObject, _r, angle + StartOffsetOfAngle);
             SetCoordinatesForBullet(Bullets[1], centerCoordOfMainObject, _r, angle - StartOffsetOfAngle);
 
@@ -116,14 +105,11 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
                     angle +180);
 
             SetCoordinatesForBullet(Bullets[3], centerCoordOfMainObject, _r + OffsetOf_r, angle - OffsetOfAngle - StartOffsetOfAngle);
-            
-            for (int i = 0; i < Bullets.Count; i++)
+
+            foreach (var bullet in Bullets)
             {
-                Trace.WriteLine(i+"     "+Bullets[i].CenterCoordinates);
+                bullet.Update();
             }
-            
-
-
 
         }
 

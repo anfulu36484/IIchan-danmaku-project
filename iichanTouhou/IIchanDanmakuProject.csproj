@@ -101,6 +101,7 @@
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementFromStartPoint.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementToNearestTargetObject.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\NoneDeterminantOfDirectionOfMovement.cs" />
+    <Compile Include="Objects\Bullets\Behavior\Rotate\AroundCenterRotator.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\GoBeyondGameAreaWayOfDying.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\NoneWayOfDying.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\TurnIntoBonusWayOfDying.cs" />
