@@ -15,6 +15,7 @@ namespace IIchanDanmakuProject.Objects.Bullets
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator(), new NoneDeterminantOfDirectionOfMovement()
                   , danmaku.Textures["bulleto1"],new TurnIntoBonusWayOfDying(danmaku),new StatChanger(-100))
         {
+            Texture.Smooth = true;
         }
 
     }

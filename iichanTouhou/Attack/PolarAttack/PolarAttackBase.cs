@@ -33,19 +33,6 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             Bullets = new List<BulletBase>(CountOfBullets);
         }
 
-        public override void Update()
-        {
-            base.Update();
-            /*for (int i = 0; i < Bullets.Count; i++)
-            {
-                if (Bullets[i] != null)
-                {
-                    Bullets[i].Update();
-                    Bullets[i].Position = GetPosition(FiArray[i]);
-                }
-            }
-            K += 0.000007f;*/
-        }
 
 
         protected Vector2f ConvertToCartesianCoordinates(double r, double fi)

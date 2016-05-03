@@ -65,7 +65,7 @@ namespace IIchanDanmakuProject
             backgroundArea = new BackgroundArea(this);
             GameArea = new GameArea(this);
             StatisticsArea = new StatisticsArea(this, GameArea);
-            MainObject = new MainObject(this, new Vector2f(500, 900), new Vector2f(20, 20), 5);
+            MainObject = new MainObject(this, new Vector2f(500, 900));
             SliceOfLifeBase = new SliceOfLife1(this, MainObject);
 
             StatisticsView = new StatisticsView(this);

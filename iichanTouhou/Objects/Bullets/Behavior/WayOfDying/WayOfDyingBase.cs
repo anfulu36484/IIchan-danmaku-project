@@ -1,6 +1,4 @@
-﻿using SFML.System;
-
-namespace IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying
+﻿namespace IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying
 {
     abstract class WayOfDyingBase
     {

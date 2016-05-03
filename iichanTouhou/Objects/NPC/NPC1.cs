@@ -40,7 +40,7 @@ namespace IIchanDanmakuProject.Objects.NPC
         public override void OnDied(object sender, EventArgs e)
         {
             base.OnDied(sender, e);
-            _flower2.OnDied(this,new EventArgs());
+            _flower2?.OnDied(this,new EventArgs());
         }
 
         private Flower2 _flower2;

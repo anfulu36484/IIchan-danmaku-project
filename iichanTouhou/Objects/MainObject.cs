@@ -1,4 +1,5 @@
-﻿using IIchanDanmakuProject.Attack.AttackOfMainObject;
+﻿using System.Diagnostics;
+using IIchanDanmakuProject.Attack.AttackOfMainObject;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -15,14 +16,42 @@ namespace IIchanDanmakuProject.Objects
 
         private AttackOfMainObject1 _ataAttackOfMainObject1;
 
+        private PowerSphereHolder _powerSphereHolder;
+
         public int Score;
 
-        public int Power;
+        private int _power;
 
-        public MainObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius)
-            : base(danmaku, startPosition, size, hitboxRadius, null)
+        public int Power
+        {
+            get { return _power; }
+            set {
+                _power = value < 0 ? 1 : value;
+            }
+        }
+
+
+        public int PowerLevel
+        {
+            get
+            {
+                if (Power >= 0 & Power < 11)
+                    return 0;
+                if (Power > 10 & Power < 51)
+                    return 1;
+                if (Power > 50 & Power < 101)
+                    return 2;
+                if (Power > 100 & Power < 201)
+                    return 3;
+                return 4;
+            }
+        }
+
+        public MainObject(Danmaku danmaku, Vector2f startPosition)
+            : base(danmaku, startPosition, new Vector2f(20,20), 5, null)
         {
             _hitbox = new Hitbox(danmaku,this);
+            Power = 300;
         }
 
         public override Vector2f Position
@@ -44,6 +73,8 @@ namespace IIchanDanmakuProject.Objects
             _hitbox.Initialize();
             _ataAttackOfMainObject1 = new AttackOfMainObject1(Danmaku,this,CenterCoordinates,50,1);
             _ataAttackOfMainObject1.Initialize();
+            _powerSphereHolder = new PowerSphereHolder(Danmaku,CenterCoordinates);
+            _powerSphereHolder.Initialize();
         }
 
         void Move(float speed)
@@ -75,6 +106,13 @@ namespace IIchanDanmakuProject.Objects
 
             _hitbox.Update();
             _ataAttackOfMainObject1.Update();
+            _powerSphereHolder.Update();
+
+            Trace.WriteLine("");
+            Trace.WriteLine(RectangleShape.Origin);
+            Trace.WriteLine(Size);
+            Trace.WriteLine(Position);
+            Trace.WriteLine(CenterCoordinates);
         }
 
         public override void Render()
@@ -82,6 +120,7 @@ namespace IIchanDanmakuProject.Objects
             base.Render();
             _hitbox.Render();
             _ataAttackOfMainObject1.Render();
+            _powerSphereHolder.Render();
         }
     }
 }

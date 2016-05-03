@@ -1,10 +1,8 @@
 ﻿using System;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
-using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
 using IIchanDanmakuProject.Objects.Bullets.Rotate;
-using SFML.Graphics;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets
