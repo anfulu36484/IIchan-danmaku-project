@@ -57,11 +57,12 @@ namespace IIchanDanmakuProject.Slice
 
         public override void Render()
         {
+            MainObject.Render();
             foreach (var gameObject in GameObjects)
             {
                 gameObject?.Render();
             }
-            MainObject.Render();
+            
             Shinigami.Render();
         }
     }

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using IIchanDanmakuProject.Attack.AttackOfMainObject;
-using SFML.Graphics;
+﻿using IIchanDanmakuProject.Attack.AttackOfMainObject;
 using SFML.System;
 using SFML.Window;
 
@@ -13,8 +11,6 @@ namespace IIchanDanmakuProject.Objects
 
         private readonly Hitbox _hitbox;
 
-
-        private AttackOfMainObject1 _ataAttackOfMainObject1;
 
         private PowerSphereHolder _powerSphereHolder;
 
@@ -48,7 +44,7 @@ namespace IIchanDanmakuProject.Objects
         }
 
         public MainObject(Danmaku danmaku, Vector2f startPosition)
-            : base(danmaku, startPosition, new Vector2f(50,50), 5, danmaku.Textures["greencirno"])
+            : base(danmaku, startPosition, new Vector2f(50,70), 5, danmaku.Textures["greencirno"])
         {
             _hitbox = new Hitbox(danmaku,this);
             Texture.Smooth = true;
@@ -70,10 +66,7 @@ namespace IIchanDanmakuProject.Objects
 
         public override void Initialize()
         {
-            //RectangleShape.FillColor = Color.Green;
             _hitbox.Initialize();
-            _ataAttackOfMainObject1 = new AttackOfMainObject1(Danmaku,this,CenterCoordinates,50,1);
-            _ataAttackOfMainObject1.Initialize();
             _powerSphereHolder = new PowerSphereHolder(Danmaku,CenterCoordinates);
             _powerSphereHolder.Initialize();
         }
@@ -106,7 +99,6 @@ namespace IIchanDanmakuProject.Objects
             Move(Keyboard.IsKeyPressed(Keyboard.Key.LShift) ? focusSpeed : ordinarySpeed);
 
             _hitbox.Update();
-            _ataAttackOfMainObject1.Update();
             _powerSphereHolder.Update();
         }
 
@@ -114,7 +106,6 @@ namespace IIchanDanmakuProject.Objects
         {
             base.Render();
             _hitbox.Render();
-            _ataAttackOfMainObject1.Render();
             _powerSphereHolder.Render();
         }
     }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using IIchanDanmakuProject.Objects.Bullets.MainObjectBullets;
 using SFML.System;
+using SFML.Window;
 
 namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 {
@@ -65,6 +65,8 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         public float StartOffsetOfAngle = 120;
 
+        public float StartOffsetOfAngleFocused = 15;
+
         public float OffsetOfAngle;
 
 
@@ -74,25 +76,21 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
         }
 
 
-        public override void Update()
+        void SetCoordinatesForSphersInFocus(Vector2f centerCoordOfMainObject, float angle)
         {
-            base.Update();
+            SetCoordinatesForBullet(Bullets[0], centerCoordOfMainObject, _r + 10, angle + StartOffsetOfAngleFocused - 25);
+            SetCoordinatesForBullet(Bullets[1], centerCoordOfMainObject, _r + 10, angle - StartOffsetOfAngleFocused + 25);
 
-            float angle;
-
-            GameObject nearestTargetObject = GetNearestTargetObject();
-
-            if (nearestTargetObject != null)
-            {
-                angle = /*360-*/GetDistanceBeforeNearestTargetObject(nearestTargetObject).CartesianToPolarCoordinate().theta;
-                
-            }
+            if (Danmaku.MainObject.PowerLevel != 3)
+                SetCoordinatesForBullet(Bullets[2], centerCoordOfMainObject, _r - 25, angle + StartOffsetOfAngleFocused + 5);
             else
-                angle = /*360-*/270;
+                SetCoordinatesForBullet(Bullets[2], centerCoordOfMainObject, _r - 25, angle + StartOffsetOfAngleFocused);
 
-            Vector2f centerCoordOfMainObject = Danmaku.MainObject.CenterCoordinates;
+            SetCoordinatesForBullet(Bullets[3], centerCoordOfMainObject, _r - 25, angle - StartOffsetOfAngleFocused - 5);
+        }
 
-
+        void SetCoordinatesForSphersUnfocused(Vector2f centerCoordOfMainObject, float angle)
+        {
             SetCoordinatesForBullet(Bullets[0], centerCoordOfMainObject, _r, angle + StartOffsetOfAngle);
             SetCoordinatesForBullet(Bullets[1], centerCoordOfMainObject, _r, angle - StartOffsetOfAngle);
 
@@ -101,9 +99,36 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
                     angle + OffsetOfAngle + StartOffsetOfAngle);
             else
                 SetCoordinatesForBullet(Bullets[2], centerCoordOfMainObject, _r + OffsetOf_r,
-                    angle +180);
+                    angle + 180);
 
             SetCoordinatesForBullet(Bullets[3], centerCoordOfMainObject, _r + OffsetOf_r, angle - OffsetOfAngle - StartOffsetOfAngle);
+        }
+
+
+        private void SetSphersCoordinate()
+        {
+            float angle;
+
+            GameObject nearestTargetObject = GetNearestTargetObject();
+
+            if (nearestTargetObject != null)
+                angle = GetDistanceBeforeNearestTargetObject(nearestTargetObject).CartesianToPolarCoordinate().theta;
+            else
+                angle = 270;
+
+            Vector2f centerCoordOfMainObject = Danmaku.MainObject.CenterCoordinates;
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.LShift))
+                SetCoordinatesForSphersInFocus(centerCoordOfMainObject, angle);
+            else
+                SetCoordinatesForSphersUnfocused(centerCoordOfMainObject, angle);
+        }
+
+        public override void Update()
+        {
+            base.Update();
+
+            SetSphersCoordinate();
 
             foreach (var bullet in Bullets)
             {
@@ -111,6 +136,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
             }
 
         }
+
 
         public override void Render()
         {
