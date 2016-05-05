@@ -197,6 +197,7 @@
     </Content>
     <Content Include="Resources\bulletmainobject2.png" />
     <Content Include="Resources\bulletmainobject3.png" />
+    <Content Include="Resources\greencirno.png" />
     <Content Include="Resources\powersphere.png" />
   </ItemGroup>
   <ItemGroup />

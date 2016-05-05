@@ -15,7 +15,7 @@ namespace IIchanDanmakuProject.Objects.NPC
         public override void Initialize()
         {
             Speed =new Vector2f(0,2f);
-            XP = 10;
+            XP = 200;
         }
 
 

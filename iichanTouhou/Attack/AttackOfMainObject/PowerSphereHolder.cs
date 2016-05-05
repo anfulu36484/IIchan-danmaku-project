@@ -19,9 +19,6 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         }
 
-
-        
-
         GameObject GetNearestTargetObject()
         {
             if (Danmaku.MainObject.TargetObjects.Count > 0)
@@ -53,8 +50,10 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
             Bullets = new List<BulletBase>(4);
             for (int i = 0; i < 4; i++)
             {
-                Bullets.Add(new PowerSphere(Danmaku,Danmaku.MainObject.CenterCoordinates,
-                    Danmaku.MainObject.TargetObjects, Danmaku.MainObject));
+                BulletBase bullet = new PowerSphere(Danmaku, Danmaku.MainObject.CenterCoordinates,
+                    Danmaku.MainObject.TargetObjects, Danmaku.MainObject);
+                bullet.Initialize();
+                Bullets.Add(bullet);
             }
 
             OffsetOfAngle = StartOffsetOfAngle + 30;

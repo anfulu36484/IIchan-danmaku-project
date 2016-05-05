@@ -48,9 +48,10 @@ namespace IIchanDanmakuProject.Objects
         }
 
         public MainObject(Danmaku danmaku, Vector2f startPosition)
-            : base(danmaku, startPosition, new Vector2f(20,20), 5, null)
+            : base(danmaku, startPosition, new Vector2f(50,50), 5, danmaku.Textures["greencirno"])
         {
             _hitbox = new Hitbox(danmaku,this);
+            Texture.Smooth = true;
             Power = 300;
         }
 
@@ -69,7 +70,7 @@ namespace IIchanDanmakuProject.Objects
 
         public override void Initialize()
         {
-            RectangleShape.FillColor = Color.Green;
+            //RectangleShape.FillColor = Color.Green;
             _hitbox.Initialize();
             _ataAttackOfMainObject1 = new AttackOfMainObject1(Danmaku,this,CenterCoordinates,50,1);
             _ataAttackOfMainObject1.Initialize();

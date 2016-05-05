@@ -10,13 +10,14 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 {
     class AttackOfMainObject1 :AttackBase
     {
-        private AttackOfMainObject1Pool _attackOfMainObject1Pool;
+        private readonly AttackOfMainObject1Pool _attackOfMainObject1Pool;
 
         public AttackOfMainObject1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, 
              int countOfBulletsForEasyMode, int timeBetweenAttacks) 
             : base(danmaku, ownerObject, startPoint, int.MaxValue/danmaku.FrameRateLimit, countOfBulletsForEasyMode)
         {
             _timeBetweenAttacks = timeBetweenAttacks;
+            _attackOfMainObject1Pool = new AttackOfMainObject1Pool(ownerObject,OnCollision);
         }
 
         private int _timeBetweenAttacks;
@@ -24,7 +25,6 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         public override void Initialize()
         {
-            _attackOfMainObject1Pool = new AttackOfMainObject1Pool((MainObject)OwnerObject,this);
             _timeBetweenAttacks = 7;
             Bullets = new List<BulletBase>();
         }

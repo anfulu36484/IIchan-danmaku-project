@@ -1,4 +1,5 @@
-﻿using IIchanDanmakuProject.Helpers.ObjectPool;
+﻿using System;
+using IIchanDanmakuProject.Helpers.ObjectPool;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets.MainObjectBullets;
 using SFML.System;
@@ -7,19 +8,19 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 {
     class AttackOfMainObject1Pool :Pool<BulletForMainObject1>
     {
-        private readonly MainObject _mainObject;
-        private readonly AttackOfMainObject1 _attackOfMainObject1;
+        private readonly GameObject _gameObject;
+        private readonly EventHandler<EventArgs> _onCollision;
 
-        public AttackOfMainObject1Pool(MainObject mainObject,AttackOfMainObject1 attackOfMainObject1)
+        public AttackOfMainObject1Pool(GameObject gameObject, EventHandler<EventArgs> onCollision)
         {
-            _mainObject = mainObject;
-            _attackOfMainObject1 = attackOfMainObject1;
+            _gameObject = gameObject;
+            _onCollision = onCollision;
         }
 
         public override BulletForMainObject1 CreateObject()
         {
-            var bullet = new BulletForMainObject1(_mainObject.danmaku,_mainObject.CenterCoordinates-new Vector2f(0,60),
-                _mainObject.TargetObjects,_mainObject,_attackOfMainObject1.OnCollision);
+            var bullet = new BulletForMainObject1(_gameObject.danmaku, _gameObject.Position-new Vector2f(0,60),
+                _gameObject.TargetObjects, _gameObject, _onCollision);
             bullet.Initialize();
             return bullet;
         }
