@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
-using IIchanDanmakuProject.Objects.Bullets.MainObjectBullets;
 using SFML.System;
 using SFML.Window;
 
-namespace IIchanDanmakuProject.Attack.AttackOfMainObject
+namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
 {
     class PowerSphereHolder :AttackBase
     {
@@ -50,7 +49,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
             Bullets = new List<BulletBase>(4);
             for (int i = 0; i < 4; i++)
             {
-                BulletBase bullet = new PowerSphere(Danmaku, Danmaku.MainObject.CenterCoordinates,
+                BulletBase bullet = new Objects.Bullets.MainObjectBullets.PowerSphere(Danmaku, Danmaku.MainObject.CenterCoordinates,
                     Danmaku.MainObject.TargetObjects, Danmaku.MainObject);
                 bullet.Initialize();
                 Bullets.Add(bullet);

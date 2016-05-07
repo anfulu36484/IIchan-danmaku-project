@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using IIchanDanmakuProject.Attack.AttackOfMainObject;
+using IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Collision;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
@@ -11,7 +11,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
     class PowerSphere :BulletBase
     {
 
-        private AttackOfMainObject1 _attackOfMainObject1;
+        private PowerSphereAttack _powerSphereAttack;
 
         public PowerSphere(Danmaku danmaku, Vector2f startPosition,
             List<GameObject> targetObjects, GameObject ownerObject)
@@ -35,20 +35,20 @@ namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
         public override void Initialize()
         {
             base.Initialize();
-            _attackOfMainObject1 = new AttackOfMainObject1(Danmaku,this,CenterCoordinates,50,1);
-            _attackOfMainObject1.Initialize();
+            _powerSphereAttack = new PowerSphereAttack(Danmaku,this,CenterCoordinates,50,1);
+            _powerSphereAttack.Initialize();
         }
 
         public override void Update()
         {
             base.Update();
-            _attackOfMainObject1.Update();
+            _powerSphereAttack.Update();
         }
 
         public override void Render()
         {
             base.Render();
-            _attackOfMainObject1.Render();
+            _powerSphereAttack.Render();
         }
     }
 }

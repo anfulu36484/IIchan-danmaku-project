@@ -6,18 +6,27 @@ using IIchanDanmakuProject.Objects.Bullets.MainObjectBullets;
 using SFML.System;
 using SFML.Window;
 
-namespace IIchanDanmakuProject.Attack.AttackOfMainObject
+namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
 {
-    class AttackOfMainObject1 :AttackBase
+    class PowerSphereAttack :AttackOfMainObjectBase
     {
-        private readonly AttackOfMainObject1Pool _attackOfMainObject1Pool;
 
-        public AttackOfMainObject1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, 
+        public PowerSphereAttack(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint,
+            int countOfBulletsForEasyMode, int timeBetweenAttacks) 
+            : base(danmaku, ownerObject, startPoint, countOfBulletsForEasyMode, timeBetweenAttacks,
+                  new PowerSphereAttackPool(ownerObject))
+        {
+        }
+
+
+        /*private readonly PowerSphereAttackPool _powerSphereAttackPool;
+
+        public PowerSphereAttack(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, 
              int countOfBulletsForEasyMode, int timeBetweenAttacks) 
             : base(danmaku, ownerObject, startPoint, int.MaxValue/danmaku.FrameRateLimit, countOfBulletsForEasyMode)
         {
             _timeBetweenAttacks = timeBetweenAttacks;
-            _attackOfMainObject1Pool = new AttackOfMainObject1Pool(ownerObject,OnCollision);
+            _powerSphereAttackPool = new PowerSphereAttackPool(ownerObject,OnCollision);
         }
 
         private int _timeBetweenAttacks;
@@ -31,7 +40,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
 
         public override void OnCollision(object obj, EventArgs e)
         {
-            _attackOfMainObject1Pool.Release((BulletForMainObject1)obj);
+            _powerSphereAttackPool.Release((BulletForPowerSphere)obj);
             Bullets.Remove((BulletBase)obj);
         }
 
@@ -40,7 +49,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
         {
             if ( _nextTimeAttack <= LivedTime)
             {
-                Bullets.Add(_attackOfMainObject1Pool.CreateObject());
+                Bullets.Add(_powerSphereAttackPool.CreateObject());
                 _nextTimeAttack = LivedTime + _timeBetweenAttacks;
             }
         }
@@ -57,7 +66,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
             {
                 if (!Bullets[i].IsObjectInGameArea())
                 {
-                    _attackOfMainObject1Pool.Release((BulletForMainObject1)Bullets[i]);
+                    _powerSphereAttackPool.Release((BulletForPowerSphere)Bullets[i]);
                     Bullets.Remove(Bullets[i]);
                 }
                 else
@@ -68,6 +77,8 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
         protected override Vector2f GetPosition(float fi)
         {
             throw new NotImplementedException();
-        }
+        }*/
+
+
     }
 }

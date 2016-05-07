@@ -1,4 +1,5 @@
 ﻿using IIchanDanmakuProject.Attack.AttackOfMainObject;
+using IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere;
 using SFML.System;
 using SFML.Window;
 

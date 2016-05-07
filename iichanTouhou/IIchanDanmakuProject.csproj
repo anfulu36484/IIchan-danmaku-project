@@ -79,9 +79,13 @@
     <Compile Include="Area\AreaBase.cs" />
     <Compile Include="Area\BackgroundArea.cs" />
     <Compile Include="Area\StatisticsArea.cs" />
-    <Compile Include="Attack\AttackOfMainObject\AttackOfMainObject1.cs" />
-    <Compile Include="Attack\AttackOfMainObject\AttackOfMainObject1Pool.cs" />
-    <Compile Include="Attack\AttackOfMainObject\PowerSphereHolder.cs" />
+    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttack.cs" />
+    <Compile Include="Attack\AttackOfMainObject\AttackOfMainObjectBase.cs" />
+    <Compile Include="Attack\AttackOfMainObject\BulletPoolBase.cs" />
+    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttackPool.cs" />
+    <Compile Include="Attack\AttackOfMainObject\PowerSphere\PowerSphereAttack.cs" />
+    <Compile Include="Attack\AttackOfMainObject\PowerSphere\PowerSphereAttackPool.cs" />
+    <Compile Include="Attack\AttackOfMainObject\PowerSphere\PowerSphereHolder.cs" />
     <Compile Include="Attack\StandartAttack\Attack1.cs" />
     <Compile Include="Attack\PolarAttack\Flower2.cs" />
     <Compile Include="Attack\PolarAttack\Flower.cs" />
@@ -93,7 +97,7 @@
     <Compile Include="GameBase.cs" />
     <Compile Include="GameElement.cs" />
     <Compile Include="Helpers\MathConverter.cs" />
-    <Compile Include="Helpers\ObjectPool\Pool.cs" />
+    <Compile Include="Helpers\Pool.cs" />
     <Compile Include="Helpers\PolarVector.cs" />
     <Compile Include="Helpers\Vector.cs" />
     <Compile Include="Objects\Bullets\Behavior\Collision\StatChanger.cs" />
@@ -108,7 +112,7 @@
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\WayOfDyingBase.cs" />
     <Compile Include="Objects\Bullets\MainObjectBullets\PowerSphere.cs" />
     <Compile Include="Objects\Bullets\NPCBullets\Bullet3.cs" />
-    <Compile Include="Objects\Bullets\MainObjectBullets\BulletForMainObject1.cs" />
+    <Compile Include="Objects\Bullets\MainObjectBullets\BulletForPowerSphere.cs" />
     <Compile Include="Objects\Bullets\NPCBullets\Bulleto1.cs" />
     <Compile Include="Objects\Hitbox.cs" />
     <Compile Include="Objects\Shinigami.cs" />

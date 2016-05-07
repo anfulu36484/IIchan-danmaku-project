@@ -8,9 +8,9 @@ using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
 {
-    class BulletForMainObject1 :BulletBase
+    class BulletForPowerSphere :BulletBase
     {
-        public BulletForMainObject1(Danmaku danmaku, Vector2f startPosition, 
+        public BulletForPowerSphere(Danmaku danmaku, Vector2f startPosition, 
             List<GameObject> targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision) 
             : base(danmaku, startPosition, new Vector2f(50,50), 25, targetObjects, ownerObject, onCollision, 
                   int.MaxValue/danmaku.FrameRateLimit, 

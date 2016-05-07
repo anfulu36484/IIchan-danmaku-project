@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IIchanDanmakuProject.Helpers.ObjectPool
+namespace IIchanDanmakuProject.Helpers
 {
     abstract class Pool<T>
         where T:class

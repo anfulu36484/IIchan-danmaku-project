@@ -1,4 +1,5 @@
 ﻿using System;
+using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
@@ -8,7 +9,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
     class Flower2 :PolarAttackBase
     {
         public Flower2(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint) 
-            : base(danmaku, ownerObject, startPoint,40, 1000, 1000, 1000000)
+            : base(danmaku, ownerObject, startPoint,40, 100, 500, 1000000)
         {
         }
 
@@ -48,8 +49,13 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
 
         protected override Vector2f GetPosition(float fi)
         {
+            /*PolarVector polarVector = new PolarVector((float)(Math.Sin(Math.Log(fi * K)) / Math.Cos(fi / K)),fi);
+            Vector2f vector = polarVector.PolarToCartesianCoordinate()*AttackScale + StartPoint;
+
+            return vector;*/
             double r = Math.Sin(Math.Log(fi * K))/ Math.Cos(fi / K);
             return ConvertToCartesianCoordinates(r, fi);
+
         }
 
     }
