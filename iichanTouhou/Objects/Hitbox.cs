@@ -25,7 +25,9 @@ namespace IIchanDanmakuProject.Objects
         public override void Update()
         {
             base.Update();
-            Position = _ownerObject.CenterCoordinates - this.Size*0.5f;
+            //Position = _ownerObject.CenterCoordinates - this.Size*0.5f;
+
+            CenterCoordinates = _ownerObject.CenterCoordinates;
         }
 
         public override void Render()

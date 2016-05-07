@@ -15,7 +15,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
             : base(danmaku, startPosition, new Vector2f(50,50), 25, targetObjects, ownerObject, onCollision, 
                   int.MaxValue/danmaku.FrameRateLimit, 
                   new InDirectionOfMotionRotator(),
-                  new MovementToNearestTargetObject(new Vector2f(0,-1)),
+                  new MovementToNearestTargetObject(new MovementFromObject(danmaku.MainObject,new Vector2f(0,130))), 
                   danmaku.Textures["bulletmainobject3"],
                   new NoneWayOfDying(danmaku),new StatChanger(-1))
         {
@@ -25,6 +25,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
         public override void Initialize()
         {
             DeterminantOfDirectionOfMovement.SpeedFactor = 10;
+            DeterminantOfDirectionOfMovement.Initialize(this);
         }
     }
 }

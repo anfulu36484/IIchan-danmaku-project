@@ -19,9 +19,6 @@ namespace IIchanDanmakuProject
 
         public void Load()
         {
-
-
-
             _textures.Add("Bonus", GenerateTexture(Properties.Resources.Bonus, ImageFormat.Png));
             _textures.Add("npc", GenerateTexture(Properties.Resources.npc, ImageFormat.Png));
 

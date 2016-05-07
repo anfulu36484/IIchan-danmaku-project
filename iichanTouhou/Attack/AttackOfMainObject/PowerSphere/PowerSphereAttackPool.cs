@@ -14,8 +14,9 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
 
         public override BulletBase CreateObject()
         {
-            var bullet = new BulletForPowerSphere(GameObject.danmaku, GameObject.Position - new Vector2f(0, 60),
+            var bullet = new BulletForPowerSphere(GameObject.danmaku, GameObject.CenterCoordinates,
                 GameObject.TargetObjects, GameObject, OnCollision);
+            bullet.CenterCoordinates = GameObject.CenterCoordinates;
             bullet.Initialize();
             return bullet;
         }

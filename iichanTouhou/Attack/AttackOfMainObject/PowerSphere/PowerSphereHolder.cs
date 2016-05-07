@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
@@ -71,7 +72,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
 
         void SetCoordinatesForBullet(BulletBase bullet, Vector2f centerCoordinatesOfMainObject, float r, float angle)
         {
-            bullet.Position = centerCoordinatesOfMainObject + new PolarVector(r,angle).PolarToCartesianCoordinate();
+            bullet.CenterCoordinates = centerCoordinatesOfMainObject + new PolarVector(r,angle).PolarToCartesianCoordinate();
         }
 
 

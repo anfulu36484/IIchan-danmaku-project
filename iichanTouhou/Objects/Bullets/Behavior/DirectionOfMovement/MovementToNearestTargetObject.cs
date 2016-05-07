@@ -5,12 +5,28 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement
 {
     class MovementToNearestTargetObject :DeterminantOfDirectionOfMovementBase
     {
-        private readonly Vector2f _directionInTheAbsenceOfObjects;
+
+        private readonly DeterminantOfDirectionOfMovementBase _directionOfMovementInAbsenceOfObjects;
+
 
         public MovementToNearestTargetObject(Vector2f directionInTheAbsenceOfObjects)
         {
-            _directionInTheAbsenceOfObjects = directionInTheAbsenceOfObjects;
+            _directionOfMovementInAbsenceOfObjects = new MovementInPredeterminedDirection(directionInTheAbsenceOfObjects);
         }
+
+        public MovementToNearestTargetObject(DeterminantOfDirectionOfMovementBase directionOfMovementInAbsenceOfObjects)
+        {
+            _directionOfMovementInAbsenceOfObjects = directionOfMovementInAbsenceOfObjects;
+        }
+
+
+        public override void Initialize(BulletBase bullet)
+        {
+            base.Initialize(bullet);
+            _directionOfMovementInAbsenceOfObjects.Initialize(Bullet);
+            _directionOfMovementInAbsenceOfObjects.SpeedFactor = SpeedFactor;
+        }
+
 
         GameObject GetNearestTargetObject()
         {
@@ -40,7 +56,9 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.DirectionOfMovement
                 Bullet.Speed = (nearestTargetObject.CenterCoordinates - Bullet.CenterCoordinates).Normalize()*
                                SpeedFactor;
             else
-                Bullet.Speed = _directionInTheAbsenceOfObjects.Normalize()*SpeedFactor;
+            {
+                _directionOfMovementInAbsenceOfObjects.Move();
+            }
         }
     }
 }

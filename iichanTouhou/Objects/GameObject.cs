@@ -70,6 +70,8 @@ namespace IIchanDanmakuProject.Objects
             Texture = texture;
 
             HitboxRadius = hitboxRadius;
+
+            RectangleShape.Origin += Size*0.5f;
         }
 
         

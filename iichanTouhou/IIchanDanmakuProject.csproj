@@ -102,7 +102,9 @@
     <Compile Include="Helpers\Vector.cs" />
     <Compile Include="Objects\Bullets\Behavior\Collision\StatChanger.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\DeterminantOfDirectionOfMovementBase.cs" />
-    <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementFromStartPoint.cs" />
+    <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementFromObject.cs" />
+    <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementFromOwnerObject.cs" />
+    <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementInPredeterminedDirection.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\MovementToNearestTargetObject.cs" />
     <Compile Include="Objects\Bullets\Behavior\DirectionOfMovement\NoneDeterminantOfDirectionOfMovement.cs" />
     <Compile Include="Objects\Bullets\Behavior\Rotate\AroundCenterRotator.cs" />

@@ -6,7 +6,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.MainAttack
     class MainAttack :AttackOfMainObjectBase
     {
         public MainAttack(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, 
-            int countOfBulletsForEasyMode, int timeBetweenAttacks, BulletPoolBase poolBase) 
+            int countOfBulletsForEasyMode, int timeBetweenAttacks) 
             : base(danmaku, ownerObject, startPoint, countOfBulletsForEasyMode, timeBetweenAttacks,
                   new MainAttackPool(ownerObject))
         {
