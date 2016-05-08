@@ -39,7 +39,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
                 if (Bullets[i] != null)
                 {
                     Bullets[i].Update();
-                    Bullets[i].Position = GetPosition(FiArray[i]);
+                    Bullets[i].CenterCoordinates = GetPosition(FiArray[i]);
                 }
             }
             ii++;

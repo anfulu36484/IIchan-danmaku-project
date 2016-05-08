@@ -13,7 +13,7 @@ namespace IIchanDanmakuProject.Objects
 
         public virtual Vector2f Position
         {
-            get { return RectangleShape.Position; } 
+            get { return RectangleShape.Position+ RectangleShape.Origin; } 
             set { RectangleShape.Position = value; }
         }
 
@@ -50,6 +50,9 @@ namespace IIchanDanmakuProject.Objects
         public List<GameObject> TargetObjects;
 
 
+        public RotatorContainer RotatorContainer;
+
+
         protected GameObject(Danmaku danmaku, Vector2f startPosition, Vector2f size, float hitboxRadius, Texture texture)
             :this(danmaku, startPosition, size, hitboxRadius, int.MaxValue/danmaku.FrameRateLimit, texture)
         {
@@ -71,8 +74,9 @@ namespace IIchanDanmakuProject.Objects
 
             HitboxRadius = hitboxRadius;
 
-            RectangleShape.Origin += Size*0.5f;
+            RotatorContainer = new RotatorContainer(Danmaku,this);
         }
+
 
         
 
@@ -92,11 +96,15 @@ namespace IIchanDanmakuProject.Objects
         {
             base.Update();
             Position += Speed;
+            RotatorContainer.Update();
         }
 
         public override void Render()
         {
-             danmaku.window.Draw(RectangleShape);
+            if(RotatorContainer.IsRotatedShapeNotExist())
+                danmaku.window.Draw(RectangleShape);
+            else
+                RotatorContainer.Render();      
         }
 
 

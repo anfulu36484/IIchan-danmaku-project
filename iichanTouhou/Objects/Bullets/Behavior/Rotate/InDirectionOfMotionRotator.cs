@@ -13,7 +13,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate
         public override void Rotate()
         {
             Vector2f direction = Bullet.CenterCoordinates - _previousPosition;
-            Bullet.RectangleShape.Rotation = MathConverter.RadianToDegrees( Math.Atan(direction.Y/direction.X));
+            Bullet.RotatorContainer.Rotation= MathConverter.RadianToDegrees( Math.Atan(direction.Y/direction.X));
            _previousPosition = Bullet.CenterCoordinates;
         }
     }

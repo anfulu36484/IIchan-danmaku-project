@@ -1,4 +1,5 @@
-﻿using SFML.System;
+﻿using System.Drawing;
+using SFML.Graphics;
 
 namespace IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate
 {
@@ -9,6 +10,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate
         public virtual void Initialize(BulletBase bullet)
         {
             Bullet = bullet;
+            Bullet.RotatorContainer.CreateRotatedRectangle();
         }
 
         public abstract void Rotate();

@@ -6,7 +6,7 @@
 
         public override void Rotate()
         {
-            Bullet.RectangleShape.Rotation += AngleOfRotation;
+            Bullet.RotatorContainer.Rotation += AngleOfRotation;
         }
     }
 }
