@@ -37,9 +37,9 @@ namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
             DeterminantOfDirectionOfMovement.SpeedFactor = 10;
             DeterminantOfDirectionOfMovement.Initialize(this);
             _anfocusedMovement = DeterminantOfDirectionOfMovement;
-            _focusedMovement = new MovementInPredeterminedDirection(new Vector2f(0, -1));
-            _focusedMovement.Initialize(this);
+            _focusedMovement = new MovementToNearestTargetObject(new MovementInPredeterminedDirection(new Vector2f(0,-1)));
             _focusedMovement.SpeedFactor = _anfocusedMovement.SpeedFactor;
+            _focusedMovement.Initialize(this);
         }
 
     }
