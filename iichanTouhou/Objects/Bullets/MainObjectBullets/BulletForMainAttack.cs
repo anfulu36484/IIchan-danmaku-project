@@ -6,18 +6,16 @@ using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets.MainObjectBullets
 {
-    class BulletForPowerSphere :MainObjectBulletBase
+    class BulletForMainAttack:MainObjectBulletBase
     {
-
-        public BulletForPowerSphere(Danmaku danmaku, Vector2f startPosition, 
+        public BulletForMainAttack(Danmaku danmaku, Vector2f startPosition,
             List<GameObject> targetObjects, GameObject ownerObject, EventHandler<EventArgs> onCollision
             ) 
             : base(danmaku, startPosition, new Vector2f(50, 50), 25, targetObjects, 
                   ownerObject, onCollision, new InDirectionOfMotionRotator(),
                   new MovementToNearestTargetObject(new MovementFromObject(danmaku.MainObject, new Vector2f(0, 130))),
-                  danmaku.Textures["bulletmainobject3"])
+                  danmaku.Textures["mainattack"])
         {
         }
-  
     }
 }

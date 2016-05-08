@@ -1,4 +1,4 @@
-﻿using IIchanDanmakuProject.Attack.AttackOfMainObject;
+﻿using IIchanDanmakuProject.Attack.AttackOfMainObject.MainAttack;
 using IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere;
 using SFML.System;
 using SFML.Window;
@@ -14,6 +14,9 @@ namespace IIchanDanmakuProject.Objects
 
 
         private PowerSphereHolder _powerSphereHolder;
+
+        private MainAttack _mainAttack;
+
 
         public int Score;
 
@@ -70,6 +73,8 @@ namespace IIchanDanmakuProject.Objects
             _hitbox.Initialize();
             _powerSphereHolder = new PowerSphereHolder(Danmaku,CenterCoordinates);
             _powerSphereHolder.Initialize();
+            _mainAttack = new MainAttack(Danmaku,this,CenterCoordinates,50,1);
+            _mainAttack.Initialize();
         }
 
         void Move(float speed)
@@ -101,6 +106,7 @@ namespace IIchanDanmakuProject.Objects
 
             _hitbox.Update();
             _powerSphereHolder.Update();
+            _mainAttack.Update();
         }
 
         public override void Render()
@@ -108,6 +114,7 @@ namespace IIchanDanmakuProject.Objects
             base.Render();
             _hitbox.Render();
             _powerSphereHolder.Render();
+            _mainAttack.Render();
         }
     }
 }

@@ -37,6 +37,8 @@ namespace IIchanDanmakuProject
             _textures.Add("powersphere", new Texture(@"D:\С_2015\IIchan danmaku project\iichanTouhou\Resources\powersphere.png"));
             _textures.Add("greencirno", new Texture(@"D:\С_2015\IIchan danmaku project\iichanTouhou\Resources\greencirno.png"));
 
+            _textures.Add("mainattack", new Texture(@"D:\С_2015\IIchan danmaku project\iichanTouhou\Resources\mainattack.png"));
+
             string[] all = System.Reflection.Assembly.GetEntryAssembly().GetManifestResourceNames();
 
 
