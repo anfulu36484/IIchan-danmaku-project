@@ -63,26 +63,6 @@ namespace IIchanDanmakuProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bonus {
-            get {
-                object obj = ResourceManager.GetObject("Bonus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bonus1 {
-            get {
-                object obj = ResourceManager.GetObject("Bonus1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bullet1 {
             get {
                 object obj = ResourceManager.GetObject("bullet1", resourceCulture);
@@ -183,26 +163,6 @@ namespace IIchanDanmakuProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bulletmainobject1 {
-            get {
-                object obj = ResourceManager.GetObject("bulletmainobject1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bulletmainobject2 {
-            get {
-                object obj = ResourceManager.GetObject("bulletmainobject2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bulletmainobject3 {
             get {
                 object obj = ResourceManager.GetObject("bulletmainobject3", resourceCulture);
@@ -226,26 +186,6 @@ namespace IIchanDanmakuProject.Properties {
         internal static System.Drawing.Bitmap bulleto11 {
             get {
                 object obj = ResourceManager.GetObject("bulleto11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bulleto2 {
-            get {
-                object obj = ResourceManager.GetObject("bulleto2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bulleto21 {
-            get {
-                object obj = ResourceManager.GetObject("bulleto21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +246,16 @@ namespace IIchanDanmakuProject.Properties {
         internal static System.Drawing.Bitmap npc1 {
             get {
                 object obj = ResourceManager.GetObject("npc1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PowerBonus {
+            get {
+                object obj = ResourceManager.GetObject("PowerBonus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

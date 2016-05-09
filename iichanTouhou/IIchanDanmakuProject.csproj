@@ -114,6 +114,7 @@
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\NoneWayOfDying.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\TurnIntoBonusWayOfDying.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\WayOfDyingBase.cs" />
+    <Compile Include="Objects\Bullets\Bonuses\PowerBonus.cs" />
     <Compile Include="Objects\Bullets\MainObjectBullets\BulletForMainAttack.cs" />
     <Compile Include="Objects\Bullets\MainObjectBullets\MainObjectBulletBase.cs" />
     <Compile Include="Objects\Bullets\MainObjectBullets\PowerSphere.cs" />
@@ -211,6 +212,7 @@
     <Content Include="Resources\bulletmainobject3.png" />
     <Content Include="Resources\greencirno.png" />
     <Content Include="Resources\mainattack.png" />
+    <None Include="Resources\P.png" />
     <Content Include="Resources\powersphere.png" />
     <None Include="Resources\starbonus.png" />
   </ItemGroup>

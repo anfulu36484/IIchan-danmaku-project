@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Bonus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bonus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bonus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bonus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bullet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,12 +148,6 @@
   <data name="bullet4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bulletmainobject1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bulletmainobject1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bulletmainobject2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bulletmainobject2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bulletmainobject3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bulletmainobject3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,12 +156,6 @@
   </data>
   <data name="bulleto11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bulleto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bulleto2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bulleto2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bulleto21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bulleto2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greencirno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greencirno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,6 +174,9 @@
   </data>
   <data name="npc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\npc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerBonus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\P.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="powersphere" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\powersphere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

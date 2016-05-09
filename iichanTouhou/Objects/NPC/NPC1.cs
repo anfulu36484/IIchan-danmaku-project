@@ -1,5 +1,7 @@
 ﻿using System;
 using IIchanDanmakuProject.Attack.PolarAttack;
+using IIchanDanmakuProject.Objects.Bullets.Bonuses;
+using IIchanDanmakuProject.Objects.Bullets.MainObjectBullets;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.NPC
@@ -41,6 +43,7 @@ namespace IIchanDanmakuProject.Objects.NPC
         {
             base.OnDied(sender, e);
             _flower2?.OnDied(this,new EventArgs());
+            danmaku.SliceOfLifeBase.Shinigami.Add(new PowerBonus(Danmaku,CenterCoordinates));
         }
 
         private Flower2 _flower2;
