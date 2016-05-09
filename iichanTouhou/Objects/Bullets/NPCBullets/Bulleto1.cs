@@ -5,13 +5,13 @@ using IIchanDanmakuProject.Objects.Bullets.Behavior.Rotate;
 using IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying;
 using SFML.System;
 
-namespace IIchanDanmakuProject.Objects.Bullets
+namespace IIchanDanmakuProject.Objects.Bullets.NPCBullets
 {
     class Bulleto1:BulletBase
     {
         public Bulleto1(Danmaku danmaku, Vector2f startPosition,  GameObject targetObject, GameObject ownerObject, 
             EventHandler<EventArgs> onCollision) 
-            : base(danmaku, startPosition, new Vector2f(40,40), 5, targetObject, ownerObject, onCollision,
+            : base(danmaku, startPosition, new Vector2f(40,40), 3, targetObject, ownerObject, onCollision,
                   int.MaxValue/danmaku.FrameRateLimit, new InDirectionOfMotionRotator(), new NoneDeterminantOfDirectionOfMovement()
                   , danmaku.Textures["bulleto1"],new TurnIntoBonusWayOfDying(danmaku),new StatChanger(-100))
         {

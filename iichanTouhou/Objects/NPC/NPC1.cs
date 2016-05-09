@@ -44,6 +44,7 @@ namespace IIchanDanmakuProject.Objects.NPC
             base.OnDied(sender, e);
             _flower2?.OnDied(this,new EventArgs());
             danmaku.SliceOfLifeBase.Shinigami.Add(new PowerBonus(Danmaku,CenterCoordinates));
+            danmaku.SliceOfLifeBase.Shinigami.Add(new TenBonus(Danmaku, CenterCoordinates+new Vector2f(-40,0)));
         }
 
         private Flower2 _flower2;
