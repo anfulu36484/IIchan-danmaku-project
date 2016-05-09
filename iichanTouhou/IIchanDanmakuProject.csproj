@@ -114,6 +114,7 @@
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\NoneWayOfDying.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\TurnIntoBonusWayOfDying.cs" />
     <Compile Include="Objects\Bullets\Behavior\WayOfDying\WayOfDyingBase.cs" />
+    <Compile Include="Objects\Bullets\Bonuses\BonusBase.cs" />
     <Compile Include="Objects\Bullets\Bonuses\PowerBonus.cs" />
     <Compile Include="Objects\Bullets\Bonuses\TenBonus.cs" />
     <Compile Include="Objects\Bullets\MainObjectBullets\BulletForMainAttack.cs" />
