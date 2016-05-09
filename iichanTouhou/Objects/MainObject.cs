@@ -48,6 +48,11 @@ namespace IIchanDanmakuProject.Objects
             }
         }
 
+        public int CountOfBomb => PowerLevel;
+
+        public int CountOfLives;
+
+
         public MainObject(Danmaku danmaku, Vector2f startPosition)
             : base(danmaku, startPosition, new Vector2f(50,70), 5, danmaku.Textures["greencirno"])
         {

@@ -5,10 +5,19 @@
         private readonly int _valueOfChangeOfXp;
         private readonly int _valueOfChangeOfPower;
         private readonly int _valueOfChangeOfScore;
+        private readonly int _valueOfChangeOfcountOfLives;
 
 
-        
+        public StatChanger(int valueOfChangeOfXp, int valueOfChangeOfPower, int valueOfChangeOfScore, int valueOfChangeOfcountOfLives)
+        {
+            _valueOfChangeOfXp = valueOfChangeOfXp;
+            _valueOfChangeOfPower = valueOfChangeOfPower;
+            _valueOfChangeOfScore = valueOfChangeOfScore;
+            _valueOfChangeOfcountOfLives = valueOfChangeOfcountOfLives;
+        }
+
         public StatChanger(int valueOfChangeOfXp, int valueOfChangeOfPower, int valueOfChangeOfScore)
+            :this(valueOfChangeOfXp,valueOfChangeOfPower,valueOfChangeOfScore,0)
         {
             _valueOfChangeOfXp = valueOfChangeOfXp;
             _valueOfChangeOfPower = valueOfChangeOfPower;
@@ -25,6 +34,7 @@
                 mainObject.XP += _valueOfChangeOfXp;
                 mainObject.Power += _valueOfChangeOfPower;
                 mainObject.Score += _valueOfChangeOfScore;
+                mainObject.CountOfLives += _valueOfChangeOfcountOfLives;
             }
             else
                 collidedObject.XP += _valueOfChangeOfXp;
