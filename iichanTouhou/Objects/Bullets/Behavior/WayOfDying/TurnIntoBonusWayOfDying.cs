@@ -13,9 +13,9 @@ namespace IIchanDanmakuProject.Objects.Bullets.Behavior.WayOfDying
             base.Run();
             if (Bullet.IsObjectInGameArea())
             {
-                Bonus bonus = new Bonus(Danmaku, Bullet.Position, Bullet.TargetObjects[0],
+                StarBonus starBonus = new StarBonus(Danmaku, Bullet.Position, Bullet.TargetObjects[0],
                     Danmaku.SliceOfLifeBase.Shinigami, Danmaku.SliceOfLifeBase.Shinigami.OnCollision);
-                Danmaku.SliceOfLifeBase.Shinigami.Add(bonus);
+                Danmaku.SliceOfLifeBase.Shinigami.Add(starBonus);
             }
         }
     }

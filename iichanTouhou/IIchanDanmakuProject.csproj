@@ -123,7 +123,7 @@
     <Compile Include="Objects\Hitbox.cs" />
     <Compile Include="Objects\RotatorContainer.cs" />
     <Compile Include="Objects\Shinigami.cs" />
-    <Compile Include="Objects\Bullets\Bonuses\Bonus.cs" />
+    <Compile Include="Objects\Bullets\Bonuses\StarBonus.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Objects\Bullets\NPCBullets\Bullet1.cs" />
     <Compile Include="Objects\Bullets\NPCBullets\Bullet2.cs" />
@@ -212,6 +212,7 @@
     <Content Include="Resources\greencirno.png" />
     <Content Include="Resources\mainattack.png" />
     <Content Include="Resources\powersphere.png" />
+    <None Include="Resources\starbonus.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

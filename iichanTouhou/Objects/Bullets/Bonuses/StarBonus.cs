@@ -7,13 +7,13 @@ using SFML.System;
 
 namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
 {
-    class Bonus :BulletBase
+    class StarBonus :BulletBase
     {
-        public Bonus(Danmaku danmaku, Vector2f startPosition,GameObject targetObject,
+        public StarBonus(Danmaku danmaku, Vector2f startPosition,GameObject targetObject,
             GameObject ownerObject, EventHandler<EventArgs> onCollision)
-        : base(danmaku, startPosition, new Vector2f(5,5),2, targetObject, ownerObject, 
-              onCollision, int.MaxValue/danmaku.FrameRateLimit,new NoneRotator(), new MovementToNearestTargetObject(new Vector2f(0,1)),
-              danmaku.Textures["Bonus"],new NoneWayOfDying(danmaku),new StatChanger(0,0,10))
+        : base(danmaku, startPosition, new Vector2f(10,10),5, targetObject, ownerObject, 
+              onCollision, int.MaxValue/danmaku.FrameRateLimit,new AroundCenterRotator(90), new MovementToNearestTargetObject(new Vector2f(0,1)),
+              danmaku.Textures["starbonus"],new NoneWayOfDying(danmaku),new StatChanger(0,0,10))
         {
             DeterminantOfDirectionOfMovement.SpeedFactor = 5;
 
