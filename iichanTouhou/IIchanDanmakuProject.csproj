@@ -79,10 +79,12 @@
     <Compile Include="Area\AreaBase.cs" />
     <Compile Include="Area\BackgroundArea.cs" />
     <Compile Include="Area\StatisticsArea.cs" />
-    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttack.cs" />
+    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttackLeft.cs" />
+    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttackRight.cs" />
     <Compile Include="Attack\AttackOfMainObject\AttackOfMainObjectBase.cs" />
     <Compile Include="Attack\AttackOfMainObject\BulletPoolBase.cs" />
-    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttackPool.cs" />
+    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttackLeftPool.cs" />
+    <Compile Include="Attack\AttackOfMainObject\MainAttack\MainAttackRightPool.cs" />
     <Compile Include="Attack\AttackOfMainObject\PowerSphere\PowerSphereAttack.cs" />
     <Compile Include="Attack\AttackOfMainObject\PowerSphere\PowerSphereAttackPool.cs" />
     <Compile Include="Attack\AttackOfMainObject\PowerSphere\PowerSphereHolder.cs" />

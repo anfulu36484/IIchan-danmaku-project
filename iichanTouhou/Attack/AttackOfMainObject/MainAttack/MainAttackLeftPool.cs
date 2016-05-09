@@ -5,9 +5,9 @@ using SFML.System;
 
 namespace IIchanDanmakuProject.Attack.AttackOfMainObject.MainAttack
 {
-    class MainAttackPool:BulletPoolBase
+    class MainAttackLeftPool:BulletPoolBase
     {
-        public MainAttackPool(GameObject gameObject) : base(gameObject)
+        public MainAttackLeftPool(GameObject gameObject) : base(gameObject)
         {
         }
 
@@ -15,7 +15,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.MainAttack
         {
             var bullet= new BulletForMainAttack(GameObject.danmaku, GameObject.CenterCoordinates,
                 GameObject.TargetObjects, GameObject, OnCollision);
-            bullet.CenterCoordinates = GameObject.CenterCoordinates + new Vector2f(0, -60);
+            bullet.CenterCoordinates = GameObject.CenterCoordinates + new Vector2f(-25, -60);
             bullet.Initialize();
             return bullet;
         }

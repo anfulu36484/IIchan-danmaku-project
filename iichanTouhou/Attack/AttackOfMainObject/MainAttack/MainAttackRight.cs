@@ -3,12 +3,12 @@ using SFML.System;
 
 namespace IIchanDanmakuProject.Attack.AttackOfMainObject.MainAttack
 {
-    class MainAttack :AttackOfMainObjectBase
+    class MainAttackRight :AttackOfMainObjectBase
     {
-        public MainAttack(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, 
+        public MainAttackRight(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, 
             int countOfBulletsForEasyMode, int timeBetweenAttacks) 
             : base(danmaku, ownerObject, startPoint, countOfBulletsForEasyMode, timeBetweenAttacks,
-                  new MainAttackPool(ownerObject))
+                  new MainAttackRightPool(ownerObject))
         {
         }
     }
