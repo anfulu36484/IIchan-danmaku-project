@@ -8,7 +8,7 @@ namespace IIchanDanmakuProject.Objects.Bullets.Bonuses
     {
 
         public PowerBonus(Danmaku danmaku, Vector2f startPosition)
-            : base(danmaku, startPosition, danmaku.Textures["PowerBonus"], new StatChanger(0, 10, 0))
+            : base(danmaku, startPosition, danmaku.Textures["PowerBonus"], new StatChanger(0, 0.1f, 0))
         {
 
         }

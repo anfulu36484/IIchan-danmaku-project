@@ -21,36 +21,46 @@ namespace IIchanDanmakuProject.Objects
 
         public int Score;
 
-        private int _power;
+        private float _power;
 
-        public int Power
+        public float Power
         {
             get { return _power; }
-            set {
-                _power = value < 0 ? 1 : value;
-            }
-        }
-
-
-        public int PowerLevel
-        {
-            get
+            set
             {
-                if (Power >= 0 & Power < 11)
-                    return 0;
-                if (Power > 10 & Power < 51)
-                    return 1;
-                if (Power > 50 & Power < 101)
-                    return 2;
-                if (Power > 100 & Power < 201)
-                    return 3;
-                return 4;
+                if (value < 0)
+                    _power = 0;
+                else if (value > 4)
+                    _power = 4;
+                else
+                    _power = value;
             }
         }
+
+
+        public int PowerLevel => (int) Power;
 
         public int CountOfBomb => PowerLevel;
 
-        public int CountOfLives;
+
+        public int CountOfLivesMax =5;
+
+
+        private int _countOfLives = 3;
+
+        public int CountOfLives
+        {
+            get { return _countOfLives; }
+            set
+            {
+                if (value > CountOfLivesMax)
+                    _countOfLives = CountOfLivesMax;
+                else
+                {
+                    _countOfLives = value;
+                }
+            }
+        }
 
 
         public MainObject(Danmaku danmaku, Vector2f startPosition)
@@ -58,7 +68,7 @@ namespace IIchanDanmakuProject.Objects
         {
             _hitbox = new Hitbox(danmaku,this);
             Texture.Smooth = true;
-            Power = 300;
+            Power = 4;
         }
 
         public override Vector2f Position

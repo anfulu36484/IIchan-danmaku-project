@@ -26,7 +26,7 @@ namespace IIchanDanmakuProject
             ResourceSet rs = rm.GetResourceSet(new CultureInfo("en-US"), true, true);
 
             if (rs == null) return;
-            foreach (var entry in rs.Cast<DictionaryEntry>())
+            foreach (var entry in rs.Cast<DictionaryEntry>().Where(n=>n.Value is System.Drawing.Image))
             {
                 _textures.Add(entry.Key.ToString(),new Texture(ImageToByte((System.Drawing.Image)entry.Value)));
             }

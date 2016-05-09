@@ -1,4 +1,6 @@
-﻿using SFML.Graphics;
+﻿using System.Collections.Generic;
+using System.Globalization;
+using SFML.Graphics;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Statistics
@@ -6,9 +8,13 @@ namespace IIchanDanmakuProject.Statistics
     class StatisticsView :GameBase
     {
         private readonly Danmaku _danmaku;
-        private Font font;
-        private Text scoreText;
-        
+        private Font _font;
+        private Text _scoreText;
+        private Text _powerText;
+        private Text _playerText;
+
+        private List<PlayerSkin> _playerSkins; 
+
 
         public StatisticsView(Danmaku danmaku)
         {
@@ -17,21 +23,65 @@ namespace IIchanDanmakuProject.Statistics
 
         public override void Initialize()
         {
-            font = new Font(@"D:\С_2015\IIchan danmaku project\iichanTouhou\Statistics\arial.ttf");
-            scoreText = new Text("Score 0",font);
-            scoreText.Position = _danmaku.StatisticsArea.Position + new Vector2f(40, 40);
-            scoreText.Scale = new Vector2f(1.2f,1.2f);
-            scoreText.Color=Color.Cyan;
+            _font = new Font(Properties.Resources.arial);
+            _scoreText = new Text("Score   0", _font)
+            {
+                Position = _danmaku.StatisticsArea.Position + new Vector2f(30, 40),
+                Scale = new Vector2f(1.1f, 1.1f),
+                Color = Color.White
+            };
+
+            _playerText = new Text("Player", _font)
+            {
+                Position = _danmaku.StatisticsArea.Position + new Vector2f(30, 100),
+                Scale = new Vector2f(1.1f, 1.1f),
+                Color = Color.White
+            };
+
+            _powerText = new Text("Power   0.00 / 4.00", _font)
+            {
+                Position = _danmaku.StatisticsArea.Position + new Vector2f(30, 160),
+                Scale = new Vector2f(1.1f, 1.1f),
+                Color = Color.White
+            };
+
+            _playerSkins= new List<PlayerSkin>();
+
+
+            float bias = 120;
+            for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax ; i++, bias+=35)
+            {
+                PlayerSkin playerSkin  = new PlayerSkin(_danmaku, new Vector2f(_playerText.Position.X+bias, _playerText.Position.Y+15));
+
+                _playerSkins.Add(playerSkin);
+            }
         }
 
         public override void Update()
         {
-            scoreText.DisplayedString = "Score " + _danmaku.MainObject.Score;
+            _scoreText.DisplayedString = $"Score   {_danmaku.MainObject.Score}";
+            _powerText.DisplayedString =  $"Power   {_danmaku.MainObject.Power.ToString("0.00", CultureInfo.CreateSpecificCulture("en-US)"))} / 4.00";
+            for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax; i++)
+            {
+                if (i < _danmaku.MainObject.CountOfLives)
+                    _playerSkins[i].Active = true;
+                else
+                    _playerSkins[i].Active = false;
+
+            }
         }
 
         public override void Render()
         {
-            _danmaku.window.Draw(scoreText);
+            _danmaku.window.Draw(_scoreText);
+            _danmaku.window.Draw(_powerText);
+            _danmaku.window.Draw(_playerText);
+
+            for (int i = 0; i < _danmaku.MainObject.CountOfLives; i++)
+            {
+                _danmaku.window.Draw(_playerSkins[i].RectangleShape);
+            }
+
         }
     }
 }

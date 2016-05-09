@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Slice\SliceOfLifeBase.cs" />
     <Compile Include="Slice\SliceOfLife1.cs" />
+    <Compile Include="Statistics\PlayerSkin.cs" />
     <Compile Include="Statistics\StatisticsView.cs" />
     <Compile Include="Textures.cs" />
   </ItemGroup>
@@ -153,9 +154,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
-    <None Include="Statistics\arial.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Statistics\arial.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,6 +215,7 @@
     <Content Include="Resources\mainattack.png" />
     <None Include="Resources\Ten.png" />
     <None Include="Resources\P.png" />
+    <None Include="Resources\PlayerSkin.png" />
     <Content Include="Resources\powersphere.png" />
     <None Include="Resources\starbonus.png" />
   </ItemGroup>
