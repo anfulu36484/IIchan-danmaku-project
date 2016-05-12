@@ -20,13 +20,10 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             base.Initialize();
             for (int i = 0; i < CountOfBullets; i++)
             {
-                /*bullets[i] = new Bullet3(Danmaku, GetPosition(FiArray[i])
-                    , new Vector2f(20, 20), 8, Danmaku.MainObject, OwnerObject, OnCollision,int.MaxValue/Danmaku.FrameRateLimit);*/
                 BulletBase bullet = new Bulleto1(Danmaku, GetPosition(FiArray[i]), Danmaku.MainObject, OwnerObject, OnCollision);
                 bullet.Initialize();
 
                 Bullets.Add(bullet);
-
             }
         }
 
@@ -48,14 +45,14 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
         }
 
 
-        protected override Vector2f GetPosition(float fi)
+        protected Vector2f GetPosition(float fi)
         {
             /*PolarVector polarVector = new PolarVector((float)(Math.Sin(Math.Log(fi * K)) / Math.Cos(fi / K)),fi);
-            Vector2f vector = polarVector.PolarToCartesianCoordinate()*AttackScale + StartPoint;
+            Vector2f vector = polarVector.PolarToCartesianCoordinateDegrees()*AttackScale + StartPoint;
 
             return vector;*/
             double r = Math.Sin(Math.Log(fi * K))/ Math.Cos(fi / K);
-            return ConvertToCartesianCoordinates(r, fi);
+            return ConvertToWindowCoordinates(r, fi);
 
         }
 

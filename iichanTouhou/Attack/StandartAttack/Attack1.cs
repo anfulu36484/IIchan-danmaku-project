@@ -10,27 +10,29 @@ namespace IIchanDanmakuProject.Attack.StandartAttack
     class Attack1 : AttackBase
     {
 
+        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime, int countOfBulletsForEasyMode)
+            : base(danmaku, ownerObject, startPoint, lifeTime, 50)
+        {
+        }
+
         public override void Initialize()
         {
-            CountOfBullets = 50;
 
             Bullets = new List<BulletBase>(CountOfBullets);
             float fi = 10;
             for (int i = 0; i < CountOfBullets; i++)
             {
-                BulletBase bullet = new Bullet1(Danmaku, GetPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
+                BulletBase bullet = new Bullet1(Danmaku, GetStartPosition(fi),new Vector2f(50,50),25, Danmaku.MainObject,OwnerObject,
                     OnCollision,int.MaxValue/Danmaku.FrameRateLimit);
 
                 bullet.Initialize();
-                //bullet.Speed =  (Bullets[i].Position - StartPoint).Normalize()*1.5f;
-
                 Bullets.Add(bullet);
 
                 fi += 10f;
             }
         }
 
-        protected override Vector2f GetPosition(float fi)
+        protected Vector2f GetStartPosition(float fi)
         {
             return new Vector2f((float)(fi * Math.Sin(fi) + StartPoint.X), (float)(fi * Math.Cos(fi) + StartPoint.Y));
         }
@@ -52,9 +54,6 @@ namespace IIchanDanmakuProject.Attack.StandartAttack
         }
 
 
-        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime, int countOfBulletsForEasyMode) 
-            : base(danmaku, ownerObject, startPoint, lifeTime, countOfBulletsForEasyMode)
-        {
-        }
+        
     }
 }

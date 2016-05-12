@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using SFML.System;
@@ -35,9 +36,11 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
 
 
 
-        protected Vector2f ConvertToCartesianCoordinates(double r, double fi)
+        protected Vector2f ConvertToWindowCoordinates(double r, double fi)
         {
-            return new Vector2f((float)(r * Math.Cos(fi) * AttackScale + StartPoint.X), (float)(r * Math.Sin(fi)) * AttackScale + StartPoint.Y);
+            return new PolarVector(r, fi).PolarToCartesianCoordinateRadian()*AttackScale + StartPoint;
+
+                //new Vector2f((float)(r * Math.Cos(fi) * AttackScale + StartPoint.X), (float)(r * Math.Sin(fi)) * AttackScale + StartPoint.Y);
         }
 
     }

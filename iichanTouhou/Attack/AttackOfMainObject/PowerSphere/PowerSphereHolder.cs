@@ -71,7 +71,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
 
         void SetCoordinatesForBullet(BulletBase bullet, Vector2f centerCoordinatesOfMainObject, float r, float angle)
         {
-            bullet.CenterCoordinates = centerCoordinatesOfMainObject + new PolarVector(r,angle).PolarToCartesianCoordinate();
+            bullet.CenterCoordinates = centerCoordinatesOfMainObject + new PolarVector(r,angle).PolarToCartesianCoordinateDegrees();
         }
 
 
@@ -111,7 +111,7 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
             GameObject nearestTargetObject = GetNearestTargetObject();
 
             if (nearestTargetObject != null)
-                angle = GetDistanceBeforeNearestTargetObject(nearestTargetObject).CartesianToPolarCoordinate().theta;
+                angle = GetDistanceBeforeNearestTargetObject(nearestTargetObject).CartesianToPolarCoordinateDegrees().theta;
             else
                 angle = 270;
 
@@ -145,9 +145,5 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject.PowerSphere
             }
         }
 
-        protected override Vector2f GetPosition(float fi)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

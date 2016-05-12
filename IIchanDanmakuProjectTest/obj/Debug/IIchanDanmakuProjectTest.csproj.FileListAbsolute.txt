@@ -1,5 +1,4 @@
 D:\С_2015\IIchan danmaku project\IIchanDanmakuProjectTest\bin\Debug\Resources\bulletmainobject1.png
-D:\С_2015\IIchan danmaku project\IIchanDanmakuProjectTest\bin\Debug\Statistics\arial.ttf
 D:\С_2015\IIchan danmaku project\IIchanDanmakuProjectTest\bin\Debug\IIchanDanmakuProjectTest.dll
 D:\С_2015\IIchan danmaku project\IIchanDanmakuProjectTest\bin\Debug\IIchanDanmakuProjectTest.pdb
 D:\С_2015\IIchan danmaku project\IIchanDanmakuProjectTest\bin\Debug\iichanTouhou.exe

@@ -22,7 +22,7 @@ namespace IIchanDanmakuProject.Helpers
 
 
 
-        public static PolarVector CartesianToPolarCoordinate(this Vector2f coordinate)
+        public static PolarVector CartesianToPolarCoordinateDegrees(this Vector2f coordinate)
         {
 
             double r = Math.Pow((Math.Pow(coordinate.X, 2) + Math.Pow(coordinate.Y, 2)), 0.5);
@@ -49,7 +49,7 @@ namespace IIchanDanmakuProject.Helpers
             return polarVector;*/
         }
 
-        public static Vector2f PolarToCartesianCoordinate(this PolarVector coordinate)
+        public static Vector2f PolarToCartesianCoordinateDegrees(this PolarVector coordinate)
         {
             /*var x = coordinate.r * Math.Cos(coordinate.theta * 2 * Math.PI / 360);
             var y = coordinate.r * Math.Sin(coordinate.theta * 2 * Math.PI / 360);
@@ -59,5 +59,20 @@ namespace IIchanDanmakuProject.Helpers
                 (float)(coordinate.r * Math.Sin(DegreesToRadian(coordinate.theta))));
         }
 
+
+        public static PolarVector CartesianToPolarCoordinateRadian(this Vector2f coordinate)
+        {
+             PolarVector polarVector = new PolarVector();
+             polarVector.r = coordinate.Length();
+             polarVector.theta = (float)Math.Atan(coordinate.Y/coordinate.X);
+             return polarVector;
+        }
+
+
+        public static Vector2f PolarToCartesianCoordinateRadian(this PolarVector coordinate)
+        {
+            return new Vector2f((float)(coordinate.r * Math.Cos(coordinate.theta)),
+                (float)(coordinate.r * Math.Sin(coordinate.theta)));
+        }
     }
 }

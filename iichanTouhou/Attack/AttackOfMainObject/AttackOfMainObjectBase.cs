@@ -65,9 +65,5 @@ namespace IIchanDanmakuProject.Attack.AttackOfMainObject
             }
         }
 
-        protected override Vector2f GetPosition(float fi)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

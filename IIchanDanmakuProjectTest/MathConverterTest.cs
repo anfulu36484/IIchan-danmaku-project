@@ -12,15 +12,15 @@ namespace IIchanDanmakuProjectTest
         public void CartesianToPolarCoordinateTestMethod()
         {
             Vector2f cartesian = new Vector2f(5,3);
-            PolarVector polarVector = cartesian.CartesianToPolarCoordinate();
-            Assert.IsTrue(Math.Abs(polarVector.r - 5.83) < 0.05 & Math.Abs(polarVector.theta - 30.963) < 0.05);
+            PolarVector polarVectorDegree = cartesian.CartesianToPolarCoordinateDegrees();
+            Assert.IsTrue(Math.Abs(polarVectorDegree.r - 5.83) < 0.05 & Math.Abs(polarVectorDegree.theta - 30.963) < 0.05);
         }
 
         [TestMethod]
         public void PolarToCartesianCoordinateTestMethod()
         {
-            PolarVector polarVector = new PolarVector(5, 30);
-            Vector2f vector = polarVector.PolarToCartesianCoordinate();
+            PolarVector polarVectorDegree = new PolarVector(5, 30);
+            Vector2f vector = polarVectorDegree.PolarToCartesianCoordinateDegrees();
             Assert.IsTrue(Math.Abs(vector.X - 4.33) < 0.05 & Math.Abs(vector.Y - 2.5) < 0.05);
         }
 

@@ -10,6 +10,12 @@
             this.r = r;
             this.theta = theta;
         }
+
+        public PolarVector(double r, double theta)
+        {
+            this.r = (float)r;
+            this.theta = (float)theta;
+        }
     }
 
 }

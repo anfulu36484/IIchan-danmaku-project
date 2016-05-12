@@ -28,9 +28,6 @@ namespace IIchanDanmakuProject.Attack
         }
 
 
-        protected abstract Vector2f GetPosition(float fi);
-
-
         public virtual void OnCollision(object obj, EventArgs e)
         {
             Console.WriteLine(@"Столкновение произошло");
