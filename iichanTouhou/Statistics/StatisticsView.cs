@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using SFML.Graphics;
 using SFML.System;
@@ -12,6 +13,7 @@ namespace IIchanDanmakuProject.Statistics
         private Text _scoreText;
         private Text _powerText;
         private Text _playerText;
+        private Text _FPSCouner;
 
         private List<PlayerSkin> _playerSkins; 
 
@@ -45,8 +47,14 @@ namespace IIchanDanmakuProject.Statistics
                 Color = Color.White
             };
 
-            _playerSkins= new List<PlayerSkin>();
+            _FPSCouner = new Text("FPS 00", _font)
+            {
+                Position = _danmaku.StatisticsArea.Position+_danmaku.StatisticsArea.Size - new Vector2f(110, 40),
+                Scale = new Vector2f(0.8f, 0.8f),
+                Color = Color.White
+            };
 
+            _playerSkins = new List<PlayerSkin>();
 
             float bias = 120;
             for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax ; i++, bias+=35)
@@ -61,6 +69,7 @@ namespace IIchanDanmakuProject.Statistics
         {
             _scoreText.DisplayedString = $"Score   {_danmaku.MainObject.Score}";
             _powerText.DisplayedString =  $"Power   {_danmaku.MainObject.Power.ToString("0.00", CultureInfo.CreateSpecificCulture("en-US)"))} / 4.00";
+            _FPSCouner.DisplayedString = $"FPS {(int)_danmaku.FPS}";
 
             float lives = _danmaku.MainObject.CountOfLives;
             for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax; i++)
@@ -88,6 +97,7 @@ namespace IIchanDanmakuProject.Statistics
             _danmaku.window.Draw(_scoreText);
             _danmaku.window.Draw(_powerText);
             _danmaku.window.Draw(_playerText);
+            _danmaku.window.Draw(_FPSCouner);
 
             for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax; i++)
             {

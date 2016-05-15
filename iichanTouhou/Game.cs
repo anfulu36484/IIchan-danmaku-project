@@ -13,6 +13,8 @@ namespace IIchanDanmakuProject
 
         public Vector2u Size;
 
+        public Clock Clock = new Clock();
+
         public int FrameRateLimit = 60;
 
         protected Game(uint width, uint height, string title, Color clearColor)
@@ -25,7 +27,7 @@ namespace IIchanDanmakuProject
             window.SetFramerateLimit((uint)FrameRateLimit);
             // Set up events
             window.Closed += OnClosed;
-           
+
         }
 
      
@@ -41,8 +43,15 @@ namespace IIchanDanmakuProject
                 window.Clear(clearColor);
                 Render();
                 window.Display();
+
+                FPS = 1/Clock.ElapsedTime.AsSeconds();
+                Clock.Restart();
             }
         }
+
+
+        public float FPS;
+
 
         private void OnClosed(object sender, EventArgs e)
         {
