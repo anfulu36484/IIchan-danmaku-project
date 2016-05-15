@@ -97,7 +97,10 @@ namespace IIchanDanmakuProject.Statistics
             _danmaku.window.Draw(_scoreText);
             _danmaku.window.Draw(_powerText);
             _danmaku.window.Draw(_playerText);
-            _danmaku.window.Draw(_FPSCouner);
+
+            try{ _danmaku.window.Draw(_FPSCouner);}
+            catch (Exception ex) { Console.WriteLine(ex.Message);}
+            
 
             for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax; i++)
             {

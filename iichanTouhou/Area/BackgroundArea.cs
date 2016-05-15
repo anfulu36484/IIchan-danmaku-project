@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using System.IO;
+using SFML.Graphics;
 using SFML.System;
 
 namespace IIchanDanmakuProject.Area
@@ -10,11 +11,18 @@ namespace IIchanDanmakuProject.Area
         {
         }
 
+       
+
         public override void Initialize()
         {
-            Rectangle.FillColor = Color.Blue;
+            Rectangle.FillColor=new Color(50,50,100);
         }
 
-        public override void Update() {}
+        public override void Update()
+        {
+            
+        }
+
+        
     }
 }

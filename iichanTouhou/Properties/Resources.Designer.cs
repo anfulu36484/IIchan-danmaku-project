@@ -71,6 +71,16 @@ namespace IIchanDanmakuProject.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] BackgroundFragmentShader {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundFragmentShader", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap bullet1 {
