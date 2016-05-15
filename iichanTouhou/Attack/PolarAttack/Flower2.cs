@@ -1,5 +1,4 @@
 ﻿using System;
-using IIchanDanmakuProject.Helpers;
 using IIchanDanmakuProject.Objects;
 using IIchanDanmakuProject.Objects.Bullets;
 using IIchanDanmakuProject.Objects.Bullets.NPCBullets;
@@ -47,10 +46,6 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
 
         protected Vector2f GetPosition(float fi)
         {
-            /*PolarVector polarVector = new PolarVector((float)(Math.Sin(Math.Log(fi * K)) / Math.Cos(fi / K)),fi);
-            Vector2f vector = polarVector.PolarToCartesianCoordinateDegrees()*AttackScale + StartPoint;
-
-            return vector;*/
             double r = Math.Sin(Math.Log(fi * K))/ Math.Cos(fi / K);
             return ConvertToWindowCoordinates(r, fi);
 

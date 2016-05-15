@@ -37,7 +37,7 @@ namespace IIchanDanmakuProject.Attack.PolarAttack
             K += 0.000007f;
         }
 
-        protected Vector2f GetPosition(float fi)
+        protected  Vector2f GetPosition(float fi)
         {
             double r = Math.Cos((Math.Sin(fi*K) + Math.Cos(fi*K)))/Math.Cos(fi*fi/K);
             return ConvertToWindowCoordinates(r, fi);

@@ -10,7 +10,7 @@ namespace IIchanDanmakuProject.Attack.StandartAttack
     class Attack1 : AttackBase
     {
 
-        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime, int countOfBulletsForEasyMode)
+        public Attack1(Danmaku danmaku, GameObject ownerObject, Vector2f startPoint, int lifeTime)
             : base(danmaku, ownerObject, startPoint, lifeTime, 50)
         {
         }

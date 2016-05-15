@@ -93,6 +93,7 @@
     <Compile Include="Attack\PolarAttack\Flower.cs" />
     <Compile Include="Attack\AttackBase.cs" />
     <Compile Include="Attack\PolarAttack\PolarAttackBase.cs" />
+    <Compile Include="Attack\StandartAttack\DirectedAttack.cs" />
     <Compile Include="Danmaku.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Area\GameArea.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Objects\Bullets\MainObjectBullets\PowerSphere.cs" />
     <Compile Include="Objects\Bullets\NPCBullets\Bullet3.cs" />
     <Compile Include="Objects\Bullets\MainObjectBullets\BulletForPowerSphere.cs" />
+    <Compile Include="Objects\Bullets\NPCBullets\BulletForDirectedAttack.cs" />
     <Compile Include="Objects\Bullets\NPCBullets\Bulleto1.cs" />
     <Compile Include="Objects\Hitbox.cs" />
     <Compile Include="Objects\RotatorContainer.cs" />
@@ -206,6 +208,7 @@
     <None Include="Resources\bullet11.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BulletForDirectedAttack.png" />
     <Content Include="Resources\bulletmainobject1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
