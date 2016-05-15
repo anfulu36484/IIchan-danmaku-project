@@ -43,12 +43,12 @@ namespace IIchanDanmakuProject.Objects
         public int CountOfBomb => PowerLevel;
 
 
-        public int CountOfLivesMax =5;
+        public float CountOfLivesMax =5;
 
 
-        private int _countOfLives = 3;
+        private float _countOfLives = 3.6f;
 
-        public int CountOfLives
+        public float CountOfLives
         {
             get { return _countOfLives; }
             set

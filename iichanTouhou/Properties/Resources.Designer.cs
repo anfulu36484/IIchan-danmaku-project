@@ -281,6 +281,16 @@ namespace IIchanDanmakuProject.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PlayerSkinFragmentShader {
+            get {
+                object obj = ResourceManager.GetObject("PlayerSkinFragmentShader", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap PowerBonus {
@@ -317,6 +327,16 @@ namespace IIchanDanmakuProject.Properties {
             get {
                 object obj = ResourceManager.GetObject("TenBonus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] VertexShader {
+            get {
+                object obj = ResourceManager.GetObject("VertexShader", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

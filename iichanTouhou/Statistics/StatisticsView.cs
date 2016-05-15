@@ -52,7 +52,7 @@ namespace IIchanDanmakuProject.Statistics
             for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax ; i++, bias+=35)
             {
                 PlayerSkin playerSkin  = new PlayerSkin(_danmaku, new Vector2f(_playerText.Position.X+bias, _playerText.Position.Y+15));
-
+                playerSkin.Initialize();
                 _playerSkins.Add(playerSkin);
             }
         }
@@ -61,14 +61,26 @@ namespace IIchanDanmakuProject.Statistics
         {
             _scoreText.DisplayedString = $"Score   {_danmaku.MainObject.Score}";
             _powerText.DisplayedString =  $"Power   {_danmaku.MainObject.Power.ToString("0.00", CultureInfo.CreateSpecificCulture("en-US)"))} / 4.00";
+
+            float lives = _danmaku.MainObject.CountOfLives;
             for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax; i++)
             {
-                if (i < _danmaku.MainObject.CountOfLives)
-                    _playerSkins[i].Active = true;
+                if (lives >= 1)
+                {
+                    _playerSkins[i].FillingFactor = 1;
+                    lives -= 1;
+                }
+                else if (lives < 1 & lives > 0)
+                {
+                    _playerSkins[i].FillingFactor = lives;
+                    lives = 0;
+                }
                 else
-                    _playerSkins[i].Active = false;
+                    _playerSkins[i].FillingFactor = 0;
 
+                _playerSkins[i].Update();
             }
+
         }
 
         public override void Render()
@@ -77,11 +89,10 @@ namespace IIchanDanmakuProject.Statistics
             _danmaku.window.Draw(_powerText);
             _danmaku.window.Draw(_playerText);
 
-            for (int i = 0; i < _danmaku.MainObject.CountOfLives; i++)
+            for (int i = 0; i < _danmaku.MainObject.CountOfLivesMax; i++)
             {
-                _danmaku.window.Draw(_playerSkins[i].RectangleShape);
+                _playerSkins[i].Render();
             }
-
         }
     }
 }
