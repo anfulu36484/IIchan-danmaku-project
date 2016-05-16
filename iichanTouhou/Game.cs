@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -13,7 +14,8 @@ namespace IIchanDanmakuProject
 
         public Vector2u Size;
 
-        public Clock Clock = new Clock();
+        Stopwatch _stopwatch = new Stopwatch();
+
 
         public int FrameRateLimit = 60;
 
@@ -27,13 +29,15 @@ namespace IIchanDanmakuProject
             window.SetFramerateLimit((uint)FrameRateLimit);
             // Set up events
             window.Closed += OnClosed;
-
+            
         }
 
      
         public void Run()
         {
             Initialize();
+
+            _stopwatch.Start();
 
             while (window.IsOpen)
             {
@@ -44,8 +48,8 @@ namespace IIchanDanmakuProject
                 Render();
                 window.Display();
 
-                FPS = 1/Clock.ElapsedTime.AsSeconds();
-                Clock.Restart();
+                FPS = 1/(float)_stopwatch.ElapsedMilliseconds*1000;
+                _stopwatch.Restart();
             }
         }
 
